@@ -12,7 +12,7 @@ target 'QuizApp' do
   pod 'AlamofireImage'
   pod 'RealmSwift'
   pod 'SnapKit'
-
+  pod 'IQKeyboardManagerSwift'
 
   # Pods for QuizApp
 

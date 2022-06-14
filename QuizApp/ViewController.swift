@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     @IBAction func loginViewAction(_ sender: Any) {
         let vc = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     

@@ -13,6 +13,8 @@ target 'QuizApp' do
   pod 'RealmSwift'
   pod 'SnapKit'
   pod 'IQKeyboardManagerSwift'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'NVActivityIndicatorView'
 
   # Pods for QuizApp
 

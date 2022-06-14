@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var submitView: UIView!
     @IBOutlet weak var viewInput: UIView!
-    @IBOutlet weak var loadingView: NVActivityIndicatorView!
     
     @IBOutlet weak var fullNameTextField: DesignableUITextField!
     @IBOutlet weak var userNameTextField: DesignableUITextField!
@@ -31,9 +30,11 @@ class LoginViewController: UIViewController {
     private let viewModel = LoginViewModel()
     private let bag = DisposeBag()
     var isLogin: Bool = true
+    let background = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        animation()
     }
     
     func updateView() {
@@ -81,7 +82,7 @@ class LoginViewController: UIViewController {
         if isLogin {
             if email.isValidEmail() {
                 if pass.count >= 6 {
-                    loadingView.startAnimating()
+                    background.isHidden = false
                     viewModel.login(email: email, password: pass)
                 } else {
                     alertView(title: "Lỗi", message: "Nhập mật khẩu từ 6 ký tự")
@@ -99,9 +100,26 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-}
-
-extension LoginViewController: UITextFieldDelegate {
+    func animation() {
+        let loading = NVActivityIndicatorView(frame: .zero, type: .ballClipRotatePulse, color: UIColor(named: "8F94FB"), padding: 0)
+        background.backgroundColor = UIColor(named: "trangmo")
+        view.addSubview(background)
+        background.addSubview(loading)
+        loading.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            loading.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loading.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loading.widthAnchor.constraint(equalToConstant: 40),
+            loading.heightAnchor.constraint(equalToConstant: 40)
+        ]
+        NSLayoutConstraint.activate(constraints)
+        loading.startAnimating()
+        background.isHidden = true
+       
+       
+        
+       
+    }
     
 }
 

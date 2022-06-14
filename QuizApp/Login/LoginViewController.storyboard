@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -238,6 +238,9 @@ terms &amp; conditions</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="sumbit"/>
+                                                <connections>
+                                                    <action selector="submitAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cs4-rt-X93"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,10 +264,6 @@ terms &amp; conditions</string>
                                     <constraint firstItem="oTp-Mp-69c" firstAttribute="leading" secondItem="BYr-Cp-Ed6" secondAttribute="leading" constant="27" id="zpe-lK-Iu8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXU-3h-k8B" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -275,21 +274,16 @@ terms &amp; conditions</string>
                             <constraint firstItem="6aD-1A-Pvz" firstAttribute="top" secondItem="8Hs-PP-Jtq" secondAttribute="bottom" id="PF9-dp-zN3"/>
                             <constraint firstItem="6aD-1A-Pvz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QlX-ad-pSc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BYr-Cp-Ed6" secondAttribute="trailing" constant="36" id="SkB-VY-hma"/>
-                            <constraint firstItem="SXU-3h-k8B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="WPy-2l-lVX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SXU-3h-k8B" secondAttribute="bottom" id="Z2J-qq-8ys"/>
                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="gr0-dD-7Qd"/>
                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="j4k-j3-IRk"/>
                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="4/10" id="o4P-pR-8EK"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SXU-3h-k8B" secondAttribute="trailing" id="oYu-5T-Glo"/>
                             <constraint firstItem="BYr-Cp-Ed6" firstAttribute="top" secondItem="hVN-ab-jrx" secondAttribute="bottom" constant="48" id="qI2-iv-taH"/>
                             <constraint firstItem="BYr-Cp-Ed6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="tKG-Ua-8Cb"/>
-                            <constraint firstItem="SXU-3h-k8B" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="udu-qP-2SH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="O8P-1I-kCD" id="2oy-HS-qIh"/>
                         <outlet property="fullNameTextField" destination="Uui-Qd-Cke" id="9VI-La-FN0"/>
-                        <outlet property="loadingView" destination="SXU-3h-k8B" id="Jop-FJ-feB"/>
                         <outlet property="loginButton" destination="fpX-wH-kNZ" id="JsP-3C-1ca"/>
                         <outlet property="loginImage" destination="rS4-wW-lhD" id="oqa-CO-Nbw"/>
                         <outlet property="loginText" destination="MVb-sF-0JU" id="ptX-9K-DkI"/>
@@ -338,9 +332,6 @@ terms &amp; conditions</string>
         <namedColor name="8F94FB">
             <color red="0.5607843137254902" green="0.58039215686274515" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

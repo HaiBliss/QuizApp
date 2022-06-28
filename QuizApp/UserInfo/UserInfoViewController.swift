@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  UserInfoViewController.swift
 //  QuizApp
 //
 //  Created by Hải Vie 🇻🇳 on 28/06/2022.
@@ -7,14 +7,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class UserInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = title
 
+        // Do any additional setup after loading the view.
     }
     
+
     init(title: String?){
         super.init(nibName: nil, bundle: nil)
         self.title = title

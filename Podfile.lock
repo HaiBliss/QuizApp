@@ -2,11 +2,15 @@ PODS:
   - Alamofire (5.6.1)
   - AlamofireImage (4.2.0):
     - Alamofire (~> 5.4)
+  - CardTabBar (1.0.0)
   - Differentiator (5.0.0)
   - IQKeyboardManagerSwift (6.5.10)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - R.swift (6.1.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
   - Realm (10.28.1):
     - Realm/Headers (= 10.28.1)
   - Realm/Headers (10.28.1)
@@ -22,18 +26,24 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SDWebImage (5.12.6):
+    - SDWebImage/Core (= 5.12.6)
+  - SDWebImage/Core (5.12.6)
   - SnapKit (5.6.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - AlamofireImage
+  - CardTabBar
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
+  - R.swift
   - RealmSwift
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SDWebImage
   - SnapKit
   - SwiftyJSON (~> 4.0)
 
@@ -41,33 +51,41 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - CardTabBar
     - Differentiator
     - IQKeyboardManagerSwift
     - NVActivityIndicatorView
+    - R.swift
+    - R.swift.Library
     - Realm
     - RealmSwift
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
+    - SDWebImage
     - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  CardTabBar: 14550e1be868b6d54f4ff31745445d6fcc1d452a
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Realm: f4674e0e7ee537f67a78d79bd8319bc777d61d06
   RealmSwift: 0e0e4786685c4442bf56d3831dfefb5fa05d6fd6
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: a47aea9e3d8816015db4e523daff50cfd294499d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 5f51a38e0a83365054a1c904bfe8d0cc26896635
+PODFILE CHECKSUM: e336f234385026745886dd9e227966aa358f9a6f
 
 COCOAPODS: 1.11.3

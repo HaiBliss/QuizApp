@@ -102,6 +102,12 @@ class LoginViewController: UIViewController {
                     switch errorCode {
                     case 200:
                         print(":Đăng nhập thành công!")
+                        guard let vc = R.storyboard.homeViewController.homeViewController() else {
+                            return
+                        }
+                        vc.modalPresentationStyle = .fullScreen
+                        self?.present(vc, animated: true)
+//                        self?.pushHome()
                         break
                     case 400:
                         self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")

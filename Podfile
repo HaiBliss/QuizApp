@@ -15,6 +15,8 @@ target 'QuizApp' do
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'NVActivityIndicatorView'
+  pod 'SDWebImage'
+  pod 'R.swift'
 
   # Pods for QuizApp
 

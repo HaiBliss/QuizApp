@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -229,26 +229,10 @@ terms &amp; conditions</string>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSN-sC-OG1">
                                         <rect key="frame" x="131" y="413" width="80" height="80"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-Yt-sho">
-                                                <rect key="frame" x="13" y="13" width="54" height="54"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="54" id="awu-uG-IFi"/>
-                                                    <constraint firstAttribute="width" constant="54" id="qkM-kr-38i"/>
-                                                </constraints>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="sumbit"/>
-                                                <connections>
-                                                    <action selector="submitAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cs4-rt-X93"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerX" secondItem="NSN-sC-OG1" secondAttribute="centerX" id="MAf-YJ-iq0"/>
                                             <constraint firstAttribute="width" constant="80" id="QOM-fA-fGA"/>
                                             <constraint firstAttribute="height" constant="80" id="XUI-2Z-IP3"/>
-                                            <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerY" secondItem="NSN-sC-OG1" secondAttribute="centerY" id="f38-sv-7XM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -264,11 +248,25 @@ terms &amp; conditions</string>
                                     <constraint firstItem="oTp-Mp-69c" firstAttribute="leading" secondItem="BYr-Cp-Ed6" secondAttribute="leading" constant="27" id="zpe-lK-Iu8"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-Yt-sho">
+                                <rect key="frame" x="180" y="666" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="awu-uG-IFi"/>
+                                    <constraint firstAttribute="width" constant="54" id="qkM-kr-38i"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="sumbit"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cs4-rt-X93"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6aD-1A-Pvz" secondAttribute="trailing" id="3db-q3-E8S"/>
+                            <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerY" secondItem="NSN-sC-OG1" secondAttribute="centerY" id="DCv-Pg-gJR"/>
+                            <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerX" secondItem="NSN-sC-OG1" secondAttribute="centerX" id="F97-vx-tA9"/>
                             <constraint firstAttribute="bottom" secondItem="6aD-1A-Pvz" secondAttribute="bottom" id="IP6-yw-Elj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8Hs-PP-Jtq" secondAttribute="trailing" id="Lgr-xe-sVi"/>
                             <constraint firstItem="6aD-1A-Pvz" firstAttribute="top" secondItem="8Hs-PP-Jtq" secondAttribute="bottom" id="PF9-dp-zN3"/>
@@ -304,19 +302,19 @@ terms &amp; conditions</string>
     </scenes>
     <designables>
         <designable name="O8P-1I-kCD">
-            <size key="intrinsicContentSize" width="135" height="34"/>
+            <size key="intrinsicContentSize" width="109" height="34"/>
         </designable>
         <designable name="TGO-hm-esV">
-            <size key="intrinsicContentSize" width="166.5" height="34"/>
+            <size key="intrinsicContentSize" width="142.5" height="34"/>
         </designable>
         <designable name="Uui-Qd-Cke">
-            <size key="intrinsicContentSize" width="114" height="34"/>
+            <size key="intrinsicContentSize" width="88" height="34"/>
         </designable>
         <designable name="YbT-DA-tcL">
-            <size key="intrinsicContentSize" width="111" height="34"/>
+            <size key="intrinsicContentSize" width="87" height="34"/>
         </designable>
         <designable name="xVT-dq-Exh">
-            <size key="intrinsicContentSize" width="118.5" height="34"/>
+            <size key="intrinsicContentSize" width="92.5" height="34"/>
         </designable>
     </designables>
     <resources>

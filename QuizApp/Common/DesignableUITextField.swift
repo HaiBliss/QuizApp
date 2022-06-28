@@ -33,6 +33,13 @@ class DesignableUITextField: UITextField {
     }
     
     func updateView() {
+        self.backgroundColor = UIColor.white
+        self.layer.borderColor = UIColor(named: "4E54C8")?.cgColor
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5.0
+        self.layer.borderWidth = 1.0
+        self.textColor = .black
+        
         if let image = leftImage {
             leftViewMode = UITextField.ViewMode.always
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))

@@ -27,7 +27,8 @@ class BaseAPI<T: TargetType> {
                     return
                 }
                 
-                if statusCode == 200 {
+                switch statusCode {
+                case 200, 400:
                     guard let jsonResponse = try? reponse.result.get() else {
                         print("jsonReponse error")
                         observer(.failure(NSError()))
@@ -46,9 +47,11 @@ class BaseAPI<T: TargetType> {
                        return
                    }
                    observer(.success(responseObj))
-                } else {
+                    break
+                default:
                     print("error statusCode is \(statusCode)")
                     observer(.failure(NSError()))
+                    break
                 }
             }
             return Disposables.create()

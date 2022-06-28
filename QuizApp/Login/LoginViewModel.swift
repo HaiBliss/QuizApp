@@ -15,7 +15,7 @@ class LoginViewModel {
     let bag = DisposeBag()
     let loginData: LoginAPIProtocol = LoginAPI()
     
-    func login(email: String, password: String){
+    func login(email: String, password: String) {
         
         loginData.login(email: email, password: password).subscribe { user in
             self.loginInfo.accept(user)

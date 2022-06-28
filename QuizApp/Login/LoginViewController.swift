@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         updateView()
         animation()
+        bindData()
     }
     
     func updateView() {
@@ -93,6 +94,27 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func bindData() {
+        viewModel.loginInfo.subscribe { [weak self] data in
+            if let loginInfo = data.element {
+                self?.background.isHidden = true
+                if let errorCode = loginInfo.code {
+                    switch errorCode {
+                    case 200:
+                        print(":Đăng nhập thành công!")
+                        break
+                    case 400:
+                        self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")
+                        break
+                    default:
+                        self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")
+                        break
+                    }
+                }
+            }
+        }.disposed(by: bag)
+    }
+    
     
     func alertView(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -115,10 +137,6 @@ class LoginViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
         loading.startAnimating()
         background.isHidden = true
-       
-       
-        
-       
     }
     
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E3E1FFD286A14A300521F59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E1FFC286A14A200521F59 /* HomeViewController.swift */; };
+		1E3E1FFE286A14A300521F59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E1FFC286A14A200521F59 /* HomeViewController.swift */; };
+		1E3E1FFF286A14A300521F59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E1FFC286A14A200521F59 /* HomeViewController.swift */; };
+		1E3E2002286A14BC00521F59 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3E2001286A14BC00521F59 /* HomeViewController.storyboard */; };
+		1E3E2003286A14BC00521F59 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3E2001286A14BC00521F59 /* HomeViewController.storyboard */; };
+		1E3E2004286A14BC00521F59 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3E2001286A14BC00521F59 /* HomeViewController.storyboard */; };
 		1E6C3C08285828DA00F0838A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C3C07285828DA00F0838A /* Constants.swift */; };
 		1E6C3C0A28582A9C00F0838A /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C3C0928582A9C00F0838A /* TargetType.swift */; };
 		1E6C3C0C28582B1D00F0838A /* RepositoriesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C3C0B28582B1D00F0838A /* RepositoriesNetworking.swift */; };
@@ -52,6 +58,8 @@
 /* Begin PBXFileReference section */
 		09DAC079AA7784A83F511BF9 /* Pods-QuizApp-QuizAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp-QuizAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuizApp-QuizAppUITests/Pods-QuizApp-QuizAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1532F080411E084A30FA7302 /* Pods_QuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E3E1FFC286A14A200521F59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1E3E2001286A14BC00521F59 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		1E6C3C07285828DA00F0838A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E6C3C0928582A9C00F0838A /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		1E6C3C0B28582B1D00F0838A /* RepositoriesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesNetworking.swift; sourceTree = "<group>"; };
@@ -113,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E3E2000286A14AC00521F59 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1E3E1FFC286A14A200521F59 /* HomeViewController.swift */,
+				1E3E2001286A14BC00521F59 /* HomeViewController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1E6C3C04285827D500F0838A /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +191,7 @@
 		1EA71A332854FD7F004422A9 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				1E3E2000286A14AC00521F59 /* Home */,
 				1E6C3C0F2858452C00F0838A /* Models */,
 				1E6C3C04285827D500F0838A /* Network */,
 				1EA71A6928551F6E004422A9 /* Common */,
@@ -357,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3E2002286A14BC00521F59 /* HomeViewController.storyboard in Resources */,
 				1EA71A412854FD86004422A9 /* LaunchScreen.storyboard in Resources */,
 				1EA71A6828551ACC004422A9 /* LoginViewController.storyboard in Resources */,
 				1EA71A3E2854FD86004422A9 /* Assets.xcassets in Resources */,
@@ -368,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3E2003286A14BC00521F59 /* HomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3E2004286A14BC00521F59 /* HomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +514,7 @@
 				1EA71A6B28551F89004422A9 /* GradientView.swift in Sources */,
 				1EA71A6D2857A8DF004422A9 /* DesignableUITextField.swift in Sources */,
 				1E6C3C132858467200F0838A /* LoginAPI.swift in Sources */,
+				1E3E1FFD286A14A300521F59 /* HomeViewController.swift in Sources */,
 				1E6C3C0A28582A9C00F0838A /* TargetType.swift in Sources */,
 				1E6C3C0C28582B1D00F0838A /* RepositoriesNetworking.swift in Sources */,
 				1E6C3C08285828DA00F0838A /* Constants.swift in Sources */,
@@ -509,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EA71A4C2854FD87004422A9 /* QuizAppTests.swift in Sources */,
+				1E3E1FFE286A14A300521F59 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +541,7 @@
 			files = (
 				1EA71A562854FD87004422A9 /* QuizAppUITests.swift in Sources */,
 				1EA71A582854FD87004422A9 /* QuizAppUITestsLaunchTests.swift in Sources */,
+				1E3E1FFF286A14A300521F59 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +703,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 28H8755HMD;
+				DEVELOPMENT_TEAM = 3983R459GS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuizApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -711,7 +735,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 28H8755HMD;
+				DEVELOPMENT_TEAM = 3983R459GS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuizApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -742,7 +766,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 28H8755HMD;
+				DEVELOPMENT_TEAM = 3983R459GS;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
@@ -781,9 +805,10 @@
 			baseConfigurationReference = 09DAC079AA7784A83F511BF9 /* Pods-QuizApp-QuizAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 28H8755HMD;
+				DEVELOPMENT_TEAM = 3983R459GS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = huuhai.ha.QuizAppUITests;

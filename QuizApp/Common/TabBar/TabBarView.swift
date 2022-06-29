@@ -28,13 +28,15 @@ class TabBarView: UIView {
     }
     
     @IBAction func tabBarAction(_ sender: UIButton) {
-        [self.homeButton,
-        self.uploadedButton,
-        self.historyButton,
-        self.profileButton].forEach {
-            $0?.isSelected = false
+        if !sender.isSelected {
+            [self.homeButton,
+            self.uploadedButton,
+            self.historyButton,
+            self.profileButton].forEach {
+                $0?.isSelected = false
+            }
+            buttonSelect(button: sender)
         }
-        buttonSelect(button: sender)
     }
     
     func activeButton(tab: TabBar) {

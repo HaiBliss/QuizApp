@@ -13,10 +13,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        
+//        //Home
+//        guard let homeVC = R.storyboard.homeViewController.homeViewController() else {
+//            return
+//        }
+//        let homeNavi = UINavigationController(rootViewController: homeVC)
+//        
+//        //ExamUpload
+//        guard let examUploadVC = R.storyboard.examUploadViewController.examUploadViewController() else {
+//            return
+//        }
+//        let examUploadNavi = UINavigationController(rootViewController: examUploadVC)
+//        
+//        //History
+//        guard let historyVC = R.storyboard.historyViewController.historyViewController() else {
+//            return
+//        }
+//        let historyNavi = UINavigationController(rootViewController: historyVC)
+//        
+//        //Profile
+//        guard let userVC = R.storyboard.userInfoViewController.userInfoViewController() else {
+//            return
+//        }
+//        let userNavi = UINavigationController(rootViewController: userVC)
+//        
+//        self.window = window
+//        window.makeKeyAndVisible()
+//        
+//        //tabbar controller
+//        let tabbarController = UITabBarController()
+//        tabbarController.viewControllers = [homeNavi, examUploadNavi, historyNavi, userNavi]
+//                
+//        window.rootViewController = tabbarController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

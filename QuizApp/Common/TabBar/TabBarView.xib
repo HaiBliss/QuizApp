@@ -185,7 +185,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
                 <constraint firstItem="Hrz-SC-1tr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GvH-Pm-8la"/>
                 <constraint firstAttribute="bottom" secondItem="Hrz-SC-1tr" secondAttribute="bottom" id="g0h-8i-1p6"/>
@@ -207,6 +207,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

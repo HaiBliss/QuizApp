@@ -24,22 +24,19 @@ class HomeViewController: UIViewController {
                 guard let vc = R.storyboard.examUploadViewController.examUploadViewController() else {
                     return
                 }
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false)
+                self.navigationController?.setViewControllers([vc], animated: false)
                 break
             case .HISTORY:
                 guard let vc = R.storyboard.historyViewController.historyViewController() else {
                     return
                 }
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false)
+                self.navigationController?.setViewControllers([vc], animated: false)
                 break
             case TabBar.PROFILE:
                 guard let vc = R.storyboard.userInfoViewController.userInfoViewController() else {
                     return
                 }
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false)
+                self.navigationController?.setViewControllers([vc], animated: false)
                 break
             default:
                 break

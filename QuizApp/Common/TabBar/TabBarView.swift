@@ -28,15 +28,15 @@ class TabBarView: UIView {
     }
     
     @IBAction func tabBarAction(_ sender: UIButton) {
-        if !sender.isSelected {
+        
             [self.homeButton,
             self.uploadedButton,
             self.historyButton,
             self.profileButton].forEach {
                 $0?.isSelected = false
             }
+            sender.isSelected = true
             buttonSelect(button: sender)
-        }
     }
     
     func activeButton(tab: TabBar) {
@@ -80,5 +80,13 @@ class TabBarView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         viewTabBar.addShadow(offset: CGSize.init(width: 0, height: -4), color: UIColor.black, radius: 4.0, opacity: 0.1)
+        [self.homeButton,
+        self.uploadedButton,
+        self.historyButton,
+        self.profileButton].forEach {
+            $0?.setImage(nil, for: .normal)
+            $0?.setImage(R.image.lightSign(), for: .selected)
+            $0?.contentVerticalAlignment = .center
+        }
     }
 }

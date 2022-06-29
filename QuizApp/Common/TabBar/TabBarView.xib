@@ -48,7 +48,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwe-eK-iIP">
                                             <rect key="frame" x="0.0" y="0.0" width="106" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="selected" image="lightSign"/>
                                             <connections>
                                                 <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="UH5-RM-Wen"/>
                                             </connections>
@@ -84,7 +83,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVi-6E-cSE">
                                             <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="selected" image="lightSign"/>
                                             <connections>
                                                 <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="eDU-En-3FO"/>
                                             </connections>
@@ -120,7 +118,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAF-ky-e4L">
                                             <rect key="frame" x="0.0" y="0.0" width="106" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="selected" image="lightSign"/>
                                             <connections>
                                                 <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="sQM-OE-gUv"/>
                                             </connections>
@@ -156,7 +153,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-nV-bwo">
                                             <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="selected" image="lightSign"/>
                                             <connections>
                                                 <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="aeh-qL-ngp"/>
                                             </connections>
@@ -200,7 +196,6 @@
         <image name="exam" width="32" height="32"/>
         <image name="exam_upload" width="32" height="32"/>
         <image name="home" width="32" height="32"/>
-        <image name="lightSign" width="55.5" height="2"/>
         <image name="profile" width="32" height="32"/>
         <namedColor name="8F94FB">
             <color red="0.5607843137254902" green="0.58039215686274515" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

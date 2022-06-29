@@ -1,27 +1,27 @@
 //
-//  HomeViewController.swift
+//  ExamUploadViewController.swift
 //  QuizApp
 //
-//  Created by Hải Vie 🇻🇳 on 28/06/2022.
+//  Created by Hải Vie 🇻🇳 on 29/06/2022.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class ExamUploadViewController: UIViewController {
 
     @IBOutlet weak var tabBarView: TabBarView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarView.activeButton(tab: .HOME)
+        tabBarView.activeButton(tab: .EXAM_UPLOAD)
         actionTap()
-
+        // Do any additional setup after loading the view.
     }
     
     func actionTap() {
         tabBarView.selectTab = { tabName in
             switch tabName {
-            case .EXAM_UPLOAD:
-                guard let vc = R.storyboard.examUploadViewController.examUploadViewController() else {
+            case .HOME:
+                guard let vc = R.storyboard.homeViewController.homeViewController() else {
                     return
                 }
                 vc.modalPresentationStyle = .fullScreen
@@ -46,5 +46,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+
 
 }

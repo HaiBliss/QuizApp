@@ -9,44 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User Info View Controller-->
+        <!--Exam Upload View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="UserInfoViewController" id="Y6W-OH-hqX" customClass="UserInfoViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExamUploadViewController" id="Y6W-OH-hqX" customClass="ExamUploadViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61v-lx-b9E" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exam Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgB-zS-GkN">
+                                <rect key="frame" x="156.5" y="437.5" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KG9-VO-TCK" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="XU9-sC-aTs"/>
+                                    <constraint firstAttribute="height" constant="60" id="dtM-eL-1XR"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-OP-jF8">
-                                <rect key="frame" x="165.5" y="432.5" width="83" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="User Info"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="61v-lx-b9E" secondAttribute="bottom" id="DZV-in-JOG"/>
-                            <constraint firstItem="61v-lx-b9E" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="YUZ-4X-rsy"/>
-                            <constraint firstItem="Ccx-OP-jF8" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="a9d-cI-NOB"/>
-                            <constraint firstItem="61v-lx-b9E" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iLg-QY-VFc"/>
-                            <constraint firstItem="Ccx-OP-jF8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qfp-KU-hXE"/>
+                            <constraint firstItem="KG9-VO-TCK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="50r-TY-Fh7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KG9-VO-TCK" secondAttribute="bottom" id="A55-af-Kna"/>
+                            <constraint firstItem="XgB-zS-GkN" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="LDy-eX-xmV"/>
+                            <constraint firstItem="KG9-VO-TCK" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="oHr-6O-Lqe"/>
+                            <constraint firstItem="XgB-zS-GkN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rCs-Im-MrD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tabBarView" destination="61v-lx-b9E" id="U2D-oC-UBh"/>
+                        <outlet property="tabBarView" destination="KG9-VO-TCK" id="JrC-T1-Gj7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="21"/>
+            <point key="canvasLocation" x="-26" y="35"/>
         </scene>
     </scenes>
     <resources>

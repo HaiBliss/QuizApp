@@ -10,16 +10,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
             <connections>
+                <outlet property="historyButton" destination="mAF-ky-e4L" id="uoU-c5-laF"/>
+                <outlet property="homeButton" destination="rwe-eK-iIP" id="DMm-95-80A"/>
+                <outlet property="profileButton" destination="h0r-nV-bwo" id="uY6-eO-tW3"/>
+                <outlet property="uploadedButton" destination="LVi-6E-cSE" id="gwv-Vs-N7o"/>
                 <outlet property="viewTabBar" destination="Hrz-SC-1tr" id="eYl-QV-7z0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="TabBarView" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="423" height="64"/>
+            <rect key="frame" x="0.0" y="0.0" width="423" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrz-SC-1tr">
-                    <rect key="frame" x="0.0" y="4" width="423" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="423" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eyn-pk-J3Q">
                             <rect key="frame" x="0.0" y="0.0" width="423" height="60"/>
@@ -41,10 +45,13 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwe-eK-iIP">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwe-eK-iIP">
                                             <rect key="frame" x="0.0" y="0.0" width="106" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="selected" image="lightSign"/>
+                                            <connections>
+                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="UH5-RM-Wen"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,6 +85,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="selected" image="lightSign"/>
+                                            <connections>
+                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="eDU-En-3FO"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -111,6 +121,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="106" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="selected" image="lightSign"/>
+                                            <connections>
+                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="sQM-OE-gUv"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -144,6 +157,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="selected" image="lightSign"/>
+                                            <connections>
+                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="aeh-qL-ngp"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -174,7 +190,7 @@
                 <constraint firstItem="Hrz-SC-1tr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GvH-Pm-8la"/>
                 <constraint firstAttribute="bottom" secondItem="Hrz-SC-1tr" secondAttribute="bottom" id="g0h-8i-1p6"/>
                 <constraint firstAttribute="trailing" secondItem="Hrz-SC-1tr" secondAttribute="trailing" id="iuv-Qg-KTc"/>
-                <constraint firstItem="Hrz-SC-1tr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="jHw-dy-tng"/>
+                <constraint firstItem="Hrz-SC-1tr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jHw-dy-tng"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-55.797101449275367" y="-0.6696428571428571"/>

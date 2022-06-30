@@ -10,10 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
             <connections>
-                <outlet property="historyButton" destination="mAF-ky-e4L" id="uoU-c5-laF"/>
-                <outlet property="homeButton" destination="rwe-eK-iIP" id="DMm-95-80A"/>
-                <outlet property="profileButton" destination="h0r-nV-bwo" id="uY6-eO-tW3"/>
-                <outlet property="uploadedButton" destination="LVi-6E-cSE" id="gwv-Vs-N7o"/>
+                <outlet property="historyTabView" destination="hgO-B0-r35" id="Idu-QR-2v0"/>
+                <outlet property="homeTabView" destination="rLI-rd-zyZ" id="zT3-xd-j7T"/>
+                <outlet property="profileTabView" destination="URf-bO-MHl" id="m9Y-Uc-m7H"/>
+                <outlet property="uploadedTabView" destination="irB-no-UlI" id="ExH-md-KYh"/>
                 <outlet property="viewTabBar" destination="Hrz-SC-1tr" id="eYl-QV-7z0"/>
             </connections>
         </placeholder>
@@ -45,25 +45,14 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwe-eK-iIP">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="60"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="UH5-RM-Wen"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="rwe-eK-iIP" secondAttribute="trailing" id="CWB-8o-rZJ"/>
-                                        <constraint firstItem="rwe-eK-iIP" firstAttribute="leading" secondItem="rLI-rd-zyZ" secondAttribute="leading" id="L44-VW-rGQ"/>
-                                        <constraint firstItem="rwe-eK-iIP" firstAttribute="top" secondItem="rLI-rd-zyZ" secondAttribute="top" id="rXl-r9-PCU"/>
                                         <constraint firstItem="HuR-cr-Vny" firstAttribute="centerX" secondItem="rLI-rd-zyZ" secondAttribute="centerX" id="rsE-3i-YY9"/>
-                                        <constraint firstAttribute="bottom" secondItem="rwe-eK-iIP" secondAttribute="bottom" id="wGj-QL-6sn"/>
                                         <constraint firstItem="HuR-cr-Vny" firstAttribute="centerY" secondItem="rLI-rd-zyZ" secondAttribute="centerY" id="yVS-ag-eOd"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irB-no-UlI">
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irB-no-UlI">
                                     <rect key="frame" x="106" y="0.0" width="105.5" height="60"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2cc-Sg-5hk">
@@ -80,25 +69,14 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVi-6E-cSE">
-                                            <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="eDU-En-3FO"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="LVi-6E-cSE" firstAttribute="top" secondItem="irB-no-UlI" secondAttribute="top" id="0ga-c8-eXM"/>
                                         <constraint firstItem="2cc-Sg-5hk" firstAttribute="centerX" secondItem="irB-no-UlI" secondAttribute="centerX" id="9pt-gj-2Mb"/>
-                                        <constraint firstAttribute="bottom" secondItem="LVi-6E-cSE" secondAttribute="bottom" id="QLV-z2-pd9"/>
-                                        <constraint firstItem="LVi-6E-cSE" firstAttribute="leading" secondItem="irB-no-UlI" secondAttribute="leading" id="d3V-va-OYI"/>
                                         <constraint firstItem="2cc-Sg-5hk" firstAttribute="centerY" secondItem="irB-no-UlI" secondAttribute="centerY" id="rfk-uP-emg"/>
-                                        <constraint firstAttribute="trailing" secondItem="LVi-6E-cSE" secondAttribute="trailing" id="xPY-zG-He6"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-B0-r35">
+                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-B0-r35">
                                     <rect key="frame" x="211.5" y="0.0" width="106" height="60"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FdR-go-jfY">
@@ -115,25 +93,14 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAF-ky-e4L">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="60"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="sQM-OE-gUv"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="mAF-ky-e4L" firstAttribute="leading" secondItem="hgO-B0-r35" secondAttribute="leading" id="D2G-Kw-lGn"/>
                                         <constraint firstItem="FdR-go-jfY" firstAttribute="centerX" secondItem="hgO-B0-r35" secondAttribute="centerX" id="DrR-nZ-Nc6"/>
-                                        <constraint firstAttribute="bottom" secondItem="mAF-ky-e4L" secondAttribute="bottom" id="Tw0-iV-3Q9"/>
-                                        <constraint firstAttribute="trailing" secondItem="mAF-ky-e4L" secondAttribute="trailing" id="YSj-k4-KAO"/>
-                                        <constraint firstItem="mAF-ky-e4L" firstAttribute="top" secondItem="hgO-B0-r35" secondAttribute="top" id="Zcz-Nv-SMT"/>
                                         <constraint firstItem="FdR-go-jfY" firstAttribute="centerY" secondItem="hgO-B0-r35" secondAttribute="centerY" id="ab4-si-JJ6"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URf-bO-MHl">
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URf-bO-MHl">
                                     <rect key="frame" x="317.5" y="0.0" width="105.5" height="60"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AOq-VY-ode">
@@ -150,22 +117,11 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-nV-bwo">
-                                            <rect key="frame" x="0.0" y="0.0" width="105.5" height="60"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="tabBarAction:" destination="-1" eventType="touchUpInside" id="aeh-qL-ngp"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="AOq-VY-ode" firstAttribute="centerY" secondItem="URf-bO-MHl" secondAttribute="centerY" id="3LE-nV-L6H"/>
                                         <constraint firstItem="AOq-VY-ode" firstAttribute="centerX" secondItem="URf-bO-MHl" secondAttribute="centerX" id="ahW-8c-6q0"/>
-                                        <constraint firstItem="h0r-nV-bwo" firstAttribute="top" secondItem="URf-bO-MHl" secondAttribute="top" id="gKn-an-oFL"/>
-                                        <constraint firstAttribute="trailing" secondItem="h0r-nV-bwo" secondAttribute="trailing" id="pAr-gO-ZPH"/>
-                                        <constraint firstAttribute="bottom" secondItem="h0r-nV-bwo" secondAttribute="bottom" id="rN7-aW-8G4"/>
-                                        <constraint firstItem="h0r-nV-bwo" firstAttribute="leading" secondItem="URf-bO-MHl" secondAttribute="leading" id="szP-Kp-Bpf"/>
                                     </constraints>
                                 </view>
                             </subviews>

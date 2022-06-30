@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61v-lx-b9E" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="XU9-sC-aTs"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-OP-jF8">
                                 <rect key="frame" x="165.5" y="432.5" width="83" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -33,16 +25,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="61v-lx-b9E" secondAttribute="bottom" id="DZV-in-JOG"/>
-                            <constraint firstItem="61v-lx-b9E" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="YUZ-4X-rsy"/>
                             <constraint firstItem="Ccx-OP-jF8" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="a9d-cI-NOB"/>
-                            <constraint firstItem="61v-lx-b9E" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="iLg-QY-VFc"/>
                             <constraint firstItem="Ccx-OP-jF8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qfp-KU-hXE"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tabBarView" destination="61v-lx-b9E" id="U2D-oC-UBh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,9 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

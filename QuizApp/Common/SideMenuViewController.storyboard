@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SlideMenuViewController" id="Y6W-OH-hqX" customClass="SideMenuViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pAE-3k-A25">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LxA-wm-8iR">
+                                <rect key="frame" x="0.0" y="112" width="260" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Footer Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oK-Vz-1yI">
+                                <rect key="frame" x="10" y="839" width="240" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-G7-dJy">
+                                <rect key="frame" x="16" y="44" width="227" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4sn-zV-ubJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="asR-dR-Sdt"/>
+                        <color key="backgroundColor" red="0.73725490199999999" green="0.12941176469999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8oK-Vz-1yI" firstAttribute="leading" secondItem="asR-dR-Sdt" secondAttribute="leading" constant="10" id="0kr-lw-Ti0"/>
+                            <constraint firstItem="sOF-G7-dJy" firstAttribute="top" secondItem="asR-dR-Sdt" secondAttribute="top" id="3o3-YP-scT"/>
+                            <constraint firstItem="sOF-G7-dJy" firstAttribute="leading" secondItem="asR-dR-Sdt" secondAttribute="leading" constant="16" id="9k3-tO-RFt"/>
+                            <constraint firstItem="LxA-wm-8iR" firstAttribute="trailing" secondItem="asR-dR-Sdt" secondAttribute="trailing" id="F6W-EF-eBi"/>
+                            <constraint firstItem="asR-dR-Sdt" firstAttribute="bottom" secondItem="8oK-Vz-1yI" secondAttribute="bottom" constant="8" id="OzI-pi-fNX"/>
+                            <constraint firstAttribute="trailing" secondItem="sOF-G7-dJy" secondAttribute="trailing" constant="17" id="PrR-SW-RR4"/>
+                            <constraint firstItem="LxA-wm-8iR" firstAttribute="top" secondItem="sOF-G7-dJy" secondAttribute="bottom" constant="18" id="bgZ-it-p5K"/>
+                            <constraint firstAttribute="trailing" secondItem="8oK-Vz-1yI" secondAttribute="trailing" constant="10" id="jhH-uc-yvi"/>
+                            <constraint firstItem="LxA-wm-8iR" firstAttribute="leading" secondItem="asR-dR-Sdt" secondAttribute="leading" id="ohp-KU-46s"/>
+                            <constraint firstItem="8oK-Vz-1yI" firstAttribute="top" secondItem="LxA-wm-8iR" secondAttribute="bottom" constant="8" id="xjg-gb-aaM"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="260" height="896"/>
+                    <connections>
+                        <outlet property="footerLabel" destination="8oK-Vz-1yI" id="p9j-eQ-JJy"/>
+                        <outlet property="headerImageView" destination="sOF-G7-dJy" id="kOt-b2-aGC"/>
+                        <outlet property="sideMenuTableView" destination="LxA-wm-8iR" id="LxR-IL-T5a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="80" height="115.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

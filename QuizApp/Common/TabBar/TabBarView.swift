@@ -9,84 +9,91 @@ import UIKit
 
 @IBDesignable
 class TabBarView: UIView {
-    @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var uploadedButton: UIButton!
-    @IBOutlet weak var historyButton: UIButton!
-    @IBOutlet weak var profileButton: UIButton!
+    
+    var itemTapped: ((_ tab: Int) -> Void)?
+    var activeItem: Int = 0
+    
+    @IBOutlet weak var homeTabView: UIView!
+    @IBOutlet weak var uploadedTabView: UIView!
+    @IBOutlet weak var historyTabView: UIView!
+    @IBOutlet weak var profileTabView: UIView!
     @IBOutlet weak var viewTabBar: UIView!
 
-    var selectTab: (_ tab: TabBar) -> () = {tab in}
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.configureView()
+    }
+    
+    convenience init(menuItems: Int, frame: CGRect) {
+        self.init(frame: frame)
         
-    }
-    
-    @IBAction func tabBarAction(_ sender: UIButton) {
-        
-            [self.homeButton,
-            self.uploadedButton,
-            self.historyButton,
-            self.profileButton].forEach {
-                $0?.isSelected = false
-            }
-            sender.isSelected = true
-            buttonSelect(button: sender)
-    }
-    
-    func activeButton(tab: TabBar) {
-        switch tab {
-        case .HOME:
-            homeButton.isSelected = true
-        case .EXAM_UPLOAD:
-            uploadedButton.isSelected = true
-        case .HISTORY:
-            historyButton.isSelected = true
-        case .PROFILE:
-            profileButton.isSelected = true
-        }
-    }
-    
-    func buttonSelect(button: UIButton) {
-        button.isSelected = true
-        switch button {
-        case homeButton:
-            selectTab(TabBar.HOME)
-            break
-        case uploadedButton:
-            selectTab(TabBar.EXAM_UPLOAD)
-            break
-        case historyButton:
-            selectTab(TabBar.HISTORY)
-            break
-        case profileButton:
-            selectTab(TabBar.PROFILE)
-            break
-        default:
-            break
-        }
-    }
-    
-    private func configureView() {
-        guard let view = self.loadViewFromNib(nidName: "TabBarView") else {
+        guard let view = self.loadViewFromNib(nidName: R.nib.tabBarView.name) else {
             return
         }
-        
         view.frame = self.bounds
-        self.addSubview(view)
-        viewTabBar.addShadow(offset: CGSize.init(width: 0, height: -4), color: UIColor.black, radius: 4.0, opacity: 0.1)
-        [self.homeButton,
-        self.uploadedButton,
-        self.historyButton,
-        self.profileButton].forEach {
-            $0?.setImage(nil, for: .normal)
-            $0?.setImage(R.image.lightSign(), for: .selected)
-            $0?.contentVerticalAlignment = .center
+        viewTabBar.addShadow(offset: CGSize.init(width: 0, height: -10), color: UIColor.black, radius: 4.0, opacity: 1)
+    
+        [homeTabView, uploadedTabView, historyTabView, profileTabView].forEach {
+            $0.addGestureRecognizer(UITapGestureRecognizer(
+                target: self,
+                action: #selector(handleTap(_:)))
+            )
+        }
+        
+        addSubview(view)
+        setNeedsLayout()
+        layoutIfNeeded()
+        activateTab(tab: 0)
+    }
+    
+    @objc func handleTap(_ sender: UIGestureRecognizer) {
+        switchTab(from: activeItem, to: sender.view!.tag)
+    }
+    
+    func switchTab(from: Int, to: Int) {
+        deactivateTab(tab: from)
+        activateTab(tab: to)
+    }
+    
+    func activateTab(tab: Int) {
+        let tabBarVc = [homeTabView, uploadedTabView, historyTabView, profileTabView]
+        guard let tabToActivate = tabBarVc[tab] else {return}
+        let borderWidth = tabToActivate.frame.width - 20
+        let borderLayer = CALayer()
+        borderLayer.backgroundColor = UIColor(named: R.color.f94FB.name)?.cgColor
+        borderLayer.name = "Active Border"
+        borderLayer.frame = CGRect(x: 10, y: 0, width: borderWidth, height: 2)
+
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.8,
+                           delay: 0.0,
+                           options: [.curveEaseIn, .allowUserInteraction]) {
+                tabToActivate.layer.addSublayer(borderLayer)
+                tabToActivate.setNeedsLayout()
+                tabToActivate.layoutIfNeeded()
+            } completion: { _ in
+                self.itemTapped?(tab)
+                self.activeItem = tab
+            }
+        }
+    }
+    
+    func deactivateTab(tab: Int) {
+        let tabBarVc = [homeTabView, uploadedTabView, historyTabView, profileTabView]
+        guard let inactiveTab = tabBarVc[tab] else {return}
+        let layerToRemove = inactiveTab.layer.sublayers?.filter({ $0.name == "Active Border" })
+
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [.curveEaseIn, .allowUserInteraction]) {
+                layerToRemove?.forEach({ $0.removeFromSuperlayer() })
+                inactiveTab.setNeedsLayout()
+                inactiveTab.layoutIfNeeded()
+            } completion: { _ in
+
+            }
         }
     }
 }

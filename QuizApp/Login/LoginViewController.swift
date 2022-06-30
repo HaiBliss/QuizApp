@@ -102,15 +102,17 @@ class LoginViewController: UIViewController {
                     switch errorCode {
                     case 200:
                         print(":Đăng nhập thành công!")
-                       
-                        
-                        guard let vc = R.storyboard.homeViewController.homeViewController() else {
+
+                        guard let tabBarVC = R.storyboard.tabBarController.tabBarController() else {
                             return
                         }
-                        let rootVC = vc
-                        let navVC = UINavigationController(rootViewController: rootVC)
-                        navVC.modalPresentationStyle = .fullScreen
-                        self?.present(navVC, animated: true)
+                        
+//                        guard let navigationBarVC = R.storyboard.baseNavigationController.baseNavigationController() else {
+//                            return
+//                        }
+//                        navigationBarVC.setViewControllers([tabBarVC], animated: false)
+                        tabBarVC.modalPresentationStyle = .fullScreen
+                        self?.present(tabBarVC, animated: true)
                         break
                     case 400:
                         self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")

@@ -6,23 +6,18 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 final class IndicatorHelper {
 
     static let shared = IndicatorHelper()
-    let loadingIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-    let indicatorView = UIView(frame: AppUtil.window?.bounds ?? CGRect.zero)
     let screenBounds = UIScreen.main.bounds
+    let loadingIndicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotatePulse, color: UIColor(named: "8F94FB"), padding: 0)
+    let indicatorView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
 
     init() {
         IndicatorHelper.runMainThread { [weak self] in
-            self?.indicatorView.backgroundColor = UIColor(
-                red: 0.0,
-                green: 0.0,
-                blue: 0.0,
-                alpha: 0.3
-            )
-            self?.loadingIndicator.color = UIColor(named: "trangmo")
+            self?.indicatorView.backgroundColor = UIColor(named: "trangmo")
             self?.loadingIndicator.center = CGPoint(x: (self?.screenBounds.size.width)! * 0.5, y: (self?.screenBounds.size.height)! * 0.5)
             self?.loadingIndicator.startAnimating()
 

@@ -20,19 +20,21 @@ enum TabItem: String, CaseIterable {
     
     var viewController: UIViewController {
         switch self {
-            case .HOME:
-//                let vc = R.storyboard.homeViewController.homeViewController()!
-                let vc = R.storyboard.homeViewController.baseNavigationController()!
-                return vc
-            case .EXAM_UPLOAD:
-                let vc = R.storyboard.examUploadViewController.examUploadViewController()!
-                return vc
-            case .HISTORY:
-                let vc = R.storyboard.historyViewController.historyViewController()!
-                return vc
-            case .PROFILE:
-                let vc = R.storyboard.userInfoViewController.userInfoViewController()!
-                return vc
+        case .HOME:
+            let vc = R.storyboard.homeViewController.baseNavigationController()!
+            return vc
+        case .EXAM_UPLOAD:
+            return UINavigationController(
+                rootViewController: R.storyboard.examUploadViewController.examUploadViewController()!
+            )
+        case .HISTORY:
+            return UINavigationController(
+                rootViewController: R.storyboard.historyViewController.historyViewController()!
+            )
+        case .PROFILE:
+            return UINavigationController(
+                rootViewController: R.storyboard.userInfoViewController.userInfoViewController()!
+            )
         }
     }
 }

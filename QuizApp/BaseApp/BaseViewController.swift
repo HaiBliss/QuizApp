@@ -14,7 +14,10 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)),
+                                               name: UIWindow.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)),
+                                               name: UIWindow.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -32,4 +35,31 @@ class BaseViewController: UIViewController {
         IndicatorHelper.shared.dismissIndicator()
     }
     
+    @objc private func keyboardShow(notification: NSNotification) {
+        guard let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
+              let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {
+                  return
+              }
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(rawValue: curve), animations: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
+    @objc private func keyboardHide(notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
+              let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {
+                  return
+              }
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(rawValue: curve), animations: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 }

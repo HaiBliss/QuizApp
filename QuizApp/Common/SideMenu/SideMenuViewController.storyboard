@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuViewController" id="Y6W-OH-hqX" customClass="SideMenuViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QmF-jI-IJR">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqI-7r-0TX" customClass="GradientView" customModule="QuizApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="112"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.27128219599999998" green="0.27911514040000002" blue="0.71287399529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.5582693219" green="0.5690657496" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="se5-eU-CDb">
+                                <rect key="frame" x="0.0" y="112" width="260" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-Xc-4V7" customClass="GradientView" customModule="QuizApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="831" width="260" height="65"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.27128219599999998" green="0.27911514040000002" blue="0.71287399529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.5582693219" green="0.5690657496" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Footer Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlr-dV-0Xt">
+                                <rect key="frame" x="10" y="839" width="240" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-2D-cCe">
+                                <rect key="frame" x="16" y="44" width="227" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zo5-Ap-frD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3jS-Mg-HAA"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3jS-Mg-HAA" firstAttribute="bottom" secondItem="Mlr-dV-0Xt" secondAttribute="bottom" constant="8" id="GOI-NG-q43"/>
+                            <constraint firstItem="3jS-Mg-HAA" firstAttribute="trailing" secondItem="sqI-7r-0TX" secondAttribute="trailing" id="Hx1-5k-AxG"/>
+                            <constraint firstItem="sqI-7r-0TX" firstAttribute="leading" secondItem="3jS-Mg-HAA" secondAttribute="leading" id="Kdc-pW-l8c"/>
+                            <constraint firstItem="Mlr-dV-0Xt" firstAttribute="leading" secondItem="3jS-Mg-HAA" secondAttribute="leading" constant="10" id="NKJ-EW-7EA"/>
+                            <constraint firstItem="se5-eU-CDb" firstAttribute="leading" secondItem="3jS-Mg-HAA" secondAttribute="leading" id="P1I-iQ-l6O"/>
+                            <constraint firstItem="sqI-7r-0TX" firstAttribute="top" secondItem="QmF-jI-IJR" secondAttribute="top" id="Q1o-Ka-qs4"/>
+                            <constraint firstAttribute="bottom" secondItem="9c2-Xc-4V7" secondAttribute="bottom" id="QNW-CA-E6U"/>
+                            <constraint firstItem="se5-eU-CDb" firstAttribute="trailing" secondItem="3jS-Mg-HAA" secondAttribute="trailing" id="VhS-U7-SAs"/>
+                            <constraint firstItem="ePY-2D-cCe" firstAttribute="leading" secondItem="3jS-Mg-HAA" secondAttribute="leading" constant="16" id="VnI-2R-xiM"/>
+                            <constraint firstItem="3jS-Mg-HAA" firstAttribute="trailing" secondItem="9c2-Xc-4V7" secondAttribute="trailing" id="XpM-dT-itV"/>
+                            <constraint firstItem="Mlr-dV-0Xt" firstAttribute="top" secondItem="se5-eU-CDb" secondAttribute="bottom" constant="8" id="dvq-kV-ytg"/>
+                            <constraint firstItem="se5-eU-CDb" firstAttribute="top" secondItem="ePY-2D-cCe" secondAttribute="bottom" constant="18" id="jHM-7m-9WY"/>
+                            <constraint firstAttribute="trailing" secondItem="ePY-2D-cCe" secondAttribute="trailing" constant="17" id="jYX-mF-qUZ"/>
+                            <constraint firstItem="se5-eU-CDb" firstAttribute="top" secondItem="sqI-7r-0TX" secondAttribute="bottom" id="syW-a3-zo9"/>
+                            <constraint firstItem="9c2-Xc-4V7" firstAttribute="leading" secondItem="3jS-Mg-HAA" secondAttribute="leading" id="t5u-7i-SBp"/>
+                            <constraint firstAttribute="trailing" secondItem="Mlr-dV-0Xt" secondAttribute="trailing" constant="10" id="wbO-4g-h6B"/>
+                            <constraint firstItem="9c2-Xc-4V7" firstAttribute="top" secondItem="se5-eU-CDb" secondAttribute="bottom" id="xDf-gj-TXc"/>
+                            <constraint firstItem="ePY-2D-cCe" firstAttribute="top" secondItem="3jS-Mg-HAA" secondAttribute="top" id="xE8-LV-Rml"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="260" height="896"/>
+                    <connections>
+                        <outlet property="footerLabel" destination="Mlr-dV-0Xt" id="yVg-fo-HQD"/>
+                        <outlet property="headerImageView" destination="ePY-2D-cCe" id="8uK-ee-pXn"/>
+                        <outlet property="sideMenuTableView" destination="se5-eU-CDb" id="wdt-uS-nk0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="80" height="115.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

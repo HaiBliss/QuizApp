@@ -20,7 +20,7 @@ class LoginViewModel {
         loginData.login(email: email, password: password).subscribe { user in
             self.loginInfo.accept(user)
         } onFailure: { error in
-            print(error)
+//            print(error)
         }.disposed(by: bag)
     }
 }

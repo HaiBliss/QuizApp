@@ -9,12 +9,14 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
 
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var tabBarView: TabBarView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        sideMenuBtn.target = self.revealViewController()
+        sideMenuBtn.action = #selector(self.revealViewController()?.revealSideMenu)
         tabBarView.activeButton(tab: .PROFILE)
         actionTap()
-        // Do any additional setup after loading the view.
     }
     
 

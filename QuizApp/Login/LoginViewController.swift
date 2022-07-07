@@ -104,13 +104,19 @@ class LoginViewController: UIViewController {
                         print(":Đăng nhập thành công!")
                        
                         
-                        guard let vc = R.storyboard.homeViewController.homeViewController() else {
-                            return
-                        }
-                        let rootVC = vc
-                        let navVC = UINavigationController(rootViewController: rootVC)
-                        navVC.modalPresentationStyle = .fullScreen
-                        self?.present(navVC, animated: true)
+//                        guard let vc = R.storyboard.homeViewController.homeViewController() else {
+//                            return
+//                        }
+//                        let rootVC = vc
+//                        let navVC = UINavigationController(rootViewController: rootVC)
+//                        navVC.modalPresentationStyle = .fullScreen
+//                        self?.present(navVC, animated: true)
+                        
+                        
+                        let storyboard = UIStoryboard(name: "BaseViewController", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "BaseViewController")
+                        controller.modalPresentationStyle = .fullScreen
+                        self?.present(controller, animated: true, completion: nil)
                         break
                     case 400:
                         self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")

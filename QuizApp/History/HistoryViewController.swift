@@ -9,12 +9,15 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var tabBarView: TabBarView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sideMenuBtn.target = self.revealViewController()
+        sideMenuBtn.action = #selector(self.revealViewController()?.revealSideMenu)
         tabBarView.activeButton(tab: .HISTORY)
         actionTap()
-        // Do any additional setup after loading the view.
     }
     
     func actionTap() {

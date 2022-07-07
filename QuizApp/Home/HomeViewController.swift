@@ -9,9 +9,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var tabBarView: TabBarView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .white
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
         tabBarView.activeButton(tab: .HOME)
         actionTap()
 

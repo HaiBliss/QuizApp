@@ -9,6 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+
+    @IBOutlet weak var subjectCollectionView: UICollectionView!
+    @IBOutlet weak var slideCollectionView: UICollectionView!
     @IBOutlet var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var tabBarView: TabBarView!
     override func viewDidLoad() {
@@ -18,6 +21,18 @@ class HomeViewController: UIViewController {
         sideMenuBtn.action = #selector(revealViewController()?.revealSideMenu)
         tabBarView.activeButton(tab: .HOME)
         actionTap()
+        setupView()
+
+    }
+    
+    func setupView() {
+        slideCollectionView.register(SlidesCollectionViewCell.nib(), forCellWithReuseIdentifier: SlidesCollectionViewCell.indentifier)
+        slideCollectionView.delegate = self
+        slideCollectionView.dataSource = self
+        
+        subjectCollectionView.register(SubjectsCollectionViewCell.nib(), forCellWithReuseIdentifier: SubjectsCollectionViewCell.indentifier)
+        subjectCollectionView.delegate = self
+        subjectCollectionView.dataSource = self
 
     }
     
@@ -48,4 +63,36 @@ class HomeViewController: UIViewController {
         }
     }
 
+}
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == slideCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlidesCollectionViewCell.indentifier, for: indexPath) as! SlidesCollectionViewCell
+            cell.configure(with: R.image.slide()!)
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubjectsCollectionViewCell.indentifier, for: indexPath) as! SubjectsCollectionViewCell
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == slideCollectionView {
+            return 4
+        }
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("You tapped me")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+    }
+    
+    
+    
 }

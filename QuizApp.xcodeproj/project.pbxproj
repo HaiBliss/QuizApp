@@ -62,6 +62,18 @@
 		1E85B658286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E85B657286BF5D000767686 /* ExamUploadViewController.storyboard */; };
 		1E85B659286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E85B657286BF5D000767686 /* ExamUploadViewController.storyboard */; };
 		1E85B65A286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E85B657286BF5D000767686 /* ExamUploadViewController.storyboard */; };
+		1E8D494C287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D494A287FCD2100396DF6 /* SlidesCollectionViewCell.swift */; };
+		1E8D494D287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D494A287FCD2100396DF6 /* SlidesCollectionViewCell.swift */; };
+		1E8D494E287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D494A287FCD2100396DF6 /* SlidesCollectionViewCell.swift */; };
+		1E8D494F287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D494B287FCD2100396DF6 /* SlidesCollectionViewCell.xib */; };
+		1E8D4950287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D494B287FCD2100396DF6 /* SlidesCollectionViewCell.xib */; };
+		1E8D4951287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D494B287FCD2100396DF6 /* SlidesCollectionViewCell.xib */; };
+		1E8D4955287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D4953287FF4C100396DF6 /* SubjectsCollectionViewCell.swift */; };
+		1E8D4956287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D4953287FF4C100396DF6 /* SubjectsCollectionViewCell.swift */; };
+		1E8D4957287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D4953287FF4C100396DF6 /* SubjectsCollectionViewCell.swift */; };
+		1E8D4958287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D4954287FF4C100396DF6 /* SubjectsCollectionViewCell.xib */; };
+		1E8D4959287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D4954287FF4C100396DF6 /* SubjectsCollectionViewCell.xib */; };
+		1E8D495A287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D4954287FF4C100396DF6 /* SubjectsCollectionViewCell.xib */; };
 		1E980391286A9BB8000C032B /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E980390286A9BB8000C032B /* ProjectManager.swift */; };
 		1E980392286A9BB8000C032B /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E980390286A9BB8000C032B /* ProjectManager.swift */; };
 		1E980393286A9BB8000C032B /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E980390286A9BB8000C032B /* ProjectManager.swift */; };
@@ -135,6 +147,10 @@
 		1E85B64E286BF4B700767686 /* HistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryViewController.storyboard; sourceTree = "<group>"; };
 		1E85B653286BF5C800767686 /* ExamUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamUploadViewController.swift; sourceTree = "<group>"; };
 		1E85B657286BF5D000767686 /* ExamUploadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExamUploadViewController.storyboard; sourceTree = "<group>"; };
+		1E8D494A287FCD2100396DF6 /* SlidesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E8D494B287FCD2100396DF6 /* SlidesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlidesCollectionViewCell.xib; sourceTree = "<group>"; };
+		1E8D4953287FF4C100396DF6 /* SubjectsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E8D4954287FF4C100396DF6 /* SubjectsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1E980390286A9BB8000C032B /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 		1E9803C2286AD654000C032B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		1E9803C7286B29E9000C032B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +318,24 @@
 			path = ExamUpload;
 			sourceTree = "<group>";
 		};
+		1E8D4949287EC8E700396DF6 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D494A287FCD2100396DF6 /* SlidesCollectionViewCell.swift */,
+				1E8D494B287FCD2100396DF6 /* SlidesCollectionViewCell.xib */,
+			);
+			path = Slides;
+			sourceTree = "<group>";
+		};
+		1E8D4952287FF4A300396DF6 /* Subjects */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D4953287FF4C100396DF6 /* SubjectsCollectionViewCell.swift */,
+				1E8D4954287FF4C100396DF6 /* SubjectsCollectionViewCell.xib */,
+			);
+			path = Subjects;
+			sourceTree = "<group>";
+		};
 		1E980398286A9E60000C032B /* Navigate */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +361,8 @@
 		1E9803C6286B29B8000C032B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1E8D4952287FF4A300396DF6 /* Subjects */,
+				1E8D4949287EC8E700396DF6 /* Slides */,
 				1E9803C7286B29E9000C032B /* HomeViewController.swift */,
 				1E9803CB286B29F1000C032B /* HomeViewController.storyboard */,
 			);
@@ -564,8 +600,10 @@
 				1EA71A3E2854FD86004422A9 /* Assets.xcassets in Resources */,
 				1E58E566286E98D8006ECBFF /* SideMenuViewController.storyboard in Resources */,
 				1E58E55C286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
+				1E8D494F287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1EA71A3C2854FD7F004422A9 /* Main.storyboard in Resources */,
 				1E58E572286E997B006ECBFF /* SideMenuCell.xib in Resources */,
+				1E8D4958287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,9 +612,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E58E567286E98D8006ECBFF /* SideMenuViewController.storyboard in Resources */,
+				1E8D4950287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1E85B650286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E85B63F286B5EC400767686 /* TabBarView.xib in Resources */,
 				1E58E573286E997B006ECBFF /* SideMenuCell.xib in Resources */,
+				1E8D4959287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
 				1E58E55D286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E85B659286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
 				1E85B637286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
@@ -589,9 +629,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E58E568286E98D8006ECBFF /* SideMenuViewController.storyboard in Resources */,
+				1E8D4951287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1E85B651286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E85B640286B5EC400767686 /* TabBarView.xib in Resources */,
 				1E58E574286E997B006ECBFF /* SideMenuCell.xib in Resources */,
+				1E8D495A287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
 				1E58E55E286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E85B65A286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
 				1E85B638286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
@@ -740,9 +782,11 @@
 				1E6C3C132858467200F0838A /* LoginAPI.swift in Sources */,
 				1E9803C8286B29E9000C032B /* HomeViewController.swift in Sources */,
 				1E6C3C0A28582A9C00F0838A /* TargetType.swift in Sources */,
+				1E8D4955287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */,
 				1E9803C3286AD654000C032B /* R.generated.swift in Sources */,
 				1E980391286A9BB8000C032B /* ProjectManager.swift in Sources */,
 				1E85B654286BF5C800767686 /* ExamUploadViewController.swift in Sources */,
+				1E8D494C287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
 				1E85B63A286B5EB100767686 /* TabBarView.swift in Sources */,
 				1E58E558286E97D2006ECBFF /* BaseViewController.swift in Sources */,
 				1E6C3C0C28582B1D00F0838A /* RepositoriesNetworking.swift in Sources */,
@@ -761,6 +805,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8D494D287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
 				1EA71A4C2854FD87004422A9 /* QuizAppTests.swift in Sources */,
 				1E58E56B286E994B006ECBFF /* SideMenuModel.swift in Sources */,
 				1E9803C4286AD654000C032B /* R.generated.swift in Sources */,
@@ -768,6 +813,7 @@
 				1E9803C9286B29E9000C032B /* HomeViewController.swift in Sources */,
 				1E58E563286E98CF006ECBFF /* SideMenuViewController.swift in Sources */,
 				1E85B633286B4EA600767686 /* UserInfoViewController.swift in Sources */,
+				1E8D4956287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */,
 				1E58E559286E97D2006ECBFF /* BaseViewController.swift in Sources */,
 				1E58E570286E997B006ECBFF /* SideMenuCell.swift in Sources */,
 				1E85B647286B63D800767686 /* UIViewExtension.swift in Sources */,
@@ -791,6 +837,8 @@
 				1E980393286A9BB8000C032B /* ProjectManager.swift in Sources */,
 				1E85B634286B4EA600767686 /* UserInfoViewController.swift in Sources */,
 				1EA71A582854FD87004422A9 /* QuizAppUITestsLaunchTests.swift in Sources */,
+				1E8D4957287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */,
+				1E8D494E287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
 				1E85B64D286BF4AD00767686 /* HistoryViewController.swift in Sources */,
 				1E85B648286B63D800767686 /* UIViewExtension.swift in Sources */,
 				1E9803CA286B29E9000C032B /* HomeViewController.swift in Sources */,

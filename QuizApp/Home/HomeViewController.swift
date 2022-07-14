@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var slideCollectionView: UICollectionView!
     @IBOutlet var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var tabBarView: TabBarView!
+    let withItem = UIScreen.main.bounds.width/2 - 40
+    let heightItem = (UIScreen.main.bounds.width/2 - 40) / (175/190)
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .white
@@ -30,6 +32,9 @@ class HomeViewController: UIViewController {
         slideCollectionView.delegate = self
         slideCollectionView.dataSource = self
         
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: withItem, height: heightItem)
+//        subjectCollectionView.collectionViewLayout = layout
         subjectCollectionView.register(SubjectsCollectionViewCell.nib(), forCellWithReuseIdentifier: SubjectsCollectionViewCell.indentifier)
         subjectCollectionView.delegate = self
         subjectCollectionView.dataSource = self
@@ -93,6 +98,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
            return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if collectionView == subjectCollectionView {
+//            return CGSize(width: withItem, height: heightItem)
+//        }
+//        return CGSize(width: 215, height: 89) 
+//    }
     
     
 }

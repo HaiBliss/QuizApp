@@ -102,6 +102,7 @@ class LoginViewController: UIViewController {
                     switch errorCode {
                     case 200:
                         print(":Đăng nhập thành công!")
+                        ProjectManager.sharedInstance.userInfo = loginInfo
                        
                         
 //                        guard let vc = R.storyboard.homeViewController.homeViewController() else {

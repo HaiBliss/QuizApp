@@ -16,4 +16,13 @@ enum TabBar {
 
 class ProjectManager: NSObject {
     var userInfo: User?
+    var ACCEPT_TOKEN: String?
+    
+    
+    class var sharedInstance: ProjectManager {
+        struct Static {
+            static let instance : ProjectManager = ProjectManager()
+        }
+        return Static.instance
+    }
 }

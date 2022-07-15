@@ -11,6 +11,7 @@ import Alamofire
 enum RepositoriesNetworking {
     case login(email: String, password: String)
     case signup(name: String, email: String, password: String)
+    case department(page: Int, perPage: Int, name: String?)
 }
 
 extension RepositoriesNetworking: TargetType {
@@ -27,6 +28,8 @@ extension RepositoriesNetworking: TargetType {
             return .post
         case .signup(_, _, _):
             return .post
+        case .department(_, _, _):
+            return .get
         }
     }
     
@@ -41,6 +44,11 @@ extension RepositoriesNetworking: TargetType {
                                                   "email" : email,
                                                   "password" : password ],
                                      encoding: URLEncoding.default)
+        case .department(page: let page, perPage: let perPage, name: let name):
+            return .requestParameters(parameters: ["page": page,
+                                                   "per_page": perPage,
+                                                   "name": name as Any
+            ], encoding: URLEncoding.default)
         }
     }
     
@@ -50,6 +58,11 @@ extension RepositoriesNetworking: TargetType {
             return [:]
         case .signup(_, _, _):
             return [:]
+        case .department(_, _, _):
+            guard let token = ProjectManager.sharedInstance.userInfo?.token else {
+                return [:]
+            }
+            return["Authorization":"Bearer " + token]
         }
     }
     
@@ -59,6 +72,8 @@ extension RepositoriesNetworking: TargetType {
             return "/account/login"
         case .signup(_, _, _):
             return "/account/register"
+        case .department(_, _, _):
+            return "/department"
         }
     }
     

@@ -38,6 +38,9 @@
                                     </fragment>
                                 </attributedString>
                             </state>
+                            <connections>
+                                <action selector="seeAllAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="G8I-r1-LiH"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,6 +62,7 @@
             </constraints>
             <connections>
                 <outlet property="departmentNameLabel" destination="NH9-RD-Yae" id="WaW-Px-N4u"/>
+                <outlet property="seeAllButton" destination="8Jc-Hj-DEd" id="pQn-Ec-1Yj"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="41.517857142857139"/>
         </collectionReusableView>

@@ -21,24 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slide" translatesAutoresizingMaskIntoConstraints="NO" id="t32-6a-Uqk">
-                                <rect key="frame" x="32" y="34" width="111" height="75"/>
+                                <rect key="frame" x="32" y="30" width="111" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="COP-hV-azL"/>
-                                    <constraint firstAttribute="height" constant="75" id="gJe-7h-JVm"/>
+                                    <constraint firstAttribute="height" constant="71" id="gJe-7h-JVm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin cơ sở" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feo-ka-gp6">
-                                <rect key="frame" x="16" y="125" width="143" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu trúc dữ liệu và giải thuật" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feo-ka-gp6">
+                                <rect key="frame" x="16" y="111" width="143" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqk-ih-TgJ">
-                                <rect key="frame" x="138" y="165" width="21" height="17"/>
+                                <rect key="frame" x="140" y="164" width="19" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aq-dD-Bsp">
-                                        <rect key="frame" x="0.0" y="0.0" width="21" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="19" height="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -52,8 +52,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5/20 đề" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5j-oI-JLE">
-                                <rect key="frame" x="16" y="165" width="50.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="16" y="164" width="47.5" height="18"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -67,9 +67,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Uqk-ih-TgJ" secondAttribute="bottom" constant="8" id="38M-27-12N"/>
-                            <constraint firstItem="t32-6a-Uqk" firstAttribute="top" secondItem="Aqp-st-f28" secondAttribute="bottom" constant="16" id="9C3-on-2Y2"/>
+                            <constraint firstItem="t32-6a-Uqk" firstAttribute="top" secondItem="Aqp-st-f28" secondAttribute="bottom" constant="12" id="9C3-on-2Y2"/>
+                            <constraint firstItem="M5j-oI-JLE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="feo-ka-gp6" secondAttribute="bottom" constant="10" id="DVg-Fh-oVq"/>
                             <constraint firstItem="t32-6a-Uqk" firstAttribute="centerX" secondItem="idm-Vr-TeB" secondAttribute="centerX" id="QN6-Cp-aXs"/>
-                            <constraint firstItem="feo-ka-gp6" firstAttribute="top" secondItem="t32-6a-Uqk" secondAttribute="bottom" constant="16" id="RTf-Ch-q9z"/>
+                            <constraint firstItem="feo-ka-gp6" firstAttribute="top" secondItem="t32-6a-Uqk" secondAttribute="bottom" constant="10" id="RTf-Ch-q9z"/>
                             <constraint firstAttribute="trailing" secondItem="Uqk-ih-TgJ" secondAttribute="trailing" constant="16" id="WnW-sR-Gsb"/>
                             <constraint firstItem="Aqp-st-f28" firstAttribute="top" secondItem="idm-Vr-TeB" secondAttribute="top" constant="8" id="ZWH-7s-ozA"/>
                             <constraint firstAttribute="trailing" secondItem="feo-ka-gp6" secondAttribute="trailing" constant="16" id="a6J-Mg-6tq"/>
@@ -98,7 +99,7 @@
                 <outlet property="subjectImage" destination="t32-6a-Uqk" id="ack-tg-re2"/>
                 <outlet property="subjectNameLabel" destination="feo-ka-gp6" id="s9M-kB-DPR"/>
             </connections>
-            <point key="canvasLocation" x="201.44927536231884" y="100.78125"/>
+            <point key="canvasLocation" x="200.72463768115944" y="100.44642857142857"/>
         </collectionViewCell>
     </objects>
     <resources>

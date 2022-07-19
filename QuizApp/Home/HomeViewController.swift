@@ -13,7 +13,7 @@ import SDWebImage
 
 class HomeViewController: UIViewController {
 
-
+    @IBOutlet weak var slideView: ShadowView!
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var searchBoxTextField: UITextField!
@@ -21,11 +21,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var slideCollectionView: UICollectionView!
     @IBOutlet var sideMenuBtn: UIBarButtonItem!
     @IBOutlet weak var tabBarView: TabBarView!
+    var departments: [Departments.Department] = []
     
     private let viewModel = HomeViewModel()
     private let bag = DisposeBag()
-    let withItem = UIScreen.main.bounds.width/2 - 40
-    let heightItem = (UIScreen.main.bounds.width/2 - 40) / (175/190)
+//    let withItem = UIScreen.main.bounds.width/2 - 40
+//    let heightItem = (UIScreen.main.bounds.width/2 - 40) / (175/190)
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .white
@@ -39,6 +40,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupView() {
+        slideView.setCorner([.bottomRight, .bottomLeft])
         slideCollectionView.register(SlidesCollectionViewCell.nib(),
                                      forCellWithReuseIdentifier: SlidesCollectionViewCell.indentifier)
         slideCollectionView.delegate = self
@@ -61,28 +63,7 @@ class HomeViewController: UIViewController {
     
     func actionTap() {
         tabBarView.selectTab = { tabName in
-            switch tabName {
-            case .EXAM_UPLOAD:
-                guard let vc = R.storyboard.examUploadViewController.examUploadViewController() else {
-                    return
-                }
-                self.navigationController?.setViewControllers([vc], animated: false)
-                break
-            case .HISTORY:
-                guard let vc = R.storyboard.historyViewController.historyViewController() else {
-                    return
-                }
-                self.navigationController?.setViewControllers([vc], animated: false)
-                break
-            case TabBar.PROFILE:
-                guard let vc = R.storyboard.userInfoViewController.userInfoViewController() else {
-                    return
-                }
-                self.navigationController?.setViewControllers([vc], animated: false)
-                break
-            default:
-                break
-            }
+            self.pushTabbar(tab: tabName)
         }
     }
     
@@ -90,22 +71,24 @@ class HomeViewController: UIViewController {
     
     func bindData() {
         
-        viewModel.getDepartmentHome(page: 1, perPage: 1, name: nil)
-        viewModel.departmentsInfo.subscribe { [weak self] data in
-            if let departmentsInfo = data.element {
-                if let errorCode = departmentsInfo.code {
+        viewModel.getDepartmentHome(page: 1, perPage: 10)
+
+        viewModel.departments.subscribe { [weak self] data in
+            if let departmentsData = data.element {
+                if let errorCode = departmentsData.code {
                     switch errorCode {
                     case 200:
                         print("Call thành công!")
+                        self?.departments = departmentsData.data ?? []
                         self?.subjectCollectionView.reloadData()
                         break
                     default:
-                        self?.alertView(title: "Load data fail!", message: departmentsInfo.message ?? "")
+                        self?.alertView(title: "Load data fail!", message: departmentsData.message ?? "")
                         break
                     }
                 }
             }
-        }
+        }.disposed(by: bag)
     }
     
     
@@ -126,6 +109,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubjectsCollectionViewCell.indentifier, for: indexPath) as! SubjectsCollectionViewCell
+        let subjects = departments[indexPath.section].subjects
+        cell.departmentLabel.text = departments[indexPath.section].name
+        cell.subjectNameLabel.text = subjects[indexPath.row].name
+        cell.subjectImage.sd_setImage(with: URL(string: subjects[indexPath.row].image ?? ""), placeholderImage: R.image.placeholder())
         return cell
         
     }
@@ -134,7 +121,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == slideCollectionView {
             return 4
         }
-        return 12
+        return departments[section].subjects.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -147,7 +134,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView == subjectCollectionView {
-            return 3
+            return departments.count
         }
         return 1
     }
@@ -157,10 +144,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                                     withReuseIdentifier: SubjectCollectionReusableView.indentifier,
                                                                                     for: indexPath)as! SubjectCollectionReusableView
-            sectionHeaderView.departmentNameLabel.text = "Khoa CNTT"
+           
+            let department = departments[indexPath.section]
+            sectionHeaderView.departmentNameLabel.text = department.name
+            sectionHeaderView.seeAllButton.tag = department.id ?? 0
+            sectionHeaderView.seeAllButton.addTarget(self, action: #selector(self.viewSeeAllSubject(_:)), for: UIControl.Event.touchUpInside)
             return sectionHeaderView
         }
         return UICollectionReusableView()
+    }
+    
+    @objc func viewSeeAllSubject(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "ListSubjectsViewController", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ListSubjectsViewController") as! ListSubjectsViewController
+        vc.departmentId = sender.tag
+        self.navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = R.color.f94FB()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 

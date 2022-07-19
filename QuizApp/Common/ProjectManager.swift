@@ -12,11 +12,13 @@ enum TabBar {
     case EXAM_UPLOAD
     case HISTORY
     case PROFILE
+    case NONE
 }
 
 class ProjectManager: NSObject {
     var userInfo: User?
     var ACCEPT_TOKEN: String?
+    var activeTab: TabBar = .NONE
     
     
     class var sharedInstance: ProjectManager {

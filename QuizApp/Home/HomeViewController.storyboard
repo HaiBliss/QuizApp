@@ -24,74 +24,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFf-cJ-V8e" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="EmF-D7-DtY"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnd-K0-ImX">
-                                <rect key="frame" x="0.0" y="104" width="414" height="40"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tìm kiếm môn học..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqr-gt-jsa" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="0.0" width="364" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Ka9-B1-mL7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="magnifyingglass" catalog="system"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="dqr-gt-jsa" firstAttribute="leading" secondItem="Fnd-K0-ImX" secondAttribute="leading" constant="25" id="Cfh-Zo-caK"/>
-                                    <constraint firstAttribute="height" constant="40" id="Qld-lW-jHH"/>
-                                    <constraint firstAttribute="trailing" secondItem="dqr-gt-jsa" secondAttribute="trailing" constant="25" id="ci2-wf-x9Q"/>
-                                    <constraint firstItem="dqr-gt-jsa" firstAttribute="centerY" secondItem="Fnd-K0-ImX" secondAttribute="centerY" id="rzL-7e-KrE"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Du-1z-E0I">
-                                <rect key="frame" x="0.0" y="144" width="414" height="160"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-Ub-8w8">
-                                        <rect key="frame" x="23" y="20" width="368" height="130"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5mD-M5-pte">
-                                            <size key="itemSize" width="287" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kNK-l9-uM8">
-                                                <rect key="frame" x="0.0" y="1" width="287" height="128"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bhF-me-FN7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                                <color key="backgroundColor" red="0.5582693219" green="0.5690657496" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <size key="customSize" width="287" height="128"/>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="CSo-IW-su5"/>
-                                    <constraint firstItem="kXs-Ub-8w8" firstAttribute="top" secondItem="5Du-1z-E0I" secondAttribute="top" constant="20" id="Fuf-AO-yjf"/>
-                                    <constraint firstAttribute="trailing" secondItem="kXs-Ub-8w8" secondAttribute="trailing" constant="23" id="sY6-MA-fzI"/>
-                                    <constraint firstItem="kXs-Ub-8w8" firstAttribute="leading" secondItem="5Du-1z-E0I" secondAttribute="leading" constant="23" id="vQx-a7-Ihm"/>
-                                    <constraint firstAttribute="bottom" secondItem="kXs-Ub-8w8" secondAttribute="bottom" constant="10" id="wdC-od-UaQ"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I34-yX-MlR">
                                 <rect key="frame" x="0.0" y="304" width="414" height="498"/>
                                 <subviews>
@@ -99,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="498"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jJG-NK-CPg">
-                                                <rect key="frame" x="10" y="10" width="394" height="488"/>
+                                                <rect key="frame" x="10" y="0.0" width="394" height="498"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="moQ-Qz-HtV">
                                                     <size key="itemSize" width="175" height="190"/>
@@ -136,7 +68,7 @@
                                             <constraint firstItem="jJG-NK-CPg" firstAttribute="leading" secondItem="vla-SN-Arf" secondAttribute="leading" constant="10" id="JoK-77-Quf"/>
                                             <constraint firstAttribute="bottom" secondItem="jJG-NK-CPg" secondAttribute="bottom" id="eBu-BC-A1l"/>
                                             <constraint firstAttribute="trailing" secondItem="jJG-NK-CPg" secondAttribute="trailing" constant="10" id="sXl-7U-qNy"/>
-                                            <constraint firstItem="jJG-NK-CPg" firstAttribute="top" secondItem="vla-SN-Arf" secondAttribute="top" constant="10" id="xT3-U8-6Qo"/>
+                                            <constraint firstItem="jJG-NK-CPg" firstAttribute="top" secondItem="vla-SN-Arf" secondAttribute="top" id="xT3-U8-6Qo"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -146,6 +78,67 @@
                                     <constraint firstAttribute="bottom" secondItem="vla-SN-Arf" secondAttribute="bottom" id="FrM-eu-zjm"/>
                                     <constraint firstItem="vla-SN-Arf" firstAttribute="top" secondItem="I34-yX-MlR" secondAttribute="top" id="ogn-qf-CTN"/>
                                     <constraint firstItem="vla-SN-Arf" firstAttribute="leading" secondItem="I34-yX-MlR" secondAttribute="leading" id="veY-4p-7EU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Du-1z-E0I" customClass="ShadowView" customModule="QuizApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144" width="414" height="160"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-Ub-8w8">
+                                        <rect key="frame" x="23" y="20" width="368" height="130"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5mD-M5-pte">
+                                            <size key="itemSize" width="287" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kNK-l9-uM8">
+                                                <rect key="frame" x="0.0" y="1" width="287" height="128"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bhF-me-FN7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                                <color key="backgroundColor" red="0.5582693219" green="0.5690657496" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="customSize" width="287" height="128"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="CSo-IW-su5"/>
+                                    <constraint firstItem="kXs-Ub-8w8" firstAttribute="top" secondItem="5Du-1z-E0I" secondAttribute="top" constant="20" id="Fuf-AO-yjf"/>
+                                    <constraint firstAttribute="trailing" secondItem="kXs-Ub-8w8" secondAttribute="trailing" constant="23" id="sY6-MA-fzI"/>
+                                    <constraint firstItem="kXs-Ub-8w8" firstAttribute="leading" secondItem="5Du-1z-E0I" secondAttribute="leading" constant="23" id="vQx-a7-Ihm"/>
+                                    <constraint firstAttribute="bottom" secondItem="kXs-Ub-8w8" secondAttribute="bottom" constant="10" id="wdC-od-UaQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnd-K0-ImX">
+                                <rect key="frame" x="0.0" y="104" width="414" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tìm kiếm môn học..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqr-gt-jsa" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="0.0" width="364" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ka9-B1-mL7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="magnifyingglass" catalog="system"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="dqr-gt-jsa" firstAttribute="leading" secondItem="Fnd-K0-ImX" secondAttribute="leading" constant="25" id="Cfh-Zo-caK"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qld-lW-jHH"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqr-gt-jsa" secondAttribute="trailing" constant="25" id="ci2-wf-x9Q"/>
+                                    <constraint firstItem="dqr-gt-jsa" firstAttribute="centerY" secondItem="Fnd-K0-ImX" secondAttribute="centerY" id="rzL-7e-KrE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-wT-AGb">
@@ -165,6 +158,13 @@
                                     <constraint firstAttribute="trailing" secondItem="pxh-Sb-Te2" secondAttribute="trailing" id="ZpF-d4-t1R"/>
                                     <constraint firstAttribute="bottom" secondItem="pxh-Sb-Te2" secondAttribute="bottom" id="egq-v3-PBt"/>
                                     <constraint firstItem="pxh-Sb-Te2" firstAttribute="top" secondItem="Kvy-wT-AGb" secondAttribute="top" id="iWG-OV-SDj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFf-cJ-V8e" customClass="TabBarView" customModule="QuizApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="EmF-D7-DtY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -201,6 +201,7 @@
                         <outlet property="searchBoxTextField" destination="dqr-gt-jsa" id="vgf-9X-XtP"/>
                         <outlet property="sideMenuBtn" destination="h5G-Wy-Kx6" id="GYm-fQ-3D3"/>
                         <outlet property="slideCollectionView" destination="kXs-Ub-8w8" id="l4q-OB-47w"/>
+                        <outlet property="slideView" destination="5Du-1z-E0I" id="YSb-Xj-ckt"/>
                         <outlet property="subjectCollectionView" destination="jJG-NK-CPg" id="e0n-Us-Hig"/>
                         <outlet property="tabBarView" destination="CFf-cJ-V8e" id="l1D-rE-X1m"/>
                     </connections>
@@ -234,7 +235,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="filter" width="32" height="32"/>
+        <image name="filter" width="16" height="16"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="menu" width="25" height="25"/>
         <namedColor name="7515DB">

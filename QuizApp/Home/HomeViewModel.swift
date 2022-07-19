@@ -11,15 +11,15 @@ import RxCocoa
 import RxDataSources
 
 class HomeViewModel {
-    let departmentsInfo = PublishRelay<Departments>()
+    let departments = PublishRelay<Departments>()
     let bag = DisposeBag()
     let departmentData: DepartmentIProtocol = DepartmentAPI()
-    
-    func getDepartmentHome(page: Int, perPage: Int, name: String?) {
-        departmentData.getDepartment(page: page, perPage: perPage, name: name).subscribe { deparment in
-            self.departmentsInfo.accept(deparment)
+
+    func getDepartmentHome(page: Int, perPage: Int) {
+        departmentData.getDepartment(page: page, perPage: perPage).subscribe { deparment in
+            self.departments.accept(deparment)
         } onFailure: { error in
-            
+            print("Lỗi API")
         }.disposed(by: bag)
     }
 }

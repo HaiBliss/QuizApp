@@ -32,28 +32,7 @@ class ExamUploadViewController: UIViewController {
     
     func actionTap() {
         tabBarView.selectTab = { tabName in
-            switch tabName {
-            case .HOME:
-                guard let vc = R.storyboard.homeViewController.homeViewController() else {
-                    return
-                }
-                self.navigationController?.setViewControllers([vc], animated: false)
-                break
-            case .HISTORY:
-                guard let vc = R.storyboard.historyViewController.historyViewController() else {
-                    return
-                }
-                self.navigationController?.setViewControllers([vc], animated: false)
-                break
-            case TabBar.PROFILE:
-                guard let vc = R.storyboard.userInfoViewController.userInfoViewController() else {
-                    return
-                }
-                self.navigationController?.setViewControllers([vc], animated: false)
-                break
-            default:
-                break
-            }
+            self.pushTabbar(tab: tabName)
         }
     }
     

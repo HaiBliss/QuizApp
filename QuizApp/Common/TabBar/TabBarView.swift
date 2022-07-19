@@ -9,6 +9,7 @@ import UIKit
 
 @IBDesignable
 class TabBarView: UIView {
+    @IBOutlet weak var shadowView: ShadowView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var uploadedButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
@@ -59,6 +60,7 @@ class TabBarView: UIView {
     }
     
     func activeButton(tab: TabBar) {
+        ProjectManager.sharedInstance.activeTab = tab
         switch tab {
             case .HOME:
                 setViewSelect(image: homeImage, lable: homeLabel)
@@ -72,26 +74,28 @@ class TabBarView: UIView {
             case .PROFILE:
                 setViewSelect(image: profileImage, lable: profileLabel)
                 break
+            case .NONE:
+                break
         }
     }
     
     func buttonSelect(button: UIButton) {
         SideMenuViewController.defaultHighlightedCell = button.tag
         switch button {
-        case homeButton:
-            selectTab(TabBar.HOME)
-            break
-        case uploadedButton:
-            selectTab(TabBar.EXAM_UPLOAD)
-            break
-        case historyButton:
-            selectTab(TabBar.HISTORY)
-            break
-        case profileButton:
-            selectTab(TabBar.PROFILE)
-            break
-        default:
-            break
+            case homeButton:
+                selectTab(TabBar.HOME)
+                break
+            case uploadedButton:
+                selectTab(TabBar.EXAM_UPLOAD)
+                break
+            case historyButton:
+                selectTab(TabBar.HISTORY)
+                break
+            case profileButton:
+                selectTab(TabBar.PROFILE)
+                break
+            default:
+                break
         }
     }
     
@@ -102,7 +106,15 @@ class TabBarView: UIView {
         
         view.frame = self.bounds
         self.addSubview(view)
-        viewTabBar.addShadow(offset: CGSize.init(width: 0, height: -4), color: UIColor.black, radius: 4.0, opacity: 0.1)
+        shadowView.setCorner([.topLeft, .topRight])
+        shadowView.shadowColor = .black
+        shadowView.shadowOffset = CGSize(width: 0, height: -4)
+        shadowView.shadowOpacity = 0.08
+        shadowView.shadowRadius = 8
+        
+        if ProjectManager.sharedInstance.activeTab != .NONE {
+            activeButton(tab: ProjectManager.sharedInstance.activeTab)
+        }
     }
     
     func setViewSelect(image: UIImageView, lable: UILabel) {

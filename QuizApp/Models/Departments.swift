@@ -19,7 +19,7 @@ struct Departments: Codable {
         let image: String?
         let created_date: String?
         let updated_date: String?
-        let del_flg: String?
+        let del_flg: Int?
         let subjects: [Subject]
         
         struct Subject: Codable {
@@ -29,7 +29,7 @@ struct Departments: Codable {
             let image: String?
             let created_date: String?
             let updated_date: String?
-            let del_flg: String?
+            let del_flg: Int?
         }
     }
 }

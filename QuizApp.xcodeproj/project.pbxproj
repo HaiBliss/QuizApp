@@ -22,6 +22,18 @@
 		1E3D31B528872F030054F6F1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31B428872F030054F6F1 /* ShadowView.swift */; };
 		1E3D31B628872F030054F6F1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31B428872F030054F6F1 /* ShadowView.swift */; };
 		1E3D31B728872F030054F6F1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31B428872F030054F6F1 /* ShadowView.swift */; };
+		1E3D31BC2888093C0054F6F1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31BA2888093C0054F6F1 /* FilterViewController.swift */; };
+		1E3D31BD2888093C0054F6F1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31BA2888093C0054F6F1 /* FilterViewController.swift */; };
+		1E3D31BE2888093C0054F6F1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31BA2888093C0054F6F1 /* FilterViewController.swift */; };
+		1E3D31BF2888093C0054F6F1 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D31BB2888093C0054F6F1 /* FilterViewController.xib */; };
+		1E3D31C02888093C0054F6F1 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D31BB2888093C0054F6F1 /* FilterViewController.xib */; };
+		1E3D31C12888093C0054F6F1 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D31BB2888093C0054F6F1 /* FilterViewController.xib */; };
+		1E3D31C528883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31C328883B380054F6F1 /* DepartmentTableViewCell.swift */; };
+		1E3D31C628883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31C328883B380054F6F1 /* DepartmentTableViewCell.swift */; };
+		1E3D31C728883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31C328883B380054F6F1 /* DepartmentTableViewCell.swift */; };
+		1E3D31C828883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D31C428883B380054F6F1 /* DepartmentTableViewCell.xib */; };
+		1E3D31C928883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D31C428883B380054F6F1 /* DepartmentTableViewCell.xib */; };
+		1E3D31CA28883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3D31C428883B380054F6F1 /* DepartmentTableViewCell.xib */; };
 		1E58E558286E97D2006ECBFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58E557286E97D2006ECBFF /* BaseViewController.swift */; };
 		1E58E559286E97D2006ECBFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58E557286E97D2006ECBFF /* BaseViewController.swift */; };
 		1E58E55A286E97D2006ECBFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58E557286E97D2006ECBFF /* BaseViewController.swift */; };
@@ -171,6 +183,10 @@
 		1E3D31AC2886B8930054F6F1 /* ListSubjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubjectsViewModel.swift; sourceTree = "<group>"; };
 		1E3D31B028870FC40054F6F1 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1E3D31B428872F030054F6F1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		1E3D31BA2888093C0054F6F1 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		1E3D31BB2888093C0054F6F1 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		1E3D31C328883B380054F6F1 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
+		1E3D31C428883B380054F6F1 /* DepartmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentTableViewCell.xib; sourceTree = "<group>"; };
 		1E58E557286E97D2006ECBFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1E58E55B286E97E2006ECBFF /* BaseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseViewController.storyboard; sourceTree = "<group>"; };
 		1E58E561286E98CF006ECBFF /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +289,25 @@
 				1E3D31AC2886B8930054F6F1 /* ListSubjectsViewModel.swift */,
 			);
 			path = ListSubjects;
+			sourceTree = "<group>";
+		};
+		1E3D31B9288808ED0054F6F1 /* FilterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E3D31C228883A970054F6F1 /* DepartmentTableCell */,
+				1E3D31BA2888093C0054F6F1 /* FilterViewController.swift */,
+				1E3D31BB2888093C0054F6F1 /* FilterViewController.xib */,
+			);
+			path = FilterViewController;
+			sourceTree = "<group>";
+		};
+		1E3D31C228883A970054F6F1 /* DepartmentTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E3D31C328883B380054F6F1 /* DepartmentTableViewCell.swift */,
+				1E3D31C428883B380054F6F1 /* DepartmentTableViewCell.xib */,
+			);
+			path = DepartmentTableCell;
 			sourceTree = "<group>";
 		};
 		1E58E556286E978A006ECBFF /* NavigationBaseController */ = {
@@ -479,6 +514,7 @@
 		1EA71A332854FD7F004422A9 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				1E3D31B9288808ED0054F6F1 /* FilterViewController */,
 				1E3D31A32886A5FE0054F6F1 /* ListSubjects */,
 				1E8D497B288537A200396DF6 /* ListQuizExam */,
 				1E85B630286B4E8600767686 /* UserInfo */,
@@ -684,12 +720,14 @@
 				1E85B63E286B5EC400767686 /* TabBarView.xib in Resources */,
 				1E8D4981288537E200396DF6 /* ListQuizViewController.storyboard in Resources */,
 				1E9803CC286B29F1000C032B /* HomeViewController.storyboard in Resources */,
+				1E3D31BF2888093C0054F6F1 /* FilterViewController.xib in Resources */,
 				1E85B658286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
 				1E85B636286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
 				1EA71A3E2854FD86004422A9 /* Assets.xcassets in Resources */,
 				1E58E566286E98D8006ECBFF /* SideMenuViewController.storyboard in Resources */,
 				1E58E55C286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E8D494F287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
+				1E3D31C828883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */,
 				1EA71A3C2854FD7F004422A9 /* Main.storyboard in Resources */,
 				1E58E572286E997B006ECBFF /* SideMenuCell.xib in Resources */,
 				1E8D4958287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
@@ -704,6 +742,7 @@
 				1E58E567286E98D8006ECBFF /* SideMenuViewController.storyboard in Resources */,
 				1E8D498B28853F2400396DF6 /* QuizTableViewCell.xib in Resources */,
 				1E8D496D288161BB00396DF6 /* SubjectCollectionReusableView.xib in Resources */,
+				1E3D31C928883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */,
 				1E8D4950287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1E85B650286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E8D4982288537E200396DF6 /* ListQuizViewController.storyboard in Resources */,
@@ -711,6 +750,7 @@
 				1E58E573286E997B006ECBFF /* SideMenuCell.xib in Resources */,
 				1E3D31AA2886A6360054F6F1 /* ListSubjectsViewController.storyboard in Resources */,
 				1E8D4959287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
+				1E3D31C02888093C0054F6F1 /* FilterViewController.xib in Resources */,
 				1E58E55D286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E85B659286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
 				1E85B637286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
@@ -725,6 +765,7 @@
 				1E58E568286E98D8006ECBFF /* SideMenuViewController.storyboard in Resources */,
 				1E8D498C28853F2400396DF6 /* QuizTableViewCell.xib in Resources */,
 				1E8D496E288161BB00396DF6 /* SubjectCollectionReusableView.xib in Resources */,
+				1E3D31CA28883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */,
 				1E8D4951287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1E85B651286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E8D4983288537E200396DF6 /* ListQuizViewController.storyboard in Resources */,
@@ -732,6 +773,7 @@
 				1E58E574286E997B006ECBFF /* SideMenuCell.xib in Resources */,
 				1E3D31AB2886A6360054F6F1 /* ListSubjectsViewController.storyboard in Resources */,
 				1E8D495A287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
+				1E3D31C12888093C0054F6F1 /* FilterViewController.xib in Resources */,
 				1E58E55E286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E85B65A286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
 				1E85B638286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
@@ -869,6 +911,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3D31C528883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */,
 				1E3D31AD2886B8930054F6F1 /* ListSubjectsViewModel.swift in Sources */,
 				1EA71A6628551ABC004422A9 /* LoginViewController.swift in Sources */,
 				1E58E56A286E994B006ECBFF /* SideMenuModel.swift in Sources */,
@@ -901,6 +944,7 @@
 				1E8D497428816CF800396DF6 /* Departments.swift in Sources */,
 				1E6C3C152858491900F0838A /* LoginViewModel.swift in Sources */,
 				1EA71A352854FD7F004422A9 /* AppDelegate.swift in Sources */,
+				1E3D31BC2888093C0054F6F1 /* FilterViewController.swift in Sources */,
 				1E8D497D288537D600396DF6 /* ListQuizViewController.swift in Sources */,
 				1E58E562286E98CF006ECBFF /* SideMenuViewController.swift in Sources */,
 				1EA71A372854FD7F004422A9 /* SceneDelegate.swift in Sources */,
@@ -933,9 +977,11 @@
 				1E8D498828853F2400396DF6 /* QuizTableViewCell.swift in Sources */,
 				1E58E570286E997B006ECBFF /* SideMenuCell.swift in Sources */,
 				1E8D497E288537D600396DF6 /* ListQuizViewController.swift in Sources */,
+				1E3D31BD2888093C0054F6F1 /* FilterViewController.swift in Sources */,
 				1E85B647286B63D800767686 /* UIViewExtension.swift in Sources */,
 				1E3D31B228870FC40054F6F1 /* UIViewControllerExtension.swift in Sources */,
 				1E85B63B286B5EB100767686 /* TabBarView.swift in Sources */,
+				1E3D31C628883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */,
 				1E980392286A9BB8000C032B /* ProjectManager.swift in Sources */,
 				1E85B64C286BF4AD00767686 /* HistoryViewController.swift in Sources */,
 			);
@@ -964,8 +1010,10 @@
 				1EA71A582854FD87004422A9 /* QuizAppUITestsLaunchTests.swift in Sources */,
 				1E8D4957287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */,
 				1E8D494E287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
+				1E3D31C728883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */,
 				1E3D31AF2886B8930054F6F1 /* ListSubjectsViewModel.swift in Sources */,
 				1E85B64D286BF4AD00767686 /* HistoryViewController.swift in Sources */,
+				1E3D31BE2888093C0054F6F1 /* FilterViewController.swift in Sources */,
 				1E85B648286B63D800767686 /* UIViewExtension.swift in Sources */,
 				1E8D497A288171D000396DF6 /* DepartmentAPI.swift in Sources */,
 				1E9803CA286B29E9000C032B /* HomeViewController.swift in Sources */,

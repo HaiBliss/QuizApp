@@ -12,6 +12,7 @@ struct Departments: Codable {
     let success: Bool?
     let message: String?
     let data: [Department]?
+    let page: Page?
     
     struct Department: Codable {
         let id: Int?

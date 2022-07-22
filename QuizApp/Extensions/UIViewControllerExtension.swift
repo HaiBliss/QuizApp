@@ -36,6 +36,15 @@ extension UIViewController {
         self.navigationController?.setViewControllers([vc], animated: false)
     }
     
+    func pushExams(mId: Int, isSubject: Bool) {
+        guard let vc = R.storyboard.listExamsViewController.listExamsViewController() else {
+            return
+        }
+        vc.mId = mId
+        vc.isSubject = isSubject
+        self.navigationController?.setViewControllers([vc], animated: false)
+    }
+    
     func pushTabbar(tab: TabBar) {
         switch tab {
             case .HOME:

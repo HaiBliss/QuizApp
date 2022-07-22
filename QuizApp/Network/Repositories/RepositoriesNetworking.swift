@@ -14,6 +14,7 @@ enum RepositoriesNetworking {
     case departmentInfo(page: Int, perPage: Int, name: String?)
     case department(page: Int, perPage: Int)
     case getSubjectsDepartment(page: Int, perPage: Int, departmentId: Int)
+    case getExams(page: Int, perPage: Int, mId: Int, isSubjectId: Bool)
 }
 
 extension RepositoriesNetworking: TargetType {
@@ -35,6 +36,8 @@ extension RepositoriesNetworking: TargetType {
         case .departmentInfo(_, _, _):
             return .get
         case .getSubjectsDepartment(_, _, _):
+            return .get
+        case .getExams(_, _, _, _):
             return .get
         }
     }
@@ -64,6 +67,16 @@ extension RepositoriesNetworking: TargetType {
             return .requestParameters(parameters: ["page": page,
                                                    "per_page": perPage,
                                                    "department_id": departmentId], encoding: URLEncoding.default)
+            
+        case .getExams(page: let page, perPage: let perPage, mId: let mId, isSubjectId: let isSubjectId):
+            if isSubjectId {
+                return .requestParameters(parameters: ["page": page,
+                                                       "per_page": perPage,
+                                                       "subject_id": mId], encoding: URLEncoding.default)
+            }
+            return .requestParameters(parameters: ["page": page,
+                                                   "per_page": perPage,
+                                                   "department_id": mId], encoding: URLEncoding.default)
         }
     }
     
@@ -88,6 +101,11 @@ extension RepositoriesNetworking: TargetType {
                 return [:]
             }
             return["Authorization":"Bearer " + token]
+        case .getExams(_, _, _, _):
+            guard let token = ProjectManager.sharedInstance.userInfo?.token else {
+                return [:]
+            }
+            return["Authorization":"Bearer " + token]
         }
     }
     
@@ -103,6 +121,8 @@ extension RepositoriesNetworking: TargetType {
             return "/department"
         case .getSubjectsDepartment(_, _, _):
             return "/department/detail"
+        case .getExams(_, _, _, _):
+            return "/exams"
         }
     }
     

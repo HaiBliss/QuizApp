@@ -125,7 +125,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You tapped me")
+        if collectionView == slideCollectionView {
+            print("Nhấn vào slider")
+        } else {
+            if let subjectId = departments[indexPath.section].subjects[indexPath.row].id {
+                pushExams(mId: subjectId, isSubject: true)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

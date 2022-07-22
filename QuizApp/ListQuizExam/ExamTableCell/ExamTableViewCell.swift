@@ -7,8 +7,10 @@
 
 import UIKit
 
-class QuizTableViewCell: UITableViewCell {
+class ExamTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var examNameLabel: UILabel!
+    @IBOutlet weak var infoExamLabel: UILabel!
     static let indentifier = "QuizTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,4 +27,8 @@ class QuizTableViewCell: UITableViewCell {
         return UINib(nibName: "QuizTableViewCell", bundle: nil)
     }
     
+    func updateView(exam: Exams.Exam) {
+        examNameLabel.text = exam.name
+        infoExamLabel.text = "\(exam.question_count ?? 0) câu - \(exam.time_count ?? 0) phút"
+    }
 }

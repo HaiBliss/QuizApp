@@ -102,6 +102,12 @@ extension ListSubjectsViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("You tapped me")
+        guard let subjects = department?.subjects else {
+            return
+        }
+        if let subjectId = subjects[indexPath.row].id {
+            pushExams(mId: subjectId, isSubject: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

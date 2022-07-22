@@ -11,7 +11,7 @@ struct Exams: Codable {
     let code: Int?
     let success:Bool?
     let message: String?
-    let data: [Exam]?
+    let data: [Exams.Exam]?
     let page: Page?
     
     struct Exam: Codable {
@@ -20,7 +20,7 @@ struct Exams: Codable {
         let department: String?
         let department_id: Int?
         let subject: String?
-        let subject_id: String?
+        let subject_id: Int?
         let image: String?
         let created_date: String?
         let updated_date: String?

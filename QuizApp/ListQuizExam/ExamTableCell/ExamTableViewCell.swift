@@ -1,5 +1,5 @@
 //
-//  QuizTableViewCell.swift
+//  ExamTableViewCell.swift
 //  QuizApp
 //
 //  Created by Hải Vie 🇻🇳 on 18/07/2022.
@@ -11,7 +11,7 @@ class ExamTableViewCell: UITableViewCell {
 
     @IBOutlet weak var examNameLabel: UILabel!
     @IBOutlet weak var infoExamLabel: UILabel!
-    static let indentifier = "QuizTableViewCell"
+    static let indentifier = "ExamTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +24,7 @@ class ExamTableViewCell: UITableViewCell {
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "QuizTableViewCell", bundle: nil)
+        return UINib(nibName: "ExamTableViewCell", bundle: nil)
     }
     
     func updateView(exam: Exams.Exam) {

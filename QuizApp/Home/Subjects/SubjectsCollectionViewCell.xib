@@ -81,18 +81,30 @@
                             <constraint firstItem="feo-ka-gp6" firstAttribute="leading" secondItem="idm-Vr-TeB" secondAttribute="leading" constant="16" id="wgJ-l4-sHP"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-g4-tba">
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <connections>
+                            <action selector="clickCellButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="aQK-uN-t9z"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="idm-Vr-TeB" secondAttribute="trailing" id="3lp-OU-d6T"/>
+                <constraint firstItem="2mf-g4-tba" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FUm-aq-dFx"/>
                 <constraint firstAttribute="bottom" secondItem="idm-Vr-TeB" secondAttribute="bottom" id="Ypy-aF-xhc"/>
+                <constraint firstAttribute="bottom" secondItem="2mf-g4-tba" secondAttribute="bottom" id="gfu-CC-gBZ"/>
+                <constraint firstItem="2mf-g4-tba" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iQ3-Cx-hLV"/>
                 <constraint firstItem="idm-Vr-TeB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kgM-4w-ACI"/>
                 <constraint firstItem="idm-Vr-TeB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vTv-FK-QTA"/>
+                <constraint firstAttribute="trailing" secondItem="2mf-g4-tba" secondAttribute="trailing" id="xXh-Yg-U7F"/>
             </constraints>
             <size key="customSize" width="146" height="185"/>
             <connections>
                 <outlet property="amountLabel" destination="M5j-oI-JLE" id="EOU-nE-5eQ"/>
+                <outlet property="clickCellButton" destination="2mf-g4-tba" id="eog-cC-Idj"/>
                 <outlet property="departmentLabel" destination="Aqp-st-f28" id="1S5-zE-nxb"/>
                 <outlet property="itemView" destination="idm-Vr-TeB" id="nQ6-y4-FHx"/>
                 <outlet property="lastScoreLabel" destination="2aq-dD-Bsp" id="rka-We-wNv"/>

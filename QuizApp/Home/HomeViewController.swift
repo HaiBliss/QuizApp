@@ -113,6 +113,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.departmentLabel.text = departments[indexPath.section].name
         cell.subjectNameLabel.text = subjects[indexPath.row].name
         cell.subjectImage.sd_setImage(with: URL(string: subjects[indexPath.row].image ?? ""), placeholderImage: R.image.placeholder())
+        if let subjectId = departments[indexPath.section].subjects[indexPath.row].id {
+            cell.didTabButton = { [weak self] _ in
+                print("Đã Click \(subjectId)")
+                self?.pushExams(mId: 10, isSubject: true)
+            }
+        }
         return cell
         
     }
@@ -125,13 +131,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == slideCollectionView {
-            print("Nhấn vào slider")
-        } else {
-            if let subjectId = departments[indexPath.section].subjects[indexPath.row].id {
-                pushExams(mId: subjectId, isSubject: true)
-            }
-        }
+        print("Nhấn vào collectionView")
+//        if collectionView == slideCollectionView {
+//            print("Nhấn vào slider")
+//        } else {
+//            if let subjectId = departments[indexPath.section].subjects[indexPath.row].id {
+//                pushExams(mId: subjectId, isSubject: true)
+//            }
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

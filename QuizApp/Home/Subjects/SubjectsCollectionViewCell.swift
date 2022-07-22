@@ -9,6 +9,7 @@ import UIKit
 
 class SubjectsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var clickCellButton: UIButton!
     @IBOutlet weak var itemView: UIView!
     static let indentifier = "SubjectsCollectionViewCell"
     @IBOutlet weak var lastScoreLabel: UILabel!
@@ -16,6 +17,8 @@ class SubjectsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var subjectImage: UIImageView!
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var subjectNameLabel: UILabel!
+    
+    var didTabButton: (_ check: Bool) -> () = {check in}
     override func awakeFromNib() {
         super.awakeFromNib()
         itemView.layer.cornerRadius = 10
@@ -26,5 +29,9 @@ class SubjectsCollectionViewCell: UICollectionViewCell {
 
     static func nib() -> UINib {
         return UINib(nibName: "SubjectsCollectionViewCell", bundle: nil)
+    }
+
+    @IBAction func clickCellButtonAction(_ sender: Any) {
+        didTabButton(true)
     }
 }

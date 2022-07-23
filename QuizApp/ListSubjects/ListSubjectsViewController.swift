@@ -31,12 +31,6 @@ class ListSubjectsViewController: UIViewController {
         actionTap()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = "Home"
-        navigationItem.backBarButtonItem = backItem
-    }
-    
     func setupView() {
         self.title = "Lựa Chọn Môn Học"
         collectionView.register(SubjectsCollectionViewCell.nib(), forCellWithReuseIdentifier: SubjectsCollectionViewCell.indentifier)
@@ -105,9 +99,7 @@ extension ListSubjectsViewController: UICollectionViewDelegate, UICollectionView
         guard let subjects = department?.subjects else {
             return
         }
-        if let subjectId = subjects[indexPath.row].id {
-            pushExams(mId: subjectId, isSubject: true)
-        }
+        pushExams(subject: subjects[indexPath.row], isSubject: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

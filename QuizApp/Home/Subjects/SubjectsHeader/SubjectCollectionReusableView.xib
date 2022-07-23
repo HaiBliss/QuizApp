@@ -31,9 +31,10 @@
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal">
                                 <attributedString key="attributedTitle">
-                                    <fragment content="See all">
+                                    <fragment content="Tất cả">
                                         <attributes>
-                                            <font key="NSFont" size="13" name="Avenir-Book"/>
+                                            <font key="NSFont" size="13" name="AvenirNext-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>

@@ -113,11 +113,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.departmentLabel.text = departments[indexPath.section].name
         cell.subjectNameLabel.text = subjects[indexPath.row].name
         cell.subjectImage.sd_setImage(with: URL(string: subjects[indexPath.row].image ?? ""), placeholderImage: R.image.placeholder())
-        if let subjectId = departments[indexPath.section].subjects[indexPath.row].id {
-            cell.didTabButton = { [weak self] _ in
-                print("Đã Click \(subjectId)")
-                self?.pushExams(mId: 10, isSubject: true)
-            }
+        let subject = departments[indexPath.section].subjects[indexPath.row]
+        cell.didTabButton = { [weak self] _ in
+            print("Đã Click \(subject.id ?? -1)")
+            self?.pushExams(subject: subject, isSubject: true)
         }
         return cell
         
@@ -168,12 +167,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     @objc func viewSeeAllSubject(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "ListSubjectsViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ListSubjectsViewController") as! ListSubjectsViewController
-        vc.departmentId = sender.tag
-        self.navigationItem.backButtonTitle = ""
-        self.navigationController?.navigationBar.tintColor = R.color.f94FB()
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.pushListSubject(departmentId: sender.tag)
     }
     
 

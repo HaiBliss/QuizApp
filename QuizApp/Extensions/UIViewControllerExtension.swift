@@ -36,13 +36,25 @@ extension UIViewController {
         self.navigationController?.setViewControllers([vc], animated: false)
     }
     
-    func pushExams(mId: Int, isSubject: Bool) {
+    func pushExams(subject: Departments.Department.Subject, isSubject: Bool) {
         guard let vc = R.storyboard.listExamsViewController.listExamsViewController() else {
             return
         }
-        vc.mId = mId
+        vc.subject = subject
         vc.isSubject = isSubject
-        self.navigationController?.setViewControllers([vc], animated: false)
+        self.navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = R.color.f94FB()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func pushListSubject(departmentId: Int) {
+        guard let vc = R.storyboard.listSubjectsViewController.listSubjectsViewController() else {
+            return
+        }
+        vc.departmentId = departmentId
+        self.navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = R.color.f94FB()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func pushTabbar(tab: TabBar) {

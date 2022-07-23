@@ -18,25 +18,33 @@ class ListExamsViewController: UIViewController {
     private var bag = DisposeBag()
     private var listExams: [Exams.Exam] = []
     var isSubject: Bool = true
-    var mId: Int?
+    var subject: Departments.Department.Subject?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         actionTap()
         bindData()
-
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Home"
+        navigationItem.backBarButtonItem = backItem
     }
     
     func setupView() {
+        self.title = "Chọn Đề"
         tableView.register(ExamTableViewCell.nib(), forCellReuseIdentifier: ExamTableViewCell.indentifier)
         tableView.delegate = self
         tableView.dataSource = self
+
+        subjectImage.sd_setImage(with: URL(string: subject?.image ?? ""), placeholderImage: R.image.placeholder())
+        subjectNameLabel.text = subject?.name ?? "N/A"
     }
     
     func bindData() {
-        if let mId = mId {
-            viewModel.getListExams(page: 1, perPage: 100, mId: mId, isSubjectId: isSubject)
+        if let mId = subject?.id {
+            viewModel.getListExams(page: 1, perPage: 100, mId: 10, isSubjectId: isSubject)
             
             viewModel.listExams.subscribe { [weak self] data in
                 if let exams = data.element {

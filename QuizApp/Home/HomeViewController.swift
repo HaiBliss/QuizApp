@@ -25,8 +25,6 @@ class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
     private let bag = DisposeBag()
-//    let withItem = UIScreen.main.bounds.width/2 - 40
-//    let heightItem = (UIScreen.main.bounds.width/2 - 40) / (175/190)
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .white
@@ -130,14 +128,15 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Nhấn vào collectionView")
-//        if collectionView == slideCollectionView {
-//            print("Nhấn vào slider")
-//        } else {
+      
+        if collectionView == slideCollectionView {
+            print("Nhấn vào slider")
+        } else {
+            print("Nhấn vào collectionView")
 //            if let subjectId = departments[indexPath.section].subjects[indexPath.row].id {
 //                pushExams(mId: subjectId, isSubject: true)
 //            }
-//        }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -177,6 +176,4 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return CGSize()
     }
-    
-    
 }

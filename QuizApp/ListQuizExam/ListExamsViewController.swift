@@ -81,4 +81,8 @@ extension ListExamsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.updateView(exam: listExams[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presentQuiz()
+    }
 }

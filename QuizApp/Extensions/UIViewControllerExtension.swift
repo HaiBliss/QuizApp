@@ -47,6 +47,20 @@ extension UIViewController {
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
+    func presentQuiz() {
+        guard let vc = R.storyboard.quizViewController.quizViewController() else {
+            return
+        }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
+    func presentImageVC() {
+        let vc = UIViewController(nibName: "ImagePopupViewController", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
     func pushListSubject(departmentId: Int) {
         guard let vc = R.storyboard.listSubjectsViewController.listSubjectsViewController() else {
             return

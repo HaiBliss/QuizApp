@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,30 +10,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubjectsCollectionViewCell" id="gTV-IL-0wX" customClass="SubjectsCollectionViewCell" customModule="QuizApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+            <rect key="frame" x="0.0" y="0.0" width="170" height="190"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+                <rect key="frame" x="0.0" y="0.0" width="170" height="190"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idm-Vr-TeB">
-                        <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="190"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slide" translatesAutoresizingMaskIntoConstraints="NO" id="t32-6a-Uqk">
-                                <rect key="frame" x="32" y="30" width="111" height="71"/>
+                                <rect key="frame" x="29.666666666666671" y="30" width="111.00000000000001" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="COP-hV-azL"/>
                                     <constraint firstAttribute="height" constant="71" id="gJe-7h-JVm"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấu trúc dữ liệu và giải thuật" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feo-ka-gp6">
-                                <rect key="frame" x="16" y="111" width="143" height="41"/>
+                                <rect key="frame" x="16" y="111" width="138" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqk-ih-TgJ">
-                                <rect key="frame" x="140" y="164" width="19" height="18"/>
+                                <rect key="frame" x="135" y="164" width="19" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aq-dD-Bsp">
                                         <rect key="frame" x="0.0" y="0.0" width="19" height="18"/>
@@ -52,13 +51,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5/20 đề" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5j-oI-JLE">
-                                <rect key="frame" x="16" y="164" width="47.5" height="18"/>
+                                <rect key="frame" x="15.999999999999996" y="164" width="47.666666666666657" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KHOA CNTT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqp-st-f28">
-                                <rect key="frame" x="8" y="8" width="159" height="10"/>
+                                <rect key="frame" x="8" y="8" width="154" height="10"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +81,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mf-g4-tba">
-                        <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="190"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <connections>
                             <action selector="clickCellButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="aQK-uN-t9z"/>
@@ -90,7 +89,6 @@
                     </button>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="idm-Vr-TeB" secondAttribute="trailing" id="3lp-OU-d6T"/>
                 <constraint firstItem="2mf-g4-tba" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FUm-aq-dFx"/>
@@ -101,7 +99,7 @@
                 <constraint firstItem="idm-Vr-TeB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vTv-FK-QTA"/>
                 <constraint firstAttribute="trailing" secondItem="2mf-g4-tba" secondAttribute="trailing" id="xXh-Yg-U7F"/>
             </constraints>
-            <size key="customSize" width="146" height="185"/>
+            <size key="customSize" width="141" height="185"/>
             <connections>
                 <outlet property="amountLabel" destination="M5j-oI-JLE" id="EOU-nE-5eQ"/>
                 <outlet property="clickCellButton" destination="2mf-g4-tba" id="eog-cC-Idj"/>
@@ -111,7 +109,7 @@
                 <outlet property="subjectImage" destination="t32-6a-Uqk" id="ack-tg-re2"/>
                 <outlet property="subjectNameLabel" destination="feo-ka-gp6" id="s9M-kB-DPR"/>
             </connections>
-            <point key="canvasLocation" x="200.72463768115944" y="100.44642857142857"/>
+            <point key="canvasLocation" x="197.10144927536234" y="100.44642857142857"/>
         </collectionViewCell>
     </objects>
     <resources>

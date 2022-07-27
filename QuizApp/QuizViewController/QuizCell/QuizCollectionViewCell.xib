@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +23,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1Z-mV-2uI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="953.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="897.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jps-HS-JGN">
-                                                <rect key="frame" x="24" y="80" width="366" height="154"/>
+                                                <rect key="frame" x="24" y="24" width="366" height="154"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phần dẻo (Firmware) trong máy tính là gì?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bz-iN-gJg">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="22"/>
@@ -44,7 +43,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-TK-lmG">
-                                                <rect key="frame" x="24" y="294" width="366" height="619.5"/>
+                                                <rect key="frame" x="24" y="238" width="366" height="619.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vw-lrq">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="163.5"/>
@@ -216,7 +215,7 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                             <constraint firstItem="jps-HS-JGN" firstAttribute="leading" secondItem="p1Z-mV-2uI" secondAttribute="leading" constant="24" id="AaY-bb-0Mr"/>
                                             <constraint firstAttribute="trailing" secondItem="jps-HS-JGN" secondAttribute="trailing" constant="24" id="KMa-a2-jXl"/>
                                             <constraint firstItem="Gu8-TK-lmG" firstAttribute="leading" secondItem="p1Z-mV-2uI" secondAttribute="leading" constant="24" id="KX8-i4-XsH"/>
-                                            <constraint firstItem="jps-HS-JGN" firstAttribute="top" secondItem="p1Z-mV-2uI" secondAttribute="top" constant="80" id="NxA-zH-fAC"/>
+                                            <constraint firstItem="jps-HS-JGN" firstAttribute="top" secondItem="p1Z-mV-2uI" secondAttribute="top" constant="24" id="NxA-zH-fAC"/>
                                             <constraint firstAttribute="bottom" secondItem="Gu8-TK-lmG" secondAttribute="bottom" constant="40" id="SVM-so-WaM"/>
                                             <constraint firstAttribute="trailing" secondItem="Gu8-TK-lmG" secondAttribute="trailing" constant="24" id="W2h-fc-qQP"/>
                                             <constraint firstItem="Gu8-TK-lmG" firstAttribute="top" secondItem="jps-HS-JGN" secondAttribute="bottom" constant="60" id="wN7-dd-Reg"/>
@@ -244,7 +243,6 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="kwn-qK-VdI" secondAttribute="bottom" id="QJY-qL-vdk"/>
                 <constraint firstItem="kwn-qK-VdI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UCX-FP-egi"/>

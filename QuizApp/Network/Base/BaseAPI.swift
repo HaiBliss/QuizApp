@@ -23,7 +23,7 @@ class BaseAPI<T: TargetType> {
 
                 guard let statusCode = reponse.response?.statusCode else {
                     print("Status code not found")
-                    observer(.failure(NSError()))
+                    observer(.failure(NSError(domain: target.baseURL + target.path, code: 1)))
                     return
                 }
                 
@@ -31,26 +31,26 @@ class BaseAPI<T: TargetType> {
                 case 200, 400:
                     guard let jsonResponse = try? reponse.result.get() else {
                         print("jsonReponse error")
-                        observer(.failure(NSError()))
+                        observer(.failure(NSError(domain: target.baseURL + target.path, code: 2)))
                         return
                     }
                     
                    guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {
                        print("theJSONData error")
-                       observer(.failure(NSError()))
+                       observer(.failure(NSError(domain: target.baseURL + target.path, code: 2)))
                        return
                    }
         
                    guard let responseObj = try? JSONDecoder().decode(M.self, from: theJSONData) else {
                        print("responseObj error")
-                       observer(.failure(NSError()))
+                       observer(.failure(NSError(domain: target.baseURL + target.path, code: 2)))
                        return
                    }
                    observer(.success(responseObj))
                     break
                 default:
                     print("error statusCode is \(statusCode)")
-                    observer(.failure(NSError()))
+                    observer(.failure(NSError(domain: target.baseURL + target.path, code: statusCode)))
                     break
                 }
             }

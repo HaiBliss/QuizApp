@@ -7,6 +7,7 @@
 
 import Foundation
 import  UIKit
+
 extension UIViewController {
     func pushHome() {
         guard let vc = R.storyboard.homeViewController.homeViewController() else {
@@ -87,6 +88,32 @@ extension UIViewController {
                 break
             case .NONE:
                 break
+        }
+    }
+    
+    
+    func animation(isRuning: Bool) {
+       
+        if ProjectManager.sharedInstance.isLoading == false {
+            ProjectManager.sharedInstance.background.backgroundColor = UIColor(named: "trangmo")
+            view.addSubview(ProjectManager.sharedInstance.background)
+            ProjectManager.sharedInstance.background.addSubview(ProjectManager.sharedInstance.loading)
+            ProjectManager.sharedInstance.loading.translatesAutoresizingMaskIntoConstraints = false
+            let constraints = [
+                ProjectManager.sharedInstance.loading.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                ProjectManager.sharedInstance.loading.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                ProjectManager.sharedInstance.loading.widthAnchor.constraint(equalToConstant: 40),
+                ProjectManager.sharedInstance.loading.heightAnchor.constraint(equalToConstant: 40)
+            ]
+            NSLayoutConstraint.activate(constraints)
+        }
+        
+        if isRuning {
+            ProjectManager.sharedInstance.isLoading = true
+            ProjectManager.sharedInstance.loading.startAnimating()
+        } else {
+            ProjectManager.sharedInstance.isLoading = false
+            ProjectManager.sharedInstance.background.removeFromSuperview()
         }
     }
 }

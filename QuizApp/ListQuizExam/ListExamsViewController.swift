@@ -44,6 +44,7 @@ class ListExamsViewController: UIViewController {
     
     func bindData() {
         if let mId = subject?.id {
+            //thay mId vào API khi đủ dữ liệu
             viewModel.getListExams(page: 1, perPage: 100, mId: 10, isSubjectId: isSubject)
             
             viewModel.listExams.subscribe { [weak self] data in

@@ -14,13 +14,14 @@ class LoginViewModel {
     let loginInfo = PublishRelay<User>()
     let bag = DisposeBag()
     let loginData: LoginAPIProtocol = LoginAPI()
+    let errorAPI = PublishRelay<NSError>()
     
     func login(email: String, password: String) {
         
         loginData.login(email: email, password: password).subscribe { user in
             self.loginInfo.accept(user)
         } onFailure: { error in
-//            print(error)
+            self.errorAPI.accept(error as NSError)
         }.disposed(by: bag)
     }
 }

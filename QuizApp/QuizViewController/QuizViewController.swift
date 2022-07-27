@@ -25,7 +25,7 @@ class QuizViewController: UIViewController {
     }
 }
 
-extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }

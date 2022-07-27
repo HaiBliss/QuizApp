@@ -169,6 +169,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         self.pushListSubject(departmentId: sender.tag)
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == subjectCollectionView {
+            
+            let width = (UIScreen.main.bounds.size.width - 60) / 2
+            let height = width * (19/17)
+            return CGSize(width: width, height: height)
+        } else {
+            return CGSize(width: 288, height: 128)
+        }
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if collectionView == subjectCollectionView {

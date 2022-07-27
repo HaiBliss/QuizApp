@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
 
@@ -30,11 +29,10 @@ class LoginViewController: UIViewController {
     private let viewModel = LoginViewModel()
     private let bag = DisposeBag()
     var isLogin: Bool = true
-    let background = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-        animation()
         bindData()
     }
     
@@ -83,7 +81,7 @@ class LoginViewController: UIViewController {
         if isLogin {
             if email.isValidEmail() {
                 if pass.count >= 6 {
-                    background.isHidden = false
+                    self.animation(isRuning: true)
                     viewModel.login(email: email, password: pass)
                 } else {
                     alertView(title: "Lỗi", message: "Nhập mật khẩu từ 6 ký tự")
@@ -97,7 +95,7 @@ class LoginViewController: UIViewController {
     func bindData() {
         viewModel.loginInfo.subscribe { [weak self] data in
             if let loginInfo = data.element {
-                self?.background.isHidden = true
+                self?.animation(isRuning: false)
                 if let errorCode = loginInfo.code {
                     switch errorCode {
                     case 200:
@@ -129,6 +127,11 @@ class LoginViewController: UIViewController {
                 }
             }
         }.disposed(by: bag)
+        
+        viewModel.errorAPI.subscribe{ [weak self] data in
+            self?.animation(isRuning: false)
+            self?.alertView(title: "Đăng nhập thất bại", message: "\(data.element?.code ?? -1)" ) 
+        }.disposed(by: bag)
     }
     
     
@@ -136,23 +139,6 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func animation() {
-        let loading = NVActivityIndicatorView(frame: .zero, type: .ballClipRotatePulse, color: UIColor(named: "8F94FB"), padding: 0)
-        background.backgroundColor = UIColor(named: "trangmo")
-        view.addSubview(background)
-        background.addSubview(loading)
-        loading.translatesAutoresizingMaskIntoConstraints = false
-        let constraints = [
-            loading.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loading.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            loading.widthAnchor.constraint(equalToConstant: 40),
-            loading.heightAnchor.constraint(equalToConstant: 40)
-        ]
-        NSLayoutConstraint.activate(constraints)
-        loading.startAnimating()
-        background.isHidden = true
     }
     
 }

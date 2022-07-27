@@ -130,7 +130,7 @@ class LoginViewController: UIViewController {
         
         viewModel.errorAPI.subscribe{ [weak self] data in
             self?.animation(isRuning: false)
-            self?.alertView(title: "Đăng nhập thất bại", message: "\(data.element?.code ?? -1)" ) 
+            self?.alertView(title: "Đăng nhập thất bại", message: "\(data.element?.code ?? -1)" )
         }.disposed(by: bag)
     }
     
@@ -155,13 +155,5 @@ extension UIView {
         let backgroundCGColor = backgroundColor?.cgColor
         backgroundColor = nil
         layer.backgroundColor =  backgroundCGColor
-    }
-}
-
-extension String {
-    func isValidEmail() -> Bool {
-        // here, `try!` will always succeed because the pattern is valid
-        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
-        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
 }

@@ -43,13 +43,13 @@ class ListExamsViewController: UIViewController {
     }
     
     func bindData() {
-        self.animation(isRuning: true)
+        self.loadingView(isRuning: true)
         if let mId = subject?.id {
             //thay mId vào API khi đủ dữ liệu
             viewModel.getListExams(page: 1, perPage: 100, mId: 10, isSubjectId: isSubject)
             
             viewModel.listExams.subscribe { [weak self] data in
-                self?.animation(isRuning: false)
+                self?.loadingView(isRuning: false)
                 if let exams = data.element {
                     if let code = exams.code {
                         switch code {
@@ -67,7 +67,7 @@ class ListExamsViewController: UIViewController {
         }
 
         viewModel.errorAPI.subscribe{ [weak self] data in
-            self?.animation(isRuning: false)
+            self?.loadingView(isRuning: false)
             switch data.element {
             case .networkError:
                 self?.alertView(title: "Lỗi", message: "Không có Internet" )
@@ -102,6 +102,9 @@ extension ListExamsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentQuiz()
+        if let examId = listExams[indexPath.row].id, let timer = listExams[indexPath.row].time_count {
+            presentQuiz(examId: examId, timer: timer)
+        }
+        
     }
 }

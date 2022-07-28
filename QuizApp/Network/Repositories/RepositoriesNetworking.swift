@@ -15,6 +15,7 @@ enum RepositoriesNetworking {
     case department(page: Int, perPage: Int)
     case getSubjectsDepartment(page: Int, perPage: Int, departmentId: Int)
     case getExams(page: Int, perPage: Int, mId: Int, isSubjectId: Bool)
+    case getQuizs(page: Int, perPage: Int, examId: Int)
 }
 
 extension RepositoriesNetworking: TargetType {
@@ -38,6 +39,8 @@ extension RepositoriesNetworking: TargetType {
         case .getSubjectsDepartment(_, _, _):
             return .get
         case .getExams(_, _, _, _):
+            return .get
+        case .getQuizs(_, _, _):
             return .get
         }
     }
@@ -77,35 +80,26 @@ extension RepositoriesNetworking: TargetType {
             return .requestParameters(parameters: ["page": page,
                                                    "per_page": perPage,
                                                    "department_id": mId], encoding: URLEncoding.default)
+
+        case .getQuizs(page: let page, perPage: let perPage, examId: let examId):
+            return .requestParameters(parameters: ["page": page,
+                                                   "per_page": perPage,
+                                                   "exam_id": examId
+                                                  ], encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .login(_, _):
-            return [:]
-        case .signup(_, _, _):
-            return [:]
-        case .department(_, _):
-            guard let token = ProjectManager.sharedInstance.userInfo?.token else {
+            case .login(_, _):
                 return [:]
-            }
-            return["Authorization":"Bearer " + token]
-        case .departmentInfo(_, _, _):
-            guard let token = ProjectManager.sharedInstance.userInfo?.token else {
+            case .signup(_, _, _):
                 return [:]
-            }
-            return["Authorization":"Bearer " + token]
-        case .getSubjectsDepartment(_, _, _):
-            guard let token = ProjectManager.sharedInstance.userInfo?.token else {
-                return [:]
-            }
-            return["Authorization":"Bearer " + token]
-        case .getExams(_, _, _, _):
-            guard let token = ProjectManager.sharedInstance.userInfo?.token else {
-                return [:]
-            }
-            return["Authorization":"Bearer " + token]
+            default:
+                guard let token = ProjectManager.sharedInstance.userInfo?.token else {
+                    return [:]
+                }
+                return["Authorization":"Bearer " + token]
         }
     }
     
@@ -123,6 +117,8 @@ extension RepositoriesNetworking: TargetType {
             return "/department/detail"
         case .getExams(_, _, _, _):
             return "/exams"
+        case .getQuizs(_, _, _):
+            return "/exams/detail"
         }
     }
     

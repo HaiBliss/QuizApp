@@ -68,11 +68,11 @@ class HomeViewController: UIViewController {
 
     
     func bindData() {
-        self.animation(isRuning: true)
+        self.loadingView(isRuning: true)
         viewModel.getDepartmentHome(page: 1, perPage: 10)
 
         viewModel.departments.subscribe { [weak self] data in
-            self?.animation(isRuning: false)
+            self?.loadingView(isRuning: false)
             if let departmentsData = data.element {
                 if let errorCode = departmentsData.code {
                     switch errorCode {
@@ -90,7 +90,7 @@ class HomeViewController: UIViewController {
         }.disposed(by: bag)
         
         viewModel.errorAPI.subscribe{ [weak self] data in
-            self?.animation(isRuning: false)
+            self?.loadingView(isRuning: false)
             switch data.element {
             case .networkError:
                 self?.alertView(title: "Đăng nhập thất bại", message: "Không có Internet" )

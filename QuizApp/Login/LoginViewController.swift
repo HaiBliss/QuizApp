@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
         if isLogin {
             if email.isValidEmail() {
                 if pass.count >= 6 {
-                    self.animation(isRuning: true)
+                    self.loadingView(isRuning: true)
                     viewModel.login(email: email, password: pass)
                 } else {
                     alertView(title: "Lỗi", message: "Nhập mật khẩu từ 6 ký tự")
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
     func bindData() {
         viewModel.loginInfo.subscribe { [weak self] data in
             if let loginInfo = data.element {
-                self?.animation(isRuning: false)
+                self?.loadingView(isRuning: false)
                 if let errorCode = loginInfo.code {
                     switch errorCode {
                     case 200:
@@ -129,7 +129,7 @@ class LoginViewController: UIViewController {
         }.disposed(by: bag)
         
         viewModel.errorAPI.subscribe{ [weak self] data in
-            self?.animation(isRuning: false)
+            self?.loadingView(isRuning: false)
             switch data.element {
             case .networkError:
                 self?.alertView(title: "Đăng nhập thất bại", message: "Không có Internet" )

@@ -40,11 +40,11 @@ class ListSubjectsViewController: UIViewController {
     }
     
     func bindData(departmentId: Int) {
-        self.animation(isRuning: true)
+        self.loadingView(isRuning: true)
         viewModel.getSubjectsDepartment(page: 1, perPage: 100, departmentId: departmentId)
         
         viewModel.subjectsDepartment.subscribe { [weak self] data in
-            self?.animation(isRuning: false)
+            self?.loadingView(isRuning: false)
             if let subjectsDepartment = data.element {
                 if let errorCode = subjectsDepartment.code {
                     switch errorCode {
@@ -61,7 +61,7 @@ class ListSubjectsViewController: UIViewController {
         }.disposed(by: bag)
         
         viewModel.errorAPI.subscribe{ [weak self] data in
-            self?.animation(isRuning: false)
+            self?.loadingView(isRuning: false)
             switch data.element {
             case .networkError:
                 self?.alertView(title: "Lỗi", message: "Không có Internet" )

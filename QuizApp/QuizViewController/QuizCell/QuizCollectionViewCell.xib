@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1Z-mV-2uI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="897.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="873.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jps-HS-JGN">
                                                 <rect key="frame" x="24" y="24" width="366" height="154"/>
@@ -43,7 +43,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-TK-lmG">
-                                                <rect key="frame" x="24" y="238" width="366" height="619.5"/>
+                                                <rect key="frame" x="24" y="214" width="366" height="619.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vw-lrq">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="163.5"/>
@@ -68,7 +68,7 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="Xp9-vv-yVN" firstAttribute="leading" secondItem="Bvy-vw-lrq" secondAttribute="leading" constant="8" id="7GE-Kk-0CM"/>
                                                             <constraint firstItem="Xp9-vv-yVN" firstAttribute="top" secondItem="Bvy-vw-lrq" secondAttribute="top" constant="8" id="TVD-vC-6MY"/>
@@ -108,7 +108,7 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="TxA-av-kiB" secondAttribute="bottom" constant="8" id="1tn-vS-iGw"/>
                                                             <constraint firstAttribute="trailing" secondItem="TxA-av-kiB" secondAttribute="trailing" constant="8" id="Gad-G6-zMr"/>
@@ -148,7 +148,7 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="y2W-Dg-oJP" firstAttribute="leading" secondItem="CLo-cN-a7D" secondAttribute="leading" constant="8" id="fPI-nV-1Qm"/>
                                                             <constraint firstAttribute="trailing" secondItem="y2W-Dg-oJP" secondAttribute="trailing" constant="8" id="fVh-eh-ugP"/>
@@ -188,7 +188,7 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="5YB-Q5-LqM" firstAttribute="top" secondItem="ySa-JU-kaf" secondAttribute="top" constant="8" id="62h-VI-dB6"/>
                                                             <constraint firstItem="5YB-Q5-LqM" firstAttribute="leading" secondItem="ySa-JU-kaf" secondAttribute="leading" constant="8" id="NUd-BN-w1v"/>
@@ -218,7 +218,7 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                             <constraint firstItem="jps-HS-JGN" firstAttribute="top" secondItem="p1Z-mV-2uI" secondAttribute="top" constant="24" id="NxA-zH-fAC"/>
                                             <constraint firstAttribute="bottom" secondItem="Gu8-TK-lmG" secondAttribute="bottom" constant="40" id="SVM-so-WaM"/>
                                             <constraint firstAttribute="trailing" secondItem="Gu8-TK-lmG" secondAttribute="trailing" constant="24" id="W2h-fc-qQP"/>
-                                            <constraint firstItem="Gu8-TK-lmG" firstAttribute="top" secondItem="jps-HS-JGN" secondAttribute="bottom" constant="60" id="wN7-dd-Reg"/>
+                                            <constraint firstItem="Gu8-TK-lmG" firstAttribute="top" secondItem="jps-HS-JGN" secondAttribute="bottom" constant="36" id="wN7-dd-Reg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -250,6 +250,18 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                 <constraint firstAttribute="trailing" secondItem="kwn-qK-VdI" secondAttribute="trailing" id="Y2G-Fi-uKe"/>
             </constraints>
             <size key="customSize" width="219" height="262"/>
+            <connections>
+                <outlet property="answerAImage" destination="ukx-9Z-AaQ" id="1FJ-iL-7ED"/>
+                <outlet property="answerALabel" destination="b9R-fP-1KK" id="MPc-9o-Uin"/>
+                <outlet property="answerBImage" destination="yrR-lv-OGW" id="jqQ-TN-Z7q"/>
+                <outlet property="answerBLabel" destination="Xin-7K-4a6" id="pbA-LJ-OHM"/>
+                <outlet property="answerCImage" destination="JuE-nM-j7P" id="swS-de-Pfz"/>
+                <outlet property="answerCLabel" destination="fKb-C8-2wp" id="c3D-Uw-A92"/>
+                <outlet property="answerDImage" destination="o9A-b2-gsv" id="vcJ-1z-MzR"/>
+                <outlet property="answerDLabel" destination="8bs-pw-SoG" id="Nrv-dD-DvR"/>
+                <outlet property="questionImage" destination="JzH-ob-eH8" id="FhI-3X-Qga"/>
+                <outlet property="questionLabel" destination="0Bz-iN-gJg" id="ono-l9-zvC"/>
+            </connections>
             <point key="canvasLocation" x="111.59420289855073" y="75.669642857142847"/>
         </collectionViewCell>
     </objects>

@@ -48,10 +48,11 @@ extension UIViewController {
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    func presentQuiz() {
+    func presentQuiz(examId: Int,  timer: Int) {
         guard let vc = R.storyboard.quizViewController.quizViewController() else {
             return
         }
+        vc.bindData(examId: examId, timer: timer)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
@@ -92,7 +93,7 @@ extension UIViewController {
     }
     
     
-    func animation(isRuning: Bool) {
+    func loadingView(isRuning: Bool) {
        
         if ProjectManager.sharedInstance.isLoading == false {
             ProjectManager.sharedInstance.background.backgroundColor = UIColor(named: "trangmo")

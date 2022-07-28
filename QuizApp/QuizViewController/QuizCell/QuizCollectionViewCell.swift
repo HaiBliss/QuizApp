@@ -21,6 +21,8 @@ class QuizCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var answerBImage: UIImageView!
     @IBOutlet weak var answerCImage: UIImageView!
     @IBOutlet weak var answerDImage: UIImageView!
+    
+    var answersDict = [0:"A. ", 1:"B. ", 2:"C. ", 3: "D. "]
 
     static let indentifier = "QuizCollectionViewCell"
     override func awakeFromNib() {
@@ -47,7 +49,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
         
         if let answers = quiz.answers {
             for i in 0...answers.count - 1{
-                answersLabel[i]?.text = answers[i].value
+                answersLabel[i]?.text = "\(answersDict[i] ?? "")\(answers[i].value ?? "")"
                 if let image = answers[i].image , image != "" {
                     answersImage[i]?.isHidden = false
                     answersImage[i]?.sd_setImage(with: URL(string: image), placeholderImage: R.image.placeholder())

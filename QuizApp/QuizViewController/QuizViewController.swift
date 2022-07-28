@@ -12,6 +12,10 @@ import RxCocoa
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var previousQuizButton: UIButton!
+    @IBOutlet weak var nextQuizButton: UIButton!
+    @IBOutlet weak var listQuizButton: UIButton!
+    @IBOutlet weak var indexQuizLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var examView: UIView!
@@ -19,6 +23,12 @@ class QuizViewController: UIViewController {
     private var listQuizs: [Quizs.Quiz] = []
     private let vỉewModel = QuizViewModel()
     let bag = DisposeBag()
+    var quizCount = 0
+    var currentPage = 0 {
+        didSet {
+            indexQuizLabel.text = "\(currentPage+1)/\(quizCount)"
+        }
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +51,8 @@ class QuizViewController: UIViewController {
                     switch errorCode {
                     case 200:
                         self?.timerLabel.text = "\(timer):00"
+                        self?.quizCount = quizs.data?.count ?? 0
+                        self?.indexQuizLabel.text = "\((self?.currentPage ?? 0) + 1)/\(self?.quizCount ?? 0)"
                         self?.listQuizs = quizs.data ?? []
                         self?.collectionView.reloadData()
                         break
@@ -70,6 +82,25 @@ class QuizViewController: UIViewController {
         }.disposed(by: bag)
 
     }
+    
+    @IBAction func nextAction(_ sender: Any) {
+        if currentPage == listQuizs.count - 1 {
+           
+        } else {
+            currentPage += 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+    @IBAction func previousAction(_ sender: Any) {
+        if currentPage < 1 {
+           
+        } else {
+            currentPage -= 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
 }
 
 extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout {
@@ -85,6 +116,11 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
     }
     
     

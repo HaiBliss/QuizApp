@@ -21,37 +21,48 @@ class BaseAPI<T: TargetType> {
             print(target.baseURL + target.path)
             AF.request(target.baseURL + target.path, method: method, parameters: parameters.0, encoding: parameters.1, headers: headers).responseJSON { reponse in
 
-                guard let statusCode = reponse.response?.statusCode else {
-                    print("Status code not found")
-                    observer(.failure(NSError(domain: target.baseURL + target.path, code: 1)))
-                    return
-                }
-                
-                switch statusCode {
-                case 200, 400:
-                    guard let jsonResponse = try? reponse.result.get() else {
-                        print("jsonReponse error")
-                        observer(.failure(NSError(domain: target.baseURL + target.path, code: 2)))
+                switch reponse.result {
+                case .success:
+                    guard let statusCode = reponse.response?.statusCode else {
                         return
                     }
                     
-                   guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {
-                       print("theJSONData error")
-                       observer(.failure(NSError(domain: target.baseURL + target.path, code: 2)))
-                       return
-                   }
-        
-                   guard let responseObj = try? JSONDecoder().decode(M.self, from: theJSONData) else {
-                       print("responseObj error")
-                       observer(.failure(NSError(domain: target.baseURL + target.path, code: 2)))
-                       return
-                   }
-                   observer(.success(responseObj))
+                    switch statusCode {
+                        case 200, 400:
+                            guard let jsonResponse = try? reponse.result.get() else {
+                                print("jsonReponse error")
+                                observer(.failure(ApiError.commonError(code: statusCode, messages: "jsonReponse error")))
+                                return
+                            }
+                            
+                           guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {
+                               print("theJSONData error")
+                               observer(.failure(ApiError.commonError(code: statusCode, messages: "theJSONData error")))
+                               return
+                           }
+                
+                           guard let responseObj = try? JSONDecoder().decode(M.self, from: theJSONData) else {
+                               print("responseObj error")
+                               observer(.failure(ApiError.commonError(code: statusCode, messages: "responseObj error")))
+                               return
+                           }
+                           observer(.success(responseObj))
+                            break
+                        default:
+                        observer(.failure(ApiError.unknow(code: statusCode)))
+                            break
+                    }
                     break
-                default:
-                    print("error statusCode is \(statusCode)")
-                    observer(.failure(NSError(domain: target.baseURL + target.path, code: statusCode)))
-                    break
+                    
+                case .failure(let error):
+                    if (error as NSError).code == NSURLErrorCancelled {
+                        debugPrint("Request cancelled: \(error.localizedDescription)")
+                        return
+                    }
+    
+                    debugPrint("Request error: \(error.localizedDescription)")
+                    observer(.failure(ApiError.networkError))
+                    return
                 }
             }
             return Disposables.create()

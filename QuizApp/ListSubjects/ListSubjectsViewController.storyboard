@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dlj-AT-wdD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="630"/>
+                                        <rect key="frame" x="10" y="0.0" width="394" height="630"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="suK-50-T0t">
                                             <size key="itemSize" width="175" height="190"/>
@@ -53,11 +53,11 @@
                                 <constraints>
                                     <constraint firstItem="1AI-0z-GVz" firstAttribute="top" secondItem="Dlj-AT-wdD" secondAttribute="bottom" id="4g9-E6-ki3"/>
                                     <constraint firstItem="1AI-0z-GVz" firstAttribute="leading" secondItem="jCc-4Q-aTb" secondAttribute="leading" id="B4U-Qw-UP6"/>
-                                    <constraint firstItem="Dlj-AT-wdD" firstAttribute="leading" secondItem="jCc-4Q-aTb" secondAttribute="leading" id="MIu-WN-Nh8"/>
+                                    <constraint firstItem="Dlj-AT-wdD" firstAttribute="leading" secondItem="jCc-4Q-aTb" secondAttribute="leading" constant="10" id="MIu-WN-Nh8"/>
                                     <constraint firstAttribute="trailing" secondItem="1AI-0z-GVz" secondAttribute="trailing" id="VDd-Ze-hsu"/>
                                     <constraint firstAttribute="bottom" secondItem="1AI-0z-GVz" secondAttribute="bottom" id="jAI-Jy-zu4"/>
                                     <constraint firstItem="Dlj-AT-wdD" firstAttribute="top" secondItem="jCc-4Q-aTb" secondAttribute="top" id="jGb-kh-bwT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dlj-AT-wdD" secondAttribute="trailing" id="mdl-dn-bVW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dlj-AT-wdD" secondAttribute="trailing" constant="10" id="mdl-dn-bVW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-pk-KMw" customClass="ShadowView" customModule="QuizApp" customModuleProvider="target">

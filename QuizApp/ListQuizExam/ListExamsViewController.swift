@@ -43,11 +43,13 @@ class ListExamsViewController: UIViewController {
     }
     
     func bindData() {
+        self.animation(isRuning: true)
         if let mId = subject?.id {
             //thay mId vào API khi đủ dữ liệu
             viewModel.getListExams(page: 1, perPage: 100, mId: 10, isSubjectId: isSubject)
             
             viewModel.listExams.subscribe { [weak self] data in
+                self?.animation(isRuning: false)
                 if let exams = data.element {
                     if let code = exams.code {
                         switch code {
@@ -63,6 +65,22 @@ class ListExamsViewController: UIViewController {
                 }
             }.disposed(by: bag)
         }
+
+        viewModel.errorAPI.subscribe{ [weak self] data in
+            self?.animation(isRuning: false)
+            switch data.element {
+            case .networkError:
+                self?.alertView(title: "Lỗi", message: "Không có Internet" )
+            case .commonError(code: _, messages: let messages):
+                self?.alertView(title: "Lỗi", message: messages )
+            case .invalidJson:
+                break
+            case .unknow(code: _):
+               break
+            case .none:
+                break
+            }
+        }.disposed(by: bag)
     }
     
     func actionTap() {

@@ -14,6 +14,7 @@ class HomeViewModel {
     let departments = PublishRelay<Departments>()
     let bag = DisposeBag()
     let departmentData: DepartmentIProtocol = DepartmentAPI()
+    let errorAPI = PublishRelay<ApiError>()
 
     func getDepartmentHome(page: Int, perPage: Int) {
         departmentData.getDepartment(page: page, perPage: perPage).subscribe { deparment in

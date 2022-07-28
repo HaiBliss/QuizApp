@@ -68,10 +68,11 @@ class HomeViewController: UIViewController {
 
     
     func bindData() {
-        
+        self.animation(isRuning: true)
         viewModel.getDepartmentHome(page: 1, perPage: 10)
 
         viewModel.departments.subscribe { [weak self] data in
+            self?.animation(isRuning: false)
             if let departmentsData = data.element {
                 if let errorCode = departmentsData.code {
                     switch errorCode {
@@ -87,13 +88,22 @@ class HomeViewController: UIViewController {
                 }
             }
         }.disposed(by: bag)
-    }
-    
-    
-    func alertView(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        
+        viewModel.errorAPI.subscribe{ [weak self] data in
+            self?.animation(isRuning: false)
+            switch data.element {
+            case .networkError:
+                self?.alertView(title: "Đăng nhập thất bại", message: "Không có Internet" )
+            case .commonError(code: _, messages: let messages):
+                self?.alertView(title: "Đăng nhập thất bại", message: messages )
+            case .invalidJson:
+                break
+            case .unknow(code: _):
+               break
+            case .none:
+                break
+            }
+        }.disposed(by: bag)
     }
 
 }

@@ -40,9 +40,11 @@ class ListSubjectsViewController: UIViewController {
     }
     
     func bindData(departmentId: Int) {
+        self.animation(isRuning: true)
         viewModel.getSubjectsDepartment(page: 1, perPage: 100, departmentId: departmentId)
         
         viewModel.subjectsDepartment.subscribe { [weak self] data in
+            self?.animation(isRuning: false)
             if let subjectsDepartment = data.element {
                 if let errorCode = subjectsDepartment.code {
                     switch errorCode {
@@ -57,18 +59,28 @@ class ListSubjectsViewController: UIViewController {
                 }
             }
         }.disposed(by: bag)
+        
+        viewModel.errorAPI.subscribe{ [weak self] data in
+            self?.animation(isRuning: false)
+            switch data.element {
+            case .networkError:
+                self?.alertView(title: "Lỗi", message: "Không có Internet" )
+            case .commonError(code: _, messages: let messages):
+                self?.alertView(title: "Lỗi", message: messages )
+            case .invalidJson:
+                break
+            case .unknow(code: _):
+               break
+            case .none:
+                break
+            }
+        }.disposed(by: bag)
     }
     
     func actionTap() {
         tabBarView.selectTab = { tabName in
             self.pushTabbar(tab: tabName)
         }
-    }
-    
-    func alertView(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
 
 }
@@ -106,5 +118,10 @@ extension ListSubjectsViewController: UICollectionViewDelegate, UICollectionView
            return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (UIScreen.main.bounds.size.width - 60) / 2
+        let height = width * (19/17)
+        return CGSize(width: width, height: height)
+    }
     
 }

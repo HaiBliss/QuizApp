@@ -130,17 +130,20 @@ class LoginViewController: UIViewController {
         
         viewModel.errorAPI.subscribe{ [weak self] data in
             self?.animation(isRuning: false)
-            self?.alertView(title: "Đăng nhập thất bại", message: "\(data.element?.code ?? -1)" )
+            switch data.element {
+            case .networkError:
+                self?.alertView(title: "Đăng nhập thất bại", message: "Không có Internet" )
+            case .commonError(code: _, messages: let messages):
+                self?.alertView(title: "Đăng nhập thất bại", message: messages )
+            case .invalidJson:
+                break
+            case .unknow(code: _):
+               break
+            case .none:
+                break
+            }
         }.disposed(by: bag)
     }
-    
-    
-    func alertView(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
 
 extension UIView {

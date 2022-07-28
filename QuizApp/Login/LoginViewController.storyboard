@@ -163,7 +163,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Địa chỉ email" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O8P-1I-kCD" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hihi@gmail.com" borderStyle="roundedRect" placeholder="Địa chỉ email" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O8P-1I-kCD" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="100" width="288" height="34"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
@@ -174,7 +174,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbT-DA-tcL" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Mật khẩu" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbT-DA-tcL" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="150" width="288" height="34"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -302,7 +302,7 @@ terms &amp; conditions</string>
     </scenes>
     <designables>
         <designable name="O8P-1I-kCD">
-            <size key="intrinsicContentSize" width="109" height="34"/>
+            <size key="intrinsicContentSize" width="127" height="34"/>
         </designable>
         <designable name="TGO-hm-esV">
             <size key="intrinsicContentSize" width="142.5" height="34"/>

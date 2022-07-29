@@ -112,10 +112,7 @@ class LoginViewController: UIViewController {
 //                        self?.present(navVC, animated: true)
                         
                         
-                        let storyboard = UIStoryboard(name: "BaseViewController", bundle: nil)
-                        let controller = storyboard.instantiateViewController(withIdentifier: "BaseViewController")
-                        controller.modalPresentationStyle = .fullScreen
-                        self?.present(controller, animated: true, completion: nil)
+                        self?.pushBase()
                         break
                     case 400:
                         self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")

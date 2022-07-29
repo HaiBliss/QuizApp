@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagePopupViewController" customModule="QuizApp" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="k90-LZ-OuH" id="WXX-uy-evl"/>
+                <outlet property="imageView" destination="9uf-RR-9e5" id="l7d-sL-nAi"/>
+                <outlet property="scrollView" destination="G0r-Es-ww7" id="zo7-WT-Qpa"/>
+                <outlet property="shadowView" destination="Uma-vC-frZ" id="BNp-A5-TZc"/>
+                <outlet property="view" destination="tug-QZ-jPl" id="a2R-us-9Fl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tug-QZ-jPl">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uma-vC-frZ" customClass="ShadowView" customModule="QuizApp" customModuleProvider="target">
+                    <rect key="frame" x="24" y="204" width="366" height="488"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0r-Es-ww7">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="488"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinh-nen-full-hd-cho-laptop-2" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-RR-9e5">
+                                    <rect key="frame" x="0.0" y="0.0" width="366" height="488"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="9uf-RR-9e5" firstAttribute="height" secondItem="G0r-Es-ww7" secondAttribute="height" id="4KZ-CW-SBf"/>
+                                <constraint firstItem="9uf-RR-9e5" firstAttribute="top" secondItem="G0r-Es-ww7" secondAttribute="top" id="G75-jv-LcY"/>
+                                <constraint firstItem="9uf-RR-9e5" firstAttribute="width" secondItem="G0r-Es-ww7" secondAttribute="width" id="fPX-N5-1DV"/>
+                                <constraint firstAttribute="trailing" secondItem="9uf-RR-9e5" secondAttribute="trailing" id="gS8-XD-OCu"/>
+                                <constraint firstAttribute="bottom" secondItem="9uf-RR-9e5" secondAttribute="bottom" id="qfX-zQ-BzT"/>
+                                <constraint firstItem="9uf-RR-9e5" firstAttribute="leading" secondItem="G0r-Es-ww7" secondAttribute="leading" id="rlm-Mx-cgZ"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="FTs-9P-S9i"/>
+                            </connections>
+                        </scrollView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k90-LZ-OuH">
+                            <rect key="frame" x="320" y="16" width="30" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="closeButtonAction:" destination="-1" eventType="touchUpInside" id="Cag-gl-q8l"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="k90-LZ-OuH" secondAttribute="trailing" constant="16" id="Gbo-Vd-3Nl"/>
+                        <constraint firstAttribute="width" secondItem="Uma-vC-frZ" secondAttribute="height" multiplier="3:4" id="bJG-aU-cqr"/>
+                        <constraint firstAttribute="trailing" secondItem="G0r-Es-ww7" secondAttribute="trailing" id="dlY-de-flg"/>
+                        <constraint firstItem="k90-LZ-OuH" firstAttribute="top" secondItem="Uma-vC-frZ" secondAttribute="top" constant="16" id="ngL-bA-eRz"/>
+                        <constraint firstItem="G0r-Es-ww7" firstAttribute="leading" secondItem="Uma-vC-frZ" secondAttribute="leading" id="oL6-xb-mFt"/>
+                        <constraint firstItem="G0r-Es-ww7" firstAttribute="top" secondItem="Uma-vC-frZ" secondAttribute="top" id="tkj-5w-NVY"/>
+                        <constraint firstAttribute="bottom" secondItem="G0r-Es-ww7" secondAttribute="bottom" id="vKh-7T-wnP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="1Tw-w2-okM"/>
+            <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Uma-vC-frZ" secondAttribute="trailing" constant="24" id="Ms0-AJ-Hq4"/>
+                <constraint firstItem="Uma-vC-frZ" firstAttribute="centerX" secondItem="tug-QZ-jPl" secondAttribute="centerX" id="cr5-Hs-sb7"/>
+                <constraint firstItem="Uma-vC-frZ" firstAttribute="centerY" secondItem="tug-QZ-jPl" secondAttribute="centerY" id="u4S-gv-AHA"/>
+                <constraint firstItem="Uma-vC-frZ" firstAttribute="leading" secondItem="tug-QZ-jPl" secondAttribute="leading" constant="24" id="vnQ-Re-cjY"/>
+            </constraints>
+            <point key="canvasLocation" x="-668" y="8"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hinh-nen-full-hd-cho-laptop-2" width="1920" height="1200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

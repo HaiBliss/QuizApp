@@ -10,6 +10,7 @@ import RxSwift
 
 class ListExamsViewController: UIViewController {
 
+    @IBOutlet weak var randomQuizButton: ShadowButton!
     @IBOutlet weak var tabBarView: TabBarView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var subjectImage: UIImageView!
@@ -33,6 +34,7 @@ class ListExamsViewController: UIViewController {
     }
     
     func setupView() {
+        randomQuizButton.setCorner(.allCorners)
         self.title = "Chọn Đề"
         tableView.register(ExamTableViewCell.nib(), forCellReuseIdentifier: ExamTableViewCell.indentifier)
         tableView.delegate = self

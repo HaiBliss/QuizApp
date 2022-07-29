@@ -76,7 +76,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtI-j1-MhS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezh-jl-Puh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezh-jl-Puh" customClass="ShadowButton" customModule="QuizApp" customModuleProvider="target">
                                                 <rect key="frame" x="36" y="8" width="342" height="44"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
@@ -135,6 +135,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="randomQuizButton" destination="Ezh-jl-Puh" id="Gh0-eJ-Iu5"/>
                         <outlet property="subjectImage" destination="pfI-Up-sXD" id="BCz-br-zBi"/>
                         <outlet property="subjectNameLabel" destination="Dup-PJ-e0S" id="EKH-5D-8h3"/>
                         <outlet property="tabBarView" destination="xd8-sc-Qo3" id="XDk-nb-Cvr"/>

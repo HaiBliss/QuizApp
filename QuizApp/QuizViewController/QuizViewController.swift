@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxDataSources
 import RxCocoa
+import Combine
 
 class QuizViewController: UIViewController {
 
@@ -17,18 +18,31 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var listQuizButton: UIButton!
     @IBOutlet weak var indexQuizLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var examView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
     private var listQuizs: [Quizs.Quiz] = []
     private let vỉewModel = QuizViewModel()
-    let bag = DisposeBag()
+    private let bag = DisposeBag()
     var quizCount = 0
-    var currentPage = 0 {
+    private var currentPage = 0 {
         didSet {
             indexQuizLabel.text = "\(currentPage+1)/\(quizCount)"
         }
     }
+    
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private var time: String = "00:00"
+    private var minutes: Float = 0.0 {
+        didSet {
+            self.time = "\(Int(minutes)):00"
+        }
+    }
+    private var initialTime = 0
+    private var endDate = Date()
+    private var store = [AnyCancellable]()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +53,16 @@ class QuizViewController: UIViewController {
         collectionView.register(QuizCollectionViewCell.nib(), forCellWithReuseIdentifier: QuizCollectionViewCell.indentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        topView.setCorner([.bottomLeft, .bottomRight])
+        bottomView.setCorner([.topLeft, .topRight])
+    }
+    
+    func setupTime() {
+        timer.receive(on: DispatchQueue.main)
+            .sink {[weak self] _ in
+                self?.updateCountdown()
+                self?.timerLabel.text = self?.time
+            }.store(in: &store)
     }
     
     func bindData(examId: Int, timer: Int) {
@@ -50,11 +74,12 @@ class QuizViewController: UIViewController {
                 if let errorCode = quizs.code {
                     switch errorCode {
                     case 200:
-                        self?.timerLabel.text = "\(timer):00"
                         self?.quizCount = quizs.data?.count ?? 0
                         self?.indexQuizLabel.text = "\((self?.currentPage ?? 0) + 1)/\(self?.quizCount ?? 0)"
                         self?.listQuizs = quizs.data ?? []
                         self?.collectionView.reloadData()
+                        self?.start(minutes: Float(timer))
+                        self?.setupTime()
                         break
                     default:
                         self?.alertView(title: "Lỗi", message: quizs.message ?? "")
@@ -82,6 +107,9 @@ class QuizViewController: UIViewController {
         }.disposed(by: bag)
 
     }
+    @IBAction func submitExamAction(_ sender: Any) {
+        submitExam(isConfirm: true)
+    }
     
     @IBAction func nextAction(_ sender: Any) {
         if currentPage == listQuizs.count - 1 {
@@ -101,6 +129,25 @@ class QuizViewController: UIViewController {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
+    
+    @IBAction func lisQuizAction(_ sender: Any) {
+        presentQuizAnswer(listQuizs: listQuizs)?.selectQuiz = {[weak self] quizIndex in
+            if (quizIndex > -1 && quizIndex <= self?.listQuizs.count ?? 0) {
+                self?.currentPage = quizIndex
+                let indexPath = IndexPath(item: quizIndex, section: 0)
+                self?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+            }
+        }
+    }
+    
+    func submitExam(isConfirm: Bool) {
+        if isConfirm {
+            self.confirmView(title: "Bạn có chắc chắn muốn nộp bài?", message: "Dĩ nhiên rồi :)))") {                self.pushBase()
+            }
+        } else {
+            pushBase()
+        }
+    }
 }
 
 extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout {
@@ -110,7 +157,21 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuizCollectionViewCell.indentifier, for: indexPath) as! QuizCollectionViewCell
-        cell.setup(quiz: listQuizs[indexPath.row], quizNumber: indexPath.row + 1)
+        let index = indexPath.row
+        cell.setup(quiz: listQuizs[index], quizNumber: index + 1)
+        cell.showImage = { url in
+            self.presentImageVC(url: url)
+        }
+        
+        cell.selectAnswer = { [weak self] quizNumber in
+            self?.listQuizs[index].isAnswer = "\(quizNumber)"
+            if let answers = self?.listQuizs[index].answers {
+                for i in 0..<answers.count {
+                    self?.listQuizs[index].answers?[i].isSelect = false
+                }
+                self?.listQuizs[index].answers?[quizNumber].isSelect = true
+            }
+        }
         return cell
     }
     
@@ -128,11 +189,37 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension QuizViewController {
     
-    func stringToTimer(timer: String) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
-        var date = dateFormatter.date(from: timer)
-        //var str_from_date = dateFormatter.string(from: date)
+    func start(minutes: Float) {
+        self.initialTime = Int(minutes)
+        self.endDate = Date()
+        self.endDate = Calendar.current.date(byAdding: .minute, value: Int(minutes), to: endDate)!
+    }
+    
+    func reset() {
+        self.minutes = Float(initialTime)
+        self.time = "\(Int(minutes)):00"
+    }
+    
+    func updateCountdown() {
+        // Nhận ngày hiện tại và thực hiện tính toán chênh lệch thời gian
+        let now = Date()
+        let diff = endDate.timeIntervalSince1970 - now.timeIntervalSince1970
+        
+        //Check that the cowndown is not <=0
+        if diff <= 0 {
+            self.time = "0:00"
+            submitExam(isConfirm: false)
+            return
+        }
+        
+        //Turn the time difference calculation into sensible data and format it
+        let date = Date(timeIntervalSince1970: diff)
+        let calendar = Calendar.current
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        
+        self.minutes = Float(minutes)
+        self.time = String(format: "%d:%02d", minutes, seconds)
     }
    
 }

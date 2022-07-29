@@ -23,7 +23,9 @@ struct Quizs: Codable {
         let created_date: String?
         let updated_date: String?
         let del_flg: Int?
-        let answers: [Answer]?
+        var answers: [Answer]?
+        let correct_answer: String?
+        var isAnswer: String?
         
         struct Answer: Codable {
             let id: Int?
@@ -31,6 +33,7 @@ struct Quizs: Codable {
             let value: String?
             let image: String?
             let del_flg: Int?
+            var isSelect: Bool?
         }
     }
 }

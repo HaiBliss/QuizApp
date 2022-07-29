@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E26A9682893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */; };
+		1E26A9692893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */; };
+		1E26A96A2893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */; };
 		1E3D31A52886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */; };
 		1E3D31A62886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */; };
 		1E3D31A72886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */; };
@@ -153,12 +156,24 @@
 		1E8D498A28853F2400396DF6 /* ExamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D498628853F2400396DF6 /* ExamTableViewCell.xib */; };
 		1E8D498B28853F2400396DF6 /* ExamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D498628853F2400396DF6 /* ExamTableViewCell.xib */; };
 		1E8D498C28853F2400396DF6 /* ExamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8D498628853F2400396DF6 /* ExamTableViewCell.xib */; };
-		1E97A7DB288E7C8D006D0FD6 /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97A7D9288E7C8D006D0FD6 /* ImagePopupViewController.swift */; };
-		1E97A7DC288E7C8D006D0FD6 /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97A7D9288E7C8D006D0FD6 /* ImagePopupViewController.swift */; };
-		1E97A7DD288E7C8D006D0FD6 /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97A7D9288E7C8D006D0FD6 /* ImagePopupViewController.swift */; };
-		1E97A7DE288E7C8D006D0FD6 /* ImagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E97A7DA288E7C8D006D0FD6 /* ImagePopupViewController.xib */; };
-		1E97A7DF288E7C8D006D0FD6 /* ImagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E97A7DA288E7C8D006D0FD6 /* ImagePopupViewController.xib */; };
-		1E97A7E0288E7C8D006D0FD6 /* ImagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E97A7DA288E7C8D006D0FD6 /* ImagePopupViewController.xib */; };
+		1E9465C42893C298005D05A2 /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465C02893C298005D05A2 /* ImagePopupViewController.swift */; };
+		1E9465C52893C298005D05A2 /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465C02893C298005D05A2 /* ImagePopupViewController.swift */; };
+		1E9465C62893C298005D05A2 /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465C02893C298005D05A2 /* ImagePopupViewController.swift */; };
+		1E9465C72893C298005D05A2 /* ImagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465C12893C298005D05A2 /* ImagePopupViewController.xib */; };
+		1E9465C82893C298005D05A2 /* ImagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465C12893C298005D05A2 /* ImagePopupViewController.xib */; };
+		1E9465C92893C298005D05A2 /* ImagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465C12893C298005D05A2 /* ImagePopupViewController.xib */; };
+		1E9465D32893C2F3005D05A2 /* PopupImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465D12893C2F3005D05A2 /* PopupImageViewController.storyboard */; };
+		1E9465D42893C2F3005D05A2 /* PopupImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465D12893C2F3005D05A2 /* PopupImageViewController.storyboard */; };
+		1E9465D52893C2F3005D05A2 /* PopupImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465D12893C2F3005D05A2 /* PopupImageViewController.storyboard */; };
+		1E9465D62893C2F3005D05A2 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465D22893C2F3005D05A2 /* PopupImageViewController.swift */; };
+		1E9465D72893C2F3005D05A2 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465D22893C2F3005D05A2 /* PopupImageViewController.swift */; };
+		1E9465D82893C2F3005D05A2 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465D22893C2F3005D05A2 /* PopupImageViewController.swift */; };
+		1E9465E32893DB28005D05A2 /* QuizAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465E22893DB28005D05A2 /* QuizAnswerViewController.swift */; };
+		1E9465E42893DB28005D05A2 /* QuizAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465E22893DB28005D05A2 /* QuizAnswerViewController.swift */; };
+		1E9465E52893DB28005D05A2 /* QuizAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9465E22893DB28005D05A2 /* QuizAnswerViewController.swift */; };
+		1E9465E72893DB30005D05A2 /* QuizAnswerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465E62893DB30005D05A2 /* QuizAnswerViewController.storyboard */; };
+		1E9465E82893DB30005D05A2 /* QuizAnswerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465E62893DB30005D05A2 /* QuizAnswerViewController.storyboard */; };
+		1E9465E92893DB30005D05A2 /* QuizAnswerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9465E62893DB30005D05A2 /* QuizAnswerViewController.storyboard */; };
 		1E980391286A9BB8000C032B /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E980390286A9BB8000C032B /* ProjectManager.swift */; };
 		1E980392286A9BB8000C032B /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E980390286A9BB8000C032B /* ProjectManager.swift */; };
 		1E980393286A9BB8000C032B /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E980390286A9BB8000C032B /* ProjectManager.swift */; };
@@ -217,6 +232,7 @@
 /* Begin PBXFileReference section */
 		09DAC079AA7784A83F511BF9 /* Pods-QuizApp-QuizAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp-QuizAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuizApp-QuizAppUITests/Pods-QuizApp-QuizAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1532F080411E084A30FA7302 /* Pods_QuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubjectsViewController.swift; sourceTree = "<group>"; };
 		1E3D31A82886A6360054F6F1 /* ListSubjectsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListSubjectsViewController.storyboard; sourceTree = "<group>"; };
 		1E3D31AC2886B8930054F6F1 /* ListSubjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubjectsViewModel.swift; sourceTree = "<group>"; };
@@ -271,8 +287,12 @@
 		1E8D4980288537E200396DF6 /* ListExamsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListExamsViewController.storyboard; sourceTree = "<group>"; };
 		1E8D498528853F2400396DF6 /* ExamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableViewCell.swift; sourceTree = "<group>"; };
 		1E8D498628853F2400396DF6 /* ExamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTableViewCell.xib; sourceTree = "<group>"; };
-		1E97A7D9288E7C8D006D0FD6 /* ImagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopupViewController.swift; sourceTree = "<group>"; };
-		1E97A7DA288E7C8D006D0FD6 /* ImagePopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePopupViewController.xib; sourceTree = "<group>"; };
+		1E9465C02893C298005D05A2 /* ImagePopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePopupViewController.swift; sourceTree = "<group>"; };
+		1E9465C12893C298005D05A2 /* ImagePopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePopupViewController.xib; sourceTree = "<group>"; };
+		1E9465D12893C2F3005D05A2 /* PopupImageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupImageViewController.storyboard; sourceTree = "<group>"; };
+		1E9465D22893C2F3005D05A2 /* PopupImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupImageViewController.swift; sourceTree = "<group>"; };
+		1E9465E22893DB28005D05A2 /* QuizAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerViewController.swift; sourceTree = "<group>"; };
+		1E9465E62893DB30005D05A2 /* QuizAnswerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizAnswerViewController.storyboard; sourceTree = "<group>"; };
 		1E980390286A9BB8000C032B /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 		1E9803C2286AD654000C032B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		1E9803C7286B29E9000C032B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +355,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E26A9662893E1C200DE211F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		1E3D31A32886A5FE0054F6F1 /* ListSubjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +395,8 @@
 		1E4F4F54288E437400A72642 /* QuizViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1E97A7D8288E7C47006D0FD6 /* ImagePopup */,
+				1E9465D02893C2F3005D05A2 /* ImagePopup */,
+				1E9465BF2893C298005D05A2 /* ImagePopup2 */,
 				1E4F4F5D288E58FD00A72642 /* QuizCell */,
 				1E4F4F55288E439500A72642 /* QuizViewController.swift */,
 				1E4F4F59288E43A100A72642 /* QuizViewController.storyboard */,
@@ -552,13 +581,32 @@
 			path = ExamTableCell;
 			sourceTree = "<group>";
 		};
-		1E97A7D8288E7C47006D0FD6 /* ImagePopup */ = {
+		1E9465BF2893C298005D05A2 /* ImagePopup2 */ = {
 			isa = PBXGroup;
 			children = (
-				1E97A7D9288E7C8D006D0FD6 /* ImagePopupViewController.swift */,
-				1E97A7DA288E7C8D006D0FD6 /* ImagePopupViewController.xib */,
+				1E9465C02893C298005D05A2 /* ImagePopupViewController.swift */,
+				1E9465C12893C298005D05A2 /* ImagePopupViewController.xib */,
+			);
+			path = ImagePopup2;
+			sourceTree = "<group>";
+		};
+		1E9465D02893C2F3005D05A2 /* ImagePopup */ = {
+			isa = PBXGroup;
+			children = (
+				1E9465D12893C2F3005D05A2 /* PopupImageViewController.storyboard */,
+				1E9465D22893C2F3005D05A2 /* PopupImageViewController.swift */,
 			);
 			path = ImagePopup;
+			sourceTree = "<group>";
+		};
+		1E9465E12893DAFC005D05A2 /* QuizAnswerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E26A9662893E1C200DE211F /* Cell */,
+				1E9465E22893DB28005D05A2 /* QuizAnswerViewController.swift */,
+				1E9465E62893DB30005D05A2 /* QuizAnswerViewController.storyboard */,
+			);
+			path = QuizAnswerViewController;
 			sourceTree = "<group>";
 		};
 		1E98039E286AA76B000C032B /* Resources */ = {
@@ -606,6 +654,7 @@
 		1EA71A332854FD7F004422A9 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				1E9465E12893DAFC005D05A2 /* QuizAnswerViewController */,
 				1E4F4F54288E437400A72642 /* QuizViewController */,
 				1E3D31B9288808ED0054F6F1 /* FilterViewController */,
 				1E3D31A32886A5FE0054F6F1 /* ListSubjects */,
@@ -806,16 +855,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E8D498A28853F2400396DF6 /* ExamTableViewCell.xib in Resources */,
+				1E9465E72893DB30005D05A2 /* QuizAnswerViewController.storyboard in Resources */,
 				1E85B64F286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E3D31A92886A6360054F6F1 /* ListSubjectsViewController.storyboard in Resources */,
 				1EA71A412854FD86004422A9 /* LaunchScreen.storyboard in Resources */,
 				1EA71A6828551ACC004422A9 /* LoginViewController.storyboard in Resources */,
 				1E85B63E286B5EC400767686 /* TabBarView.xib in Resources */,
-				1E97A7DE288E7C8D006D0FD6 /* ImagePopupViewController.xib in Resources */,
 				1E8D4981288537E200396DF6 /* ListExamsViewController.storyboard in Resources */,
 				1E9803CC286B29F1000C032B /* HomeViewController.storyboard in Resources */,
+				1E9465D32893C2F3005D05A2 /* PopupImageViewController.storyboard in Resources */,
 				1E3D31BF2888093C0054F6F1 /* FilterViewController.xib in Resources */,
 				1E85B658286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
+				1E9465C72893C298005D05A2 /* ImagePopupViewController.xib in Resources */,
 				1E85B636286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
 				1E4F4F63288E592200A72642 /* QuizCollectionViewCell.xib in Resources */,
 				1E4F4F5A288E43A100A72642 /* QuizViewController.storyboard in Resources */,
@@ -839,19 +890,21 @@
 				1E8D498B28853F2400396DF6 /* ExamTableViewCell.xib in Resources */,
 				1E8D496D288161BB00396DF6 /* SubjectCollectionReusableView.xib in Resources */,
 				1E3D31C928883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */,
+				1E9465D42893C2F3005D05A2 /* PopupImageViewController.storyboard in Resources */,
 				1E8D4950287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1E85B650286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E8D4982288537E200396DF6 /* ListExamsViewController.storyboard in Resources */,
 				1E85B63F286B5EC400767686 /* TabBarView.xib in Resources */,
 				1E58E573286E997B006ECBFF /* SideMenuCell.xib in Resources */,
 				1E3D31AA2886A6360054F6F1 /* ListSubjectsViewController.storyboard in Resources */,
+				1E9465C82893C298005D05A2 /* ImagePopupViewController.xib in Resources */,
 				1E8D4959287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
 				1E4F4F64288E592200A72642 /* QuizCollectionViewCell.xib in Resources */,
+				1E9465E82893DB30005D05A2 /* QuizAnswerViewController.storyboard in Resources */,
 				1E4F4F5B288E43A100A72642 /* QuizViewController.storyboard in Resources */,
 				1E3D31C02888093C0054F6F1 /* FilterViewController.xib in Resources */,
 				1E58E55D286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E85B659286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
-				1E97A7DF288E7C8D006D0FD6 /* ImagePopupViewController.xib in Resources */,
 				1E85B637286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
 				1E9803CD286B29F1000C032B /* HomeViewController.storyboard in Resources */,
 			);
@@ -865,19 +918,21 @@
 				1E8D498C28853F2400396DF6 /* ExamTableViewCell.xib in Resources */,
 				1E8D496E288161BB00396DF6 /* SubjectCollectionReusableView.xib in Resources */,
 				1E3D31CA28883B380054F6F1 /* DepartmentTableViewCell.xib in Resources */,
+				1E9465D52893C2F3005D05A2 /* PopupImageViewController.storyboard in Resources */,
 				1E8D4951287FCD2100396DF6 /* SlidesCollectionViewCell.xib in Resources */,
 				1E85B651286BF4B700767686 /* HistoryViewController.storyboard in Resources */,
 				1E8D4983288537E200396DF6 /* ListExamsViewController.storyboard in Resources */,
 				1E85B640286B5EC400767686 /* TabBarView.xib in Resources */,
 				1E58E574286E997B006ECBFF /* SideMenuCell.xib in Resources */,
 				1E3D31AB2886A6360054F6F1 /* ListSubjectsViewController.storyboard in Resources */,
+				1E9465C92893C298005D05A2 /* ImagePopupViewController.xib in Resources */,
 				1E8D495A287FF4C100396DF6 /* SubjectsCollectionViewCell.xib in Resources */,
 				1E4F4F65288E592200A72642 /* QuizCollectionViewCell.xib in Resources */,
+				1E9465E92893DB30005D05A2 /* QuizAnswerViewController.storyboard in Resources */,
 				1E4F4F5C288E43A100A72642 /* QuizViewController.storyboard in Resources */,
 				1E3D31C12888093C0054F6F1 /* FilterViewController.xib in Resources */,
 				1E58E55E286E97E2006ECBFF /* BaseViewController.storyboard in Resources */,
 				1E85B65A286BF5D000767686 /* ExamUploadViewController.storyboard in Resources */,
-				1E97A7E0288E7C8D006D0FD6 /* ImagePopupViewController.xib in Resources */,
 				1E85B638286B4EAD00767686 /* UserInfoViewController.storyboard in Resources */,
 				1E9803CE286B29F1000C032B /* HomeViewController.storyboard in Resources */,
 			);
@@ -1018,6 +1073,8 @@
 				1EA71A6628551ABC004422A9 /* LoginViewController.swift in Sources */,
 				1E58E56A286E994B006ECBFF /* SideMenuModel.swift in Sources */,
 				1EA71A392854FD7F004422A9 /* ViewController.swift in Sources */,
+				1E26A9682893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */,
+				1E9465E32893DB28005D05A2 /* QuizAnswerViewController.swift in Sources */,
 				1E892C052891C7A1005A61FA /* StringExtension.swift in Sources */,
 				1EA71A6B28551F89004422A9 /* GradientView.swift in Sources */,
 				1E85B64B286BF4AD00767686 /* HistoryViewController.swift in Sources */,
@@ -1025,7 +1082,6 @@
 				1E58E56F286E997B006ECBFF /* SideMenuCell.swift in Sources */,
 				1E85B632286B4EA600767686 /* UserInfoViewController.swift in Sources */,
 				1E6C3C132858467200F0838A /* LoginAPI.swift in Sources */,
-				1E97A7DB288E7C8D006D0FD6 /* ImagePopupViewController.swift in Sources */,
 				1E3D31B528872F030054F6F1 /* ShadowView.swift in Sources */,
 				1E9803C8286B29E9000C032B /* HomeViewController.swift in Sources */,
 				1E892C0F289294EC005A61FA /* QuizAPI.swift in Sources */,
@@ -1045,6 +1101,7 @@
 				1E8D4978288171D000396DF6 /* DepartmentAPI.swift in Sources */,
 				1E892C0B28928B65005A61FA /* ApiError.swift in Sources */,
 				1E85B63A286B5EB100767686 /* TabBarView.swift in Sources */,
+				1E9465C42893C298005D05A2 /* ImagePopupViewController.swift in Sources */,
 				1E58E558286E97D2006ECBFF /* BaseViewController.swift in Sources */,
 				1E6C3C0C28582B1D00F0838A /* RepositoriesNetworking.swift in Sources */,
 				1EAA9720288A558A00401E88 /* ListExamsViewModel.swift in Sources */,
@@ -1064,6 +1121,7 @@
 				1E892C1D2892E1C1005A61FA /* QuizViewModel.swift in Sources */,
 				1E6C3C0E28582E6000F0838A /* BaseAPI.swift in Sources */,
 				1E6C3C112858453E00F0838A /* User.swift in Sources */,
+				1E9465D62893C2F3005D05A2 /* PopupImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,14 +1141,17 @@
 				1E85B655286BF5C800767686 /* ExamUploadViewController.swift in Sources */,
 				1E3D31A62886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */,
 				1E9803C9286B29E9000C032B /* HomeViewController.swift in Sources */,
+				1E9465D72893C2F3005D05A2 /* PopupImageViewController.swift in Sources */,
 				1E892C10289294EC005A61FA /* QuizAPI.swift in Sources */,
 				1E58E563286E98CF006ECBFF /* SideMenuViewController.swift in Sources */,
 				1E85B633286B4EA600767686 /* UserInfoViewController.swift in Sources */,
 				1E8D496A288161BB00396DF6 /* SubjectCollectionReusableView.swift in Sources */,
 				1E8D4979288171D000396DF6 /* DepartmentAPI.swift in Sources */,
 				1E8D4956287FF4C100396DF6 /* SubjectsCollectionViewCell.swift in Sources */,
-				1E97A7DC288E7C8D006D0FD6 /* ImagePopupViewController.swift in Sources */,
 				1E3D31B628872F030054F6F1 /* ShadowView.swift in Sources */,
+				1E26A9692893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */,
+				1E9465C52893C298005D05A2 /* ImagePopupViewController.swift in Sources */,
+				1E9465E42893DB28005D05A2 /* QuizAnswerViewController.swift in Sources */,
 				1E8D497528816CF900396DF6 /* Departments.swift in Sources */,
 				1E58E559286E97D2006ECBFF /* BaseViewController.swift in Sources */,
 				1E4F4F61288E592200A72642 /* QuizCollectionViewCell.swift in Sources */,
@@ -1123,13 +1184,15 @@
 				1E58E55A286E97D2006ECBFF /* BaseViewController.swift in Sources */,
 				1E4F4F62288E592200A72642 /* QuizCollectionViewCell.swift in Sources */,
 				1E892C11289294EC005A61FA /* QuizAPI.swift in Sources */,
+				1E26A96A2893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */,
 				1E85B656286BF5C800767686 /* ExamUploadViewController.swift in Sources */,
+				1E9465E52893DB28005D05A2 /* QuizAnswerViewController.swift in Sources */,
 				1E8D498928853F2400396DF6 /* ExamTableViewCell.swift in Sources */,
 				1E8D496B288161BB00396DF6 /* SubjectCollectionReusableView.swift in Sources */,
 				1E58E564286E98CF006ECBFF /* SideMenuViewController.swift in Sources */,
+				1E9465D82893C2F3005D05A2 /* PopupImageViewController.swift in Sources */,
 				1E3D31B728872F030054F6F1 /* ShadowView.swift in Sources */,
 				1E85B63C286B5EB100767686 /* TabBarView.swift in Sources */,
-				1E97A7DD288E7C8D006D0FD6 /* ImagePopupViewController.swift in Sources */,
 				1E980393286A9BB8000C032B /* ProjectManager.swift in Sources */,
 				1E85B634286B4EA600767686 /* UserInfoViewController.swift in Sources */,
 				1E8D497F288537D600396DF6 /* ListExamsViewController.swift in Sources */,
@@ -1141,6 +1204,7 @@
 				1E8D494E287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
 				1E3D31C728883B380054F6F1 /* DepartmentTableViewCell.swift in Sources */,
 				1E3D31AF2886B8930054F6F1 /* ListSubjectsViewModel.swift in Sources */,
+				1E9465C62893C298005D05A2 /* ImagePopupViewController.swift in Sources */,
 				1E85B64D286BF4AD00767686 /* HistoryViewController.swift in Sources */,
 				1EAA9726288A578500401E88 /* Page.swift in Sources */,
 				1E892C0D28928B65005A61FA /* ApiError.swift in Sources */,

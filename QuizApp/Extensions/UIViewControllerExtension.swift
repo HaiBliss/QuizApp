@@ -9,6 +9,13 @@ import Foundation
 import  UIKit
 
 extension UIViewController {
+    func pushBase() {
+        let storyboard = UIStoryboard(name: "BaseViewController", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "BaseViewController")
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
+    }
+    
     func pushHome() {
         guard let vc = R.storyboard.homeViewController.homeViewController() else {
             return
@@ -57,10 +64,24 @@ extension UIViewController {
         self.present(vc, animated: true)
     }
     
-    func presentImageVC() {
-        let vc = UIViewController(nibName: "ImagePopupViewController", bundle: nil)
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+    func presentImageVC(url: String) {
+//        guard let vc = R.storyboard.popupImageViewController.popupImageViewController() else {
+//            return
+//        }
+        
+        let vc = ImagePopupViewController(nibName: "ImagePopupViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        vc.urlImage = url
+        self.present(vc, animated: false)
+    }
+    
+    func presentQuizAnswer(listQuizs: [Quizs.Quiz]) -> QuizAnswerViewController?{
+        let vc = R.storyboard.quizAnswerViewController.quizAnswerViewController()!
+        
+        vc.listQuizs = listQuizs
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
+        return vc
     }
     
     func pushListSubject(departmentId: Int) {
@@ -121,6 +142,17 @@ extension UIViewController {
     func alertView(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func confirmView(title: String, message: String, onOK: (() -> Void)? = nil){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in
+            onOK?()
+        }
+        let cancelAction = UIAlertAction(title: "Huỷ", style: .default, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
 }

@@ -25,9 +25,9 @@ class QuizAnswerCollectionViewCell: UICollectionViewCell {
     func setupView(quiz: Quizs.Quiz, quizNumber: Int) {
         quizAnswerButton.setTitle("\(quizNumber)", for: .normal)
         if let isAnswer = quiz.isAnswer, isAnswer != "" {
-            quizAnswerView.borderColor = .green
-            quizAnswerView.backgroundColor = .blue
-            quizAnswerButton.setTitleColor(.white, for: .normal)
+            quizAnswerView.borderColor = R.color.f94FB()!
+//            quizAnswerView.backgroundColor = R.color.e54C8()
+            quizAnswerButton.setTitleColor(R.color.f94FB(), for: .normal)
         } else {
             quizAnswerView.borderColor = .gray
             quizAnswerView.backgroundColor = .white

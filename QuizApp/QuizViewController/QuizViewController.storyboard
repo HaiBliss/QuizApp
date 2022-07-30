@@ -41,7 +41,7 @@
                                     <constraint firstItem="ujp-by-bnW" firstAttribute="leading" secondItem="4uN-cZ-gut" secondAttribute="leading" id="yqc-MN-YNG"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fF-O4-3R5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fF-O4-3R5" customClass="ShadowView" customModule="QuizApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                                 <color key="backgroundColor" name="8F94FB"/>
                             </view>

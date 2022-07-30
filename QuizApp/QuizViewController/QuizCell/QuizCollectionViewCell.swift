@@ -75,10 +75,12 @@ class QuizCollectionViewCell: UICollectionViewCell {
        
         if let answers = quiz.answers {
             for i in 0...answers.count - 1{
+                answersView[i]?.borderColor = R.color.f94FB()!
                 if answers[i].isSelect ?? false {
-                    answersView[i]?.borderColor = .green
+                    answersView[i]?.backgroundColor = R.color.f94FB()
+                    answersLabel[i]?.textColor = .white
                 } else {
-                    answersView[i]?.borderColor = .black
+                    answersLabel[i]?.textColor = .black
                 }
                 answersLabel[i]?.text = "\(answersDict[i] ?? "")\(answers[i].value ?? "")"
                 if let image = answers[i].image , image != "" {
@@ -111,10 +113,13 @@ class QuizCollectionViewCell: UICollectionViewCell {
     
     func selectQuiz(quizTag: Int) {
         let answersView = [answerAView, answerBView, answerCView, answerDView]
+        let answersLabel = [answerALabel, answerBLabel, answerCLabel, answerDLabel]
         for i in 0...3 {
-            answersView[i]?.borderColor = .black
+            answersView[i]?.backgroundColor = .white
+            answersLabel[i]?.textColor = .black
         }
-        answersView[quizTag]?.borderColor = .blue
+        answersView[quizTag]?.backgroundColor = R.color.f94FB()
+        answersLabel[quizTag]?.textColor = .white
         selectAnswer(quizTag)
     }
 

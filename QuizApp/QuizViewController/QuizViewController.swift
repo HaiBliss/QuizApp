@@ -19,8 +19,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var indexQuizLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var topView: ShadowView!
+    @IBOutlet weak var bottomView: ShadowView!
     @IBOutlet weak var examView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
     private var listQuizs: [Quizs.Quiz] = []

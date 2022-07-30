@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1Z-mV-2uI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1011.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1009.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jps-HS-JGN">
                                                 <rect key="frame" x="24" y="16" width="366" height="154"/>
@@ -43,30 +43,30 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-TK-lmG">
-                                                <rect key="frame" x="24" y="194" width="366" height="777.5"/>
+                                                <rect key="frame" x="24" y="194" width="366" height="775.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vw-lrq">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="203.5"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-vv-yVN">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-vv-yVN">
                                                                 <rect key="frame" x="8" y="8" width="350" height="187.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-fP-1KK">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="127.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="123.5"/>
                                                                         <string key="text">A. Phần mềm được đặt vào bên trong các mạch điện tử trong quá trình sản xuất. Hihi
-Phần mềm hệ thốngPhần mềm hệ thống</string>
+Phần mềm hệ thống</string>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-Nj-IO2">
-                                                                        <rect key="frame" x="0.0" y="127.5" width="350" height="60"/>
+                                                                        <rect key="frame" x="87.5" y="127.5" width="175" height="60"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-9Z-AaQ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFk-et-bzE">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="buttonImagection:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lLe-Iq-G8M"/>
@@ -86,18 +86,17 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                             <constraint firstAttribute="bottom" secondItem="AFk-et-bzE" secondAttribute="bottom" id="aE9-AY-i3h"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                <real key="value" value="1"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedRadius">
-                                                                                <real key="value" value="2"/>
-                                                                            </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="KfN-Nj-IO2" firstAttribute="width" secondItem="Xp9-vv-yVN" secondAttribute="width" multiplier="1:2" id="5h8-ur-2TE"/>
+                                                                    <constraint firstItem="b9R-fP-1KK" firstAttribute="leading" secondItem="Xp9-vv-yVN" secondAttribute="leading" id="ODW-7f-co0"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="b9R-fP-1KK" secondAttribute="trailing" id="tTh-QZ-UOs"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,25 +119,25 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rid-ph-llv">
-                                                        <rect key="frame" x="0.0" y="219.5" width="366" height="138"/>
+                                                        <rect key="frame" x="0.0" y="219.5" width="366" height="136"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-av-kiB">
-                                                                <rect key="frame" x="8" y="8" width="350" height="122"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-av-kiB">
+                                                                <rect key="frame" x="8" y="8" width="350" height="120"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B. Hệ điều hành" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xin-7K-4a6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="62"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Q-63-B7L">
-                                                                        <rect key="frame" x="0.0" y="62" width="350" height="60"/>
+                                                                        <rect key="frame" x="87.5" y="60" width="175" height="60"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yrR-lv-OGW">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                             </imageView>
                                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-rN-5ga">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="buttonImagection:" destination="gTV-IL-0wX" eventType="touchUpInside" id="yhK-BH-KHC"/>
@@ -158,18 +157,17 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                             <constraint firstAttribute="trailing" secondItem="fV1-rN-5ga" secondAttribute="trailing" id="vnt-3g-wRz"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedRadius">
-                                                                                <real key="value" value="2"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                <real key="value" value="1"/>
-                                                                            </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="Xin-7K-4a6" secondAttribute="trailing" id="DjL-OY-hFU"/>
+                                                                    <constraint firstItem="Xin-7K-4a6" firstAttribute="leading" secondItem="TxA-av-kiB" secondAttribute="leading" id="ZBH-jY-aAB"/>
+                                                                    <constraint firstItem="Q2Q-63-B7L" firstAttribute="width" secondItem="TxA-av-kiB" secondAttribute="width" multiplier="1:2" id="fnm-Qj-VxQ"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,25 +190,25 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-cN-a7D">
-                                                        <rect key="frame" x="0.0" y="373.5" width="366" height="190"/>
+                                                        <rect key="frame" x="0.0" y="371.5" width="366" height="190"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="y2W-Dg-oJP">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="y2W-Dg-oJP">
                                                                 <rect key="frame" x="8" y="8" width="350" height="174"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C. Các Driver cho các thiết bị phần cứng và các mạch hỗ trợ phối ghép vào ra cho máy tính." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-C8-2wp">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="346.5" height="114"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="110"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-my-SKm">
-                                                                        <rect key="frame" x="0.0" y="114" width="350" height="60"/>
+                                                                        <rect key="frame" x="87.5" y="114" width="175" height="60"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JuE-nM-j7P">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                             </imageView>
                                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee6-8C-Acy">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="buttonImagection:" destination="gTV-IL-0wX" eventType="touchUpInside" id="BrY-bG-WgE"/>
@@ -230,18 +228,17 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                             <constraint firstAttribute="bottom" secondItem="JuE-nM-j7P" secondAttribute="bottom" id="zwd-F8-91A"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedRadius">
-                                                                                <real key="value" value="2"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                <real key="value" value="1"/>
-                                                                            </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="fKb-C8-2wp" firstAttribute="leading" secondItem="y2W-Dg-oJP" secondAttribute="leading" id="bbS-8s-Pya"/>
+                                                                    <constraint firstItem="w5i-my-SKm" firstAttribute="width" secondItem="y2W-Dg-oJP" secondAttribute="width" multiplier="1:2" id="gVT-Ii-f4x"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="fKb-C8-2wp" secondAttribute="trailing" id="h4O-VM-OLG"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,25 +261,25 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySa-JU-kaf">
-                                                        <rect key="frame" x="0.0" y="579.5" width="366" height="198"/>
+                                                        <rect key="frame" x="0.0" y="577.5" width="366" height="198"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5YB-Q5-LqM">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5YB-Q5-LqM">
                                                                 <rect key="frame" x="8" y="8" width="350" height="182"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D. Phần mềm hệ thống" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-pw-SoG">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="122"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="118"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DT-Bx-K8T">
-                                                                        <rect key="frame" x="0.0" y="122" width="350" height="60"/>
+                                                                        <rect key="frame" x="87.5" y="122" width="175" height="60"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o9A-b2-gsv">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                             </imageView>
                                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-c6-dHK">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <connections>
                                                                                     <action selector="buttonImagection:" destination="gTV-IL-0wX" eventType="touchUpInside" id="oYC-wL-BM1"/>
@@ -302,18 +299,17 @@ Phần mềm hệ thốngPhần mềm hệ thống</string>
                                                                             <constraint firstItem="4UE-c6-dHK" firstAttribute="top" secondItem="2DT-Bx-K8T" secondAttribute="top" id="vgl-hB-h6l"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedRadius">
-                                                                                <real key="value" value="2"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                <real key="value" value="1"/>
-                                                                            </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="8bs-pw-SoG" firstAttribute="leading" secondItem="5YB-Q5-LqM" secondAttribute="leading" id="8eh-72-hNw"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="8bs-pw-SoG" secondAttribute="trailing" id="OAw-kY-zWc"/>
+                                                                    <constraint firstItem="2DT-Bx-K8T" firstAttribute="width" secondItem="5YB-Q5-LqM" secondAttribute="width" multiplier="1:2" id="tuh-9x-3no"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -70,11 +70,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vFt-l8-4yb" firstAttribute="centerY" secondItem="sac-eG-aeV" secondAttribute="centerY" id="6K4-6e-Dql"/>
                                     <constraint firstItem="t23-mh-HWv" firstAttribute="centerY" secondItem="sac-eG-aeV" secondAttribute="centerY" id="6fp-Ao-0cc"/>
                                     <constraint firstItem="t23-mh-HWv" firstAttribute="leading" secondItem="sac-eG-aeV" secondAttribute="leading" constant="24" id="GtH-wL-qNR"/>
                                     <constraint firstItem="cLi-gj-Aan" firstAttribute="centerY" secondItem="sac-eG-aeV" secondAttribute="centerY" id="JGp-7e-VQX"/>
-                                    <constraint firstItem="vFt-l8-4yb" firstAttribute="centerX" secondItem="sac-eG-aeV" secondAttribute="centerX" id="PmB-aO-0tn"/>
                                     <constraint firstAttribute="trailing" secondItem="cLi-gj-Aan" secondAttribute="trailing" constant="24" id="dRj-z9-Jt9"/>
                                     <constraint firstAttribute="height" constant="60" id="lYs-Pd-ngg"/>
                                 </constraints>

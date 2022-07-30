@@ -150,7 +150,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+        if (collectionView == subjectCollectionView) {
+            return UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+        }
+        return UIEdgeInsets()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -179,10 +182,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         self.pushListSubject(departmentId: sender.tag)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == subjectCollectionView {
-            
             let width = (UIScreen.main.bounds.size.width - 60) / 2
             let height = width * (19/17)
             return CGSize(width: width, height: height)

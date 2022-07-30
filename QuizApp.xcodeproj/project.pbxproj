@@ -10,6 +10,9 @@
 		1E26A9682893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */; };
 		1E26A9692893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */; };
 		1E26A96A2893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */; };
+		1E26A96C2895412B00DE211F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A96B2895412B00DE211F /* App.swift */; };
+		1E26A96D2895412B00DE211F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A96B2895412B00DE211F /* App.swift */; };
+		1E26A96E2895412B00DE211F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E26A96B2895412B00DE211F /* App.swift */; };
 		1E3D31A52886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */; };
 		1E3D31A62886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */; };
 		1E3D31A72886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */; };
@@ -231,6 +234,7 @@
 		09DAC079AA7784A83F511BF9 /* Pods-QuizApp-QuizAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp-QuizAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuizApp-QuizAppUITests/Pods-QuizApp-QuizAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1532F080411E084A30FA7302 /* Pods_QuizAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E26A9672893E1DF00DE211F /* QuizAnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E26A96B2895412B00DE211F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		1E3D31A42886A62E0054F6F1 /* ListSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubjectsViewController.swift; sourceTree = "<group>"; };
 		1E3D31A82886A6360054F6F1 /* ListSubjectsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListSubjectsViewController.storyboard; sourceTree = "<group>"; };
 		1E3D31AC2886B8930054F6F1 /* ListSubjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubjectsViewModel.swift; sourceTree = "<group>"; };
@@ -410,13 +414,13 @@
 			path = QuizCell;
 			sourceTree = "<group>";
 		};
-		1E58E556286E978A006ECBFF /* NavigationBaseController */ = {
+		1E58E556286E978A006ECBFF /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1E58E557286E97D2006ECBFF /* BaseViewController.swift */,
 				1E58E55B286E97E2006ECBFF /* BaseViewController.storyboard */,
 			);
-			path = NavigationBaseController;
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		1E58E55F286E98A4006ECBFF /* SideMenu */ = {
@@ -705,12 +709,13 @@
 			isa = PBXGroup;
 			children = (
 				1E58E55F286E98A4006ECBFF /* SideMenu */,
-				1E58E556286E978A006ECBFF /* NavigationBaseController */,
+				1E58E556286E978A006ECBFF /* BaseViewController */,
 				1E85B641286B5F5C00767686 /* TabBar */,
 				1EA71A6A28551F89004422A9 /* GradientView.swift */,
 				1EA71A6C2857A8DF004422A9 /* DesignableUITextField.swift */,
 				1E980390286A9BB8000C032B /* ProjectManager.swift */,
 				1E3D31B428872F030054F6F1 /* ShadowView.swift */,
+				1E26A96B2895412B00DE211F /* App.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1070,6 +1075,7 @@
 				1E892C052891C7A1005A61FA /* StringExtension.swift in Sources */,
 				1EA71A6B28551F89004422A9 /* GradientView.swift in Sources */,
 				1E85B64B286BF4AD00767686 /* HistoryViewController.swift in Sources */,
+				1E26A96C2895412B00DE211F /* App.swift in Sources */,
 				1EA71A6D2857A8DF004422A9 /* DesignableUITextField.swift in Sources */,
 				1E58E56F286E997B006ECBFF /* SideMenuCell.swift in Sources */,
 				1E85B632286B4EA600767686 /* UserInfoViewController.swift in Sources */,
@@ -1134,6 +1140,7 @@
 				1E3D31A62886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */,
 				1E9803C9286B29E9000C032B /* HomeViewController.swift in Sources */,
 				1E9465D72893C2F3005D05A2 /* PopupImageViewController.swift in Sources */,
+				1E26A96D2895412B00DE211F /* App.swift in Sources */,
 				1E892C10289294EC005A61FA /* QuizAPI.swift in Sources */,
 				1E58E563286E98CF006ECBFF /* SideMenuViewController.swift in Sources */,
 				1E85B633286B4EA600767686 /* UserInfoViewController.swift in Sources */,
@@ -1202,6 +1209,7 @@
 				1E892C0D28928B65005A61FA /* ApiError.swift in Sources */,
 				1E892C1F2892E1C1005A61FA /* QuizViewModel.swift in Sources */,
 				1E3D31BE2888093C0054F6F1 /* FilterViewController.swift in Sources */,
+				1E26A96E2895412B00DE211F /* App.swift in Sources */,
 				1E85B648286B63D800767686 /* UIViewExtension.swift in Sources */,
 				1E8D497A288171D000396DF6 /* DepartmentAPI.swift in Sources */,
 				1E9803CA286B29E9000C032B /* HomeViewController.swift in Sources */,

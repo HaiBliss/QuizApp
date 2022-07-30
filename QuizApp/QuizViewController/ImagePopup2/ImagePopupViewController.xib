@@ -28,7 +28,7 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0r-Es-ww7">
                             <rect key="frame" x="0.0" y="0.0" width="366" height="488"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinh-nen-full-hd-cho-laptop-2" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-RR-9e5">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-RR-9e5">
                                     <rect key="frame" x="0.0" y="0.0" width="366" height="488"/>
                                 </imageView>
                             </subviews>
@@ -76,7 +76,6 @@
         </view>
     </objects>
     <resources>
-        <image name="hinh-nen-full-hd-cho-laptop-2" width="1920" height="1200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

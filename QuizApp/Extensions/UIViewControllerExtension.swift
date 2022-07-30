@@ -9,11 +9,60 @@ import Foundation
 import  UIKit
 
 extension UIViewController {
+    
     func pushBase() {
-        let storyboard = UIStoryboard(name: "BaseViewController", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "BaseViewController")
-        controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: true, completion: nil)
+        let window = UIApplication.shared.windows.first
+        window?.rootViewController?.dismiss(animated: false, completion: nil)
+//        let storyboard = UIStoryboard(name: "BaseViewController", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "BaseViewController")
+//        controller.modalPresentationStyle = .fullScreen
+//        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func pushBaseRoot() {
+        let window = UIApplication.shared.windows.first
+        
+        guard let vc = R.storyboard.baseViewController.baseViewController() else {
+            return
+        }
+       
+        let snapShot = window?.snapshotView(afterScreenUpdates: true)
+        if let snapShot = snapShot {
+            vc.view.addSubview(snapShot)
+        }
+        
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+
+        UIView.animate(withDuration: 0.5, animations: {
+            snapShot?.layer.opacity = 0
+            snapShot?.layer.transform = CATransform3DMakeScale(1, 1, 1)
+        }) { finished in
+            snapShot?.removeFromSuperview()
+        }
+    }
+    
+    func pushLoginRoot() {
+        let window = UIApplication.shared.windows.first
+        guard let vc = R.storyboard.loginViewController.loginViewController() else {
+            return
+        }
+        
+        let snapShot = window?.snapshotView(afterScreenUpdates: true)
+        if let snapShot = snapShot {
+            vc.view.addSubview(snapShot)
+            
+        }
+        
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+
+        UIView.animate(withDuration: 0.5, animations: {
+            snapShot?.layer.opacity = 0
+            snapShot?.layer.transform = CATransform3DMakeScale(1, 1, 1)
+        }) { finished in
+            snapShot?.removeFromSuperview()
+        }
     }
     
     func pushHome() {

@@ -111,8 +111,12 @@ class LoginViewController: UIViewController {
 //                        navVC.modalPresentationStyle = .fullScreen
 //                        self?.present(navVC, animated: true)
                         
+//                        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+//                        App.shared.swipeLoginToHome()
+//                        window.rootViewController = loginViewController
+                        self?.pushBaseRoot()
                         
-                        self?.pushBase()
+                        
                         break
                     case 400:
                         self?.alertView(title: "Đăng nhập thất bại", message: loginInfo.message ?? "")

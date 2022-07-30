@@ -40,7 +40,7 @@ class QuizViewController: UIViewController {
             self.time = "\(Int(minutes)):00"
         }
     }
-    private var initialTime = 0
+//    private var initialTime = 0
     private var endDate = Date()
     private var store = [AnyCancellable]()
    
@@ -66,6 +66,7 @@ class QuizViewController: UIViewController {
     }
     
     func bindData(examId: Int, timer: Int) {
+        
         self.loadingView(isRuning: true)
         vỉewModel.getQuizs(page: 1, perPage: 100, examId: examId)
         vỉewModel.quizs.subscribe { [weak self] data in
@@ -74,12 +75,13 @@ class QuizViewController: UIViewController {
                 if let errorCode = quizs.code {
                     switch errorCode {
                     case 200:
+                        self?.timerLabel.text = "\(timer):00"
                         self?.quizCount = quizs.data?.count ?? 0
                         self?.indexQuizLabel.text = "\((self?.currentPage ?? 0) + 1)/\(self?.quizCount ?? 0)"
                         self?.listQuizs = quizs.data ?? []
                         self?.collectionView.reloadData()
-                        self?.start(minutes: Float(timer))
                         self?.setupTime()
+                        self?.start(minutes: Float(timer))
                         break
                     default:
                         self?.alertView(title: "Lỗi", message: quizs.message ?? "")
@@ -142,7 +144,8 @@ class QuizViewController: UIViewController {
     
     func submitExam(isConfirm: Bool) {
         if isConfirm {
-            self.confirmView(title: "Bạn có chắc chắn muốn nộp bài?", message: "Dĩ nhiên rồi :)))") {                self.pushBase()
+            self.confirmView(title: "Bạn có chắc chắn muốn nộp bài?", message: "Dĩ nhiên rồi :)))") {
+                self.pushBase()
             }
         } else {
             pushBase()
@@ -190,15 +193,15 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension QuizViewController {
     
     func start(minutes: Float) {
-        self.initialTime = Int(minutes)
+        let initialTime = Int(minutes)
         self.endDate = Date()
-        self.endDate = Calendar.current.date(byAdding: .minute, value: Int(minutes), to: endDate)!
+        self.endDate = Calendar.current.date(byAdding: .second, value: initialTime * 60 + 1, to: endDate)!
     }
     
-    func reset() {
-        self.minutes = Float(initialTime)
-        self.time = "\(Int(minutes)):00"
-    }
+//    func reset() {
+//        self.minutes = Float(initialTime)
+//        self.time = "\(Int(minutes)):00"
+//    }
     
     func updateCountdown() {
         // Nhận ngày hiện tại và thực hiện tính toán chênh lệch thời gian

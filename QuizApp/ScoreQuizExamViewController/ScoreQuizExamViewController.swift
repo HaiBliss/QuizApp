@@ -28,30 +28,30 @@ class ScoreQuizExamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chartProgressView.backgroundColor = .yellow
+        sum = 150
+        correct = 100
+        
+        setupView(sum: sum, correct: correct)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        sum = 150
-        correct = 75
-        let xPosition = chartProgressView.center.x
-        let yPosition = chartProgressView.center.y
-        let lineWidth = chartProgressView.frame.height / 15
-        let radius = chartProgressView.frame.height * (2/5) - lineWidth
-        let position = CGPoint(x: xPosition, y: yPosition - lineWidth)
-     
-       
-        progressRing = CircularProgressBar(radius: radius, position: position, innerTrackColor: .red, outerTrackColor: .blue, lineWidth: lineWidth)
-        progressRing.countQuiz = CGFloat(sum)
-        progressRing.correctQuiz = CGFloat(correct)
-        progressRing.backgroundColor = UIColor.magenta.cgColor
-        chartProgressView.layer.addSublayer(progressRing)
-        
-        
          timer = Timer.scheduledTimer(timeInterval: 0.015, target: self, selector: #selector(incrementCount), userInfo: nil, repeats: true)
          timer.fire()
 
         chartProgressView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(resetProgressCount)))
+    }
+    
+    func setupView(sum: Int, correct: Int) {
+        let xPosition = chartProgressView.frame.width / 2
+        let yPosition = chartProgressView.frame.height / 2
+        let lineWidth = chartProgressView.frame.height / 15
+        let radius = chartProgressView.frame.height * (2/5) - lineWidth
+        let position = CGPoint(x: xPosition, y: yPosition)
+        progressRing = CircularProgressBar(radius: radius, position: position, innerTrackColor: .red, outerTrackColor: .blue, lineWidth: lineWidth)
+        progressRing.countQuiz = CGFloat(sum)
+        progressRing.correctQuiz = CGFloat(correct)
+        chartProgressView.layer.addSublayer(progressRing)
     }
     
     @IBAction func backActionButton(_ sender: Any) {
@@ -70,7 +70,7 @@ class ScoreQuizExamViewController: UIViewController {
     }
     
     @objc func incrementCount() {
-//        let score = (100.0 / Double(sum)) * Double(correct)
+//      let score = (100.0 / Double(sum)) * Double(correct)
         count += 1
         progressRing.progress = count
         if count >= CGFloat(correct) {

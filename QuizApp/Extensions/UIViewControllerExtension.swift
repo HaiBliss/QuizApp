@@ -10,9 +10,9 @@ import  UIKit
 
 extension UIViewController {
     
-    func pushBase() {
+    func dimissRootVC() {
         let window = UIApplication.shared.windows.first
-        window?.rootViewController?.dismiss(animated: false, completion: nil)
+        window?.rootViewController?.dismiss(animated: true, completion: nil)
 //        let storyboard = UIStoryboard(name: "BaseViewController", bundle: nil)
 //        let controller = storyboard.instantiateViewController(withIdentifier: "BaseViewController")
 //        controller.modalPresentationStyle = .fullScreen
@@ -20,26 +20,26 @@ extension UIViewController {
     }
     
     func pushBaseRoot() {
-        let window = UIApplication.shared.windows.first
+         let window = UIApplication.shared.windows.first
         
         guard let vc = R.storyboard.baseViewController.baseViewController() else {
             return
         }
        
-        let snapShot = window?.snapshotView(afterScreenUpdates: true)
-        if let snapShot = snapShot {
-            vc.view.addSubview(snapShot)
-        }
+//        let snapShot = window?.snapshotView(afterScreenUpdates: true)
+//        if let snapShot = snapShot {
+//            vc.view.addSubview(snapShot)
+//        }
         
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
 
-        UIView.animate(withDuration: 0.5, animations: {
-            snapShot?.layer.opacity = 0
-            snapShot?.layer.transform = CATransform3DMakeScale(1, 1, 1)
-        }) { finished in
-            snapShot?.removeFromSuperview()
-        }
+//        UIView.animate(withDuration: 0.5, animations: {
+//            snapShot?.layer.opacity = 0
+//            snapShot?.layer.transform = CATransform3DMakeScale(1, 1, 1)
+//        }) { finished in
+//            snapShot?.removeFromSuperview()
+//        }
     }
     
     func pushLoginRoot() {
@@ -141,6 +141,14 @@ extension UIViewController {
         self.navigationItem.backButtonTitle = ""
         self.navigationController?.navigationBar.tintColor = R.color.f94FB()
         self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func presentScoreQuiz() {
+        guard let vc = R.storyboard.scoreQuizExamViewController.scoreQuizExamViewController() else {
+            return
+        }
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     func pushTabbar(tab: TabBar) {

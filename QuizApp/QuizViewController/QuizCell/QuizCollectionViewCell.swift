@@ -76,7 +76,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
         if let answers = quiz.answers {
             for i in 0...answers.count - 1{
                 answersView[i]?.borderColor = R.color.f94FB()!
-                if answers[i].isSelect ?? false {
+                if answers[i].is_select ?? false {
                     answersView[i]?.backgroundColor = R.color.f94FB()
                     answersLabel[i]?.textColor = .white
                 } else {

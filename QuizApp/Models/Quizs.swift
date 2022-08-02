@@ -33,7 +33,8 @@ struct Quizs: Codable {
             let value: String?
             let image: String?
             let del_flg: Int?
-            var isSelect: Bool?
+            var is_select: Bool?
+            var is_correct: Bool?
         }
     }
 }

@@ -19,40 +19,32 @@ class BaseAPI<T: TargetType> {
             let parameters = self.buildParams(task: target.task)
             
             print(target.baseURL + target.path)
-            AF.request(target.baseURL + target.path, method: method, parameters: parameters.0, encoding: parameters.1, headers: headers).responseJSON { reponse in
+            AF.request(target.baseURL + target.path,
+                       method: method,
+                       parameters: parameters.0,
+                       encoding: parameters.1,
+                       headers: headers).responseDecodable(of: M.self) { response in
 
-                switch reponse.result {
+                switch response.result {
                 case .success:
-                    guard let statusCode = reponse.response?.statusCode else {
+                    guard let statusCode = response.response?.statusCode else {
                         return
                     }
                     
                     switch statusCode {
                         case 200, 400:
-                            guard let jsonResponse = try? reponse.result.get() else {
-                                print("jsonReponse error")
-                                observer(.failure(ApiError.commonError(code: statusCode, messages: "jsonReponse error")))
+                            guard let responseObj = try? JSONDecoder().decode(M.self, from: response.data ?? Data()) else {
+                                print("responseObj error")
+                                observer(.failure(ApiError.commonError(code: statusCode, messages: "Response could not be decoded")))
                                 return
                             }
-                            
-                           guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {
-                               print("theJSONData error")
-                               observer(.failure(ApiError.commonError(code: statusCode, messages: "theJSONData error")))
-                               return
-                           }
-                
-                           guard let responseObj = try? JSONDecoder().decode(M.self, from: theJSONData) else {
-                               print("responseObj error")
-                               observer(.failure(ApiError.commonError(code: statusCode, messages: "responseObj error")))
-                               return
-                           }
-                           observer(.success(responseObj))
+                            observer(.success(responseObj))
                             break
+                        
                         default:
-                        observer(.failure(ApiError.unknow(code: statusCode)))
+                            observer(.failure(ApiError.unknow(code: statusCode)))
                             break
                     }
-                    break
                     
                 case .failure(let error):
                     if (error as NSError).code == NSURLErrorCancelled {
@@ -61,7 +53,10 @@ class BaseAPI<T: TargetType> {
                     }
     
                     debugPrint("Request error: \(error.localizedDescription)")
-                    observer(.failure(ApiError.networkError))
+                    observer(.failure(ApiError.commonError(
+                        code: error.responseCode ?? -1,
+                        messages: "\(error.localizedDescription)"
+                        )))
                     return
                 }
             }

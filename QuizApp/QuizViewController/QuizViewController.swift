@@ -145,10 +145,14 @@ class QuizViewController: UIViewController {
     func submitExam(isConfirm: Bool) {
         if isConfirm {
             self.confirmView(title: "Bạn có chắc chắn muốn nộp bài?", message: "Dĩ nhiên rồi :)))") {
-                self.pushBase()
+                //dimissRootVC()
+                self.timer.upstream.connect().cancel()
+                self.presentScoreQuiz()
             }
         } else {
-            pushBase()
+            timer.upstream.connect().cancel()
+            //dimissRootVC()
+            presentScoreQuiz()
         }
     }
 }
@@ -170,9 +174,9 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
             self?.listQuizs[index].isAnswer = "\(quizNumber)"
             if let answers = self?.listQuizs[index].answers {
                 for i in 0..<answers.count {
-                    self?.listQuizs[index].answers?[i].isSelect = false
+                    self?.listQuizs[index].answers?[i].is_select = false
                 }
-                self?.listQuizs[index].answers?[quizNumber].isSelect = true
+                self?.listQuizs[index].answers?[quizNumber].is_select = true
             }
         }
         return cell

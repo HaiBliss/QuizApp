@@ -6,19 +6,25 @@
 //
 
 import UIKit
+import Combine
 
 class QuizAnswerViewController: UIViewController {
 
     @IBOutlet weak var tooltipView: UIView!
     @IBOutlet weak var shadowView: ShadowView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var timeDismiss: Int = 0
+    var timer = Timer()
     var listQuizs: [Quizs.Quiz] = []
     var selectQuiz: (_ quizIndex: Int) -> () = {quizIndex in }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        timer = Timer.scheduledTimer(withTimeInterval: Double(timeDismiss), repeats: false) { [weak self] _ in
+            self?.dismiss(animated: false)
+            self?.timer.invalidate()
+        }
     }
     
     func setupView() {
@@ -34,10 +40,12 @@ class QuizAnswerViewController: UIViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
+        timer.invalidate()
         dismiss(animated: false)
     }
     
     @objc func closeViewAction(sender: Bool) {
+        timer.invalidate()
         dismiss(animated: false)
     }
     

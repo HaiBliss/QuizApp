@@ -27,6 +27,7 @@ class QuizViewController: UIViewController {
     private let vỉewModel = QuizViewModel()
     private let bag = DisposeBag()
     var quizCount = 0
+    private var timeDismiss: Int = 0
     private var currentPage = 0 {
         didSet {
             indexQuizLabel.text = "\(currentPage+1)/\(quizCount)"
@@ -46,6 +47,7 @@ class QuizViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         setupView()
     }
     
@@ -133,11 +135,13 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func lisQuizAction(_ sender: Any) {
-        presentQuizAnswer(listQuizs: listQuizs)?.selectQuiz = {[weak self] quizIndex in
-            if (quizIndex > -1 && quizIndex <= self?.listQuizs.count ?? 0) {
-                self?.currentPage = quizIndex
-                let indexPath = IndexPath(item: quizIndex, section: 0)
-                self?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        if timeDismiss > 1 {
+            presentQuizAnswer(listQuizs: listQuizs, timeDismiss: timeDismiss)?.selectQuiz = {[weak self] quizIndex in
+                if (quizIndex > -1 && quizIndex <= self?.listQuizs.count ?? 0) {
+                    self?.currentPage = quizIndex
+                    let indexPath = IndexPath(item: quizIndex, section: 0)
+                    self?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+                }
             }
         }
     }
@@ -224,7 +228,7 @@ extension QuizViewController {
         let calendar = Calendar.current
         let minutes = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
-        
+        self.timeDismiss = minutes * 60 + seconds
         self.minutes = Float(minutes)
         self.time = String(format: "%d:%02d", minutes, seconds)
     }

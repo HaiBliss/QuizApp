@@ -19,7 +19,13 @@ extension UIColor {
 
 class ScoreQuizExamViewController: UIViewController {
 
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var backgroundTopView: ShadowView!
+    @IBOutlet weak var backgroundBottomView: UIView!
     @IBOutlet weak var chartProgressView: UIView!
+    @IBOutlet weak var backCorrectButton: ShadowButton!
+    @IBOutlet weak var restartButton: ShadowButton!
+    @IBOutlet weak var backButton: ShadowButton!
     var count: CGFloat = 0
     var progressRing: CircularProgressBar!
     var timer: Timer!
@@ -30,7 +36,8 @@ class ScoreQuizExamViewController: UIViewController {
         super.viewDidLoad()
         sum = 150
         correct = 100
-        
+        chartProgressView.setCorner(.allCorners)
+        backgroundTopView.setCorner([.bottomLeft, .bottomRight])
         setupView(sum: sum, correct: correct)
         
     }
@@ -48,7 +55,7 @@ class ScoreQuizExamViewController: UIViewController {
         let lineWidth = chartProgressView.frame.height / 15
         let radius = chartProgressView.frame.height * (2/5) - lineWidth
         let position = CGPoint(x: xPosition, y: yPosition)
-        progressRing = CircularProgressBar(radius: radius, position: position, innerTrackColor: .red, outerTrackColor: .blue, lineWidth: lineWidth)
+        progressRing = CircularProgressBar(radius: radius, position: position, innerTrackColor: R.color.f94FB()!, outerTrackColor: R.color.e54C8()!, lineWidth: lineWidth)
         progressRing.countQuiz = CGFloat(sum)
         progressRing.correctQuiz = CGFloat(correct)
         chartProgressView.layer.addSublayer(progressRing)
@@ -70,10 +77,10 @@ class ScoreQuizExamViewController: UIViewController {
     }
     
     @objc func incrementCount() {
-//      let score = (100.0 / Double(sum)) * Double(correct)
         count += 1
         progressRing.progress = count
         if count >= CGFloat(correct) {
+            progressRing.score = (10.0 / Double(sum)) * Double(correct)
             timer.invalidate()
         }
     }

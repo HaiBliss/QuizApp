@@ -124,10 +124,11 @@ extension UIViewController {
         self.present(vc, animated: false)
     }
     
-    func presentQuizAnswer(listQuizs: [Quizs.Quiz]) -> QuizAnswerViewController?{
+    func presentQuizAnswer(listQuizs: [Quizs.Quiz], timeDismiss: Int) -> QuizAnswerViewController?{
         let vc = R.storyboard.quizAnswerViewController.quizAnswerViewController()!
         
         vc.listQuizs = listQuizs
+        vc.timeDismiss = timeDismiss
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: false)
         return vc

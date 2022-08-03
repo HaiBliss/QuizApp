@@ -57,11 +57,11 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG NHẬP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-sF-0JU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="19.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="nfc-bo-jLF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                                         <color key="textColor" name="4E54C8"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -114,6 +114,7 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhm-fi-f8x">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
                                                             <action selector="signupTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lUo-Xo-yzq"/>
@@ -143,7 +144,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Họ và tên" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Uui-Qd-Cke" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
@@ -154,7 +155,7 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xVT-dq-Exh" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="288" height="34"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user"/>
@@ -165,7 +166,7 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hihi@gmail.com" borderStyle="roundedRect" placeholder="Địa chỉ email" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O8P-1I-kCD" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="100" width="288" height="34"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
@@ -176,7 +177,7 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Mật khẩu" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbT-DA-tcL" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="150" width="288" height="34"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="pass"/>
@@ -187,7 +188,7 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập lại mật khẩu" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TGO-hm-esV" customClass="DesignableUITextField" customModule="QuizApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="200" width="288" height="34"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="new-password"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="pass"/>
@@ -203,7 +204,7 @@
                                                                 <rect key="frame" x="30" y="0.0" width="228" height="50"/>
                                                                 <string key="text">By pressing “submit” you agree to our
 terms &amp; conditions</string>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                                                 <color key="textColor" name="8F94FB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -302,19 +303,19 @@ terms &amp; conditions</string>
     </scenes>
     <designables>
         <designable name="O8P-1I-kCD">
-            <size key="intrinsicContentSize" width="127" height="34"/>
+            <size key="intrinsicContentSize" width="131" height="34"/>
         </designable>
         <designable name="TGO-hm-esV">
-            <size key="intrinsicContentSize" width="142.5" height="34"/>
+            <size key="intrinsicContentSize" width="145" height="34"/>
         </designable>
         <designable name="Uui-Qd-Cke">
-            <size key="intrinsicContentSize" width="88" height="34"/>
+            <size key="intrinsicContentSize" width="89.5" height="34"/>
         </designable>
         <designable name="YbT-DA-tcL">
-            <size key="intrinsicContentSize" width="87" height="34"/>
+            <size key="intrinsicContentSize" width="88" height="34"/>
         </designable>
         <designable name="xVT-dq-Exh">
-            <size key="intrinsicContentSize" width="92.5" height="34"/>
+            <size key="intrinsicContentSize" width="93.5" height="34"/>
         </designable>
     </designables>
     <resources>

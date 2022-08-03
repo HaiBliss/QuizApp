@@ -19,6 +19,11 @@ public class CircularProgressBar: CALayer {
     public var isUsingAnimation: Bool!
     public var countQuiz: CGFloat = 0.0
     public var correctQuiz: CGFloat = 0.0
+    public var score: CGFloat = 0.0 {
+        didSet {
+            completedLabel.text = "\(String(format: "%.2f", score)) điểm"
+        }
+    }
 //    public var progress: CGFloat = 0 {
 //        didSet {
 //            progressLabel.text = "\(progress)"
@@ -71,7 +76,7 @@ public class CircularProgressBar: CALayer {
         progressLabel.center = position
         progressLabel.center.y = position.y - 10
         progressLabel.font = UIFont.boldSystemFont(ofSize: radius * 0.2)
-        progressLabel.text = "0%"
+        progressLabel.text = "0"
         progressLabel.textColor = .gray
         progressLabel.textAlignment = .center
         insertSublayer(progressLabel.layer, at: 0)
@@ -83,8 +88,8 @@ public class CircularProgressBar: CALayer {
         completedLabel.textAlignment = .center
         completedLabel.center = position
         completedLabel.center.y = position.y + 20
-        completedLabel.textColor = .green
-        completedLabel.text = "Completed"
+        completedLabel.textColor = R.color.f94FB()!
+        completedLabel.text = "quizs"
         insertSublayer(completedLabel.layer, at: 0)
         
     }

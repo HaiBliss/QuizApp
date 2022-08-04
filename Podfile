@@ -12,7 +12,6 @@ target 'QuizApp' do
   pod 'AlamofireImage'
   pod 'RealmSwift'
   pod 'SnapKit'
-  pod 'IQKeyboardManagerSwift'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'NVActivityIndicatorView'
   pod 'SDWebImage'

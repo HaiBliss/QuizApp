@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var submitView: UIView!
     @IBOutlet weak var viewInput: UIView!
     @IBOutlet weak var viewBottom: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var fullNameTextField: DesignableUITextField!
     @IBOutlet weak var userNameTextField: DesignableUITextField!
@@ -30,6 +31,8 @@ class LoginViewController: UIViewController {
     private let viewModel = LoginViewModel()
     private let bag = DisposeBag()
     var isLogin: Bool = true
+    var activeField: UITextField?
+    var lastOffset: CGPoint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,21 @@ class LoginViewController: UIViewController {
         bindData()
     }
     
+    
+    //keyboard
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
     func updateView() {
         
         viewInput.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 5.0, opacity: 0.2)
@@ -49,6 +67,15 @@ class LoginViewController: UIViewController {
         loginImage.isHidden = false
         signupText.textColor = UIColor(named: "4E54C8")
         loginText.textColor = UIColor(named: "8F94FB")
+        
+        self.activeField = UITextField()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+        fullNameTextField.delegate = self
+        userNameTextField.delegate = self
+        emailTextField.delegate = self
+        passWordTextField.delegate = self
+        rePassWordTextField.delegate = self
         
     }
     @IBAction func loginTap(_ sender: Any) {
@@ -63,6 +90,7 @@ class LoginViewController: UIViewController {
         loginText.textColor = UIColor(named: "8F94FB")
     }
     @IBAction func signupTap(_ sender: Any) {
+        view.setNeedsLayout()
         isLogin = false
         fullNameTextField.isHidden = false
         userNameTextField.isHidden = false
@@ -72,6 +100,7 @@ class LoginViewController: UIViewController {
         loginImage.isHidden = true
         loginText.textColor = UIColor(named: "4E54C8")
         signupText.textColor = UIColor(named: "8F94FB")
+        view.setNeedsLayout()
     }
     
     @IBAction func submitAction(_ sender: Any) {
@@ -145,6 +174,41 @@ class LoginViewController: UIViewController {
                 break
             }
         }.disposed(by: bag)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let keyboardInfo = notification.userInfo else { return }
+        if let keyboardSize = (keyboardInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
+            let keyboardHeight = keyboardSize.height + 10
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+            self.scrollView.contentInset = contentInsets
+            var viewRect = self.view.frame
+            viewRect.size.height -= keyboardHeight
+            guard let activeField = activeField else {
+                return
+            }
+            if (!viewRect.contains(activeField.frame.origin)){
+                let scrollPoint = CGPoint(x: 0, y: activeField.frame.origin.y - keyboardHeight)
+                self.scrollView.setContentOffset(scrollPoint, animated: true)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        self.scrollView.contentInset = contentInsets
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.activeField = nil
+        return true
     }
 }
 

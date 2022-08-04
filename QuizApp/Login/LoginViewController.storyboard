@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJo-hx-Lci">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-PP-Jtq">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-PP-Jtq" customClass="GradientView" customModule="QuizApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-ab-jrx">
@@ -59,7 +59,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐĂNG NHẬP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-sF-0JU">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="19.333333333333332"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="nfc-bo-jLF"/>
                                                                         </constraints>
@@ -68,7 +68,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightSign" translatesAutoresizingMaskIntoConstraints="NO" id="rS4-wW-lhD">
-                                                                        <rect key="frame" x="23.5" y="13" width="53" height="15"/>
+                                                                        <rect key="frame" x="23.666666666666657" y="13" width="53" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15" id="0km-WO-VtT"/>
                                                                             <constraint firstAttribute="width" constant="53" id="Zwa-g5-7XN"/>
@@ -108,7 +108,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightSign" translatesAutoresizingMaskIntoConstraints="NO" id="erR-iX-wFE">
-                                                                        <rect key="frame" x="23.5" y="13" width="53" height="15"/>
+                                                                        <rect key="frame" x="23.666666666666657" y="13" width="53" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15" id="dO0-Jr-Pm3"/>
                                                                             <constraint firstAttribute="width" constant="53" id="zNg-B9-WDh"/>
@@ -294,8 +294,8 @@ terms &amp; conditions</string>
                         <constraints>
                             <constraint firstItem="jRm-QE-EZd" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="4J3-wi-VpN"/>
                             <constraint firstAttribute="bottom" secondItem="jRm-QE-EZd" secondAttribute="bottom" id="5iC-07-jeU"/>
-                            <constraint firstItem="jRm-QE-EZd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="AP7-XB-ytQ"/>
-                            <constraint firstItem="jRm-QE-EZd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dgq-dL-dTM"/>
+                            <constraint firstItem="jRm-QE-EZd" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="AP7-XB-ytQ"/>
+                            <constraint firstItem="jRm-QE-EZd" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="dgq-dL-dTM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -306,6 +306,7 @@ terms &amp; conditions</string>
                         <outlet property="loginText" destination="MVb-sF-0JU" id="ptX-9K-DkI"/>
                         <outlet property="passWordTextField" destination="YbT-DA-tcL" id="Fl7-lg-OrO"/>
                         <outlet property="rePassWordTextField" destination="TGO-hm-esV" id="X6d-cf-cHJ"/>
+                        <outlet property="scrollView" destination="jRm-QE-EZd" id="sSK-Oz-x8F"/>
                         <outlet property="signupButton" destination="Lhm-fi-f8x" id="Sgo-na-CsV"/>
                         <outlet property="signupImage" destination="erR-iX-wFE" id="EGR-Sa-k4W"/>
                         <outlet property="signupText" destination="ft4-sC-wqn" id="f5Z-pC-gR5"/>
@@ -327,19 +328,19 @@ terms &amp; conditions</string>
             <size key="intrinsicContentSize" width="145" height="34"/>
         </designable>
         <designable name="Uui-Qd-Cke">
-            <size key="intrinsicContentSize" width="89.5" height="34"/>
+            <size key="intrinsicContentSize" width="89.333333333333329" height="34"/>
         </designable>
         <designable name="YbT-DA-tcL">
-            <size key="intrinsicContentSize" width="88" height="34"/>
+            <size key="intrinsicContentSize" width="87.666666666666671" height="34"/>
         </designable>
         <designable name="xVT-dq-Exh">
-            <size key="intrinsicContentSize" width="93.5" height="34"/>
+            <size key="intrinsicContentSize" width="93.666666666666671" height="34"/>
         </designable>
     </designables>
     <resources>
-        <image name="email" width="16.5" height="13"/>
-        <image name="lightSign" width="55.5" height="2"/>
-        <image name="logo" width="80" height="115.5"/>
+        <image name="email" width="16.666666030883789" height="12.666666984558105"/>
+        <image name="lightSign" width="55.666667938232422" height="2"/>
+        <image name="logo" width="80" height="115.33333587646484"/>
         <image name="pass" width="14" height="16"/>
         <image name="sumbit" width="54" height="54"/>
         <image name="user" width="16" height="16"/>

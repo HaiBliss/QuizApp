@@ -99,8 +99,6 @@ class LoginViewController: UIViewController {
         loginImage.isHidden = true
         loginText.textColor = UIColor(named: "4E54C8")
         signupText.textColor = UIColor(named: "8F94FB")
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        view.setNeedsLayout()
     }
     
     @IBAction func submitAction(_ sender: Any) {

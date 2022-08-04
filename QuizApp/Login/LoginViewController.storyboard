@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJo-hx-Lci">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-PP-Jtq" customClass="GradientView" customModule="QuizApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-ab-jrx">
                                                         <rect key="frame" x="167" y="76" width="80" height="116"/>
@@ -48,10 +48,6 @@
                                                         <color key="value" red="0.27128219599999998" green="0.27911514040000002" blue="0.71287399529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aD-1A-Pvz">
-                                                <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYr-Cp-Ed6">
                                                 <rect key="frame" x="36" y="240" width="342" height="448"/>
@@ -270,26 +266,22 @@ terms &amp; conditions</string>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="6aD-1A-Pvz" secondAttribute="trailing" id="3iA-Ye-gWO"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Sf-Yt-sho" secondAttribute="bottom" priority="1" constant="36" id="6W5-2z-h9V"/>
                                             <constraint firstItem="BYr-Cp-Ed6" firstAttribute="top" secondItem="hVN-ab-jrx" secondAttribute="bottom" constant="48" id="9bt-Pc-duN"/>
                                             <constraint firstItem="BYr-Cp-Ed6" firstAttribute="leading" secondItem="cJo-hx-Lci" secondAttribute="leading" constant="36" id="ALH-dC-6bj"/>
                                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="top" secondItem="cJo-hx-Lci" secondAttribute="top" id="Hka-Us-54a"/>
                                             <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerY" secondItem="NSN-sC-OG1" secondAttribute="centerY" id="PJY-wO-3fX"/>
-                                            <constraint firstItem="6aD-1A-Pvz" firstAttribute="top" secondItem="8Hs-PP-Jtq" secondAttribute="bottom" id="PYU-MK-gQs"/>
-                                            <constraint firstAttribute="bottom" secondItem="6aD-1A-Pvz" secondAttribute="bottom" id="Vpd-pU-anA"/>
                                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="leading" secondItem="cJo-hx-Lci" secondAttribute="leading" id="Zoq-5n-7zW"/>
                                             <constraint firstAttribute="trailing" secondItem="BYr-Cp-Ed6" secondAttribute="trailing" constant="36" id="dTg-mX-jt0"/>
-                                            <constraint firstItem="6aD-1A-Pvz" firstAttribute="top" secondItem="cJo-hx-Lci" secondAttribute="top" constant="358.5" id="esY-q8-JWr"/>
+                                            <constraint firstItem="8Hs-PP-Jtq" firstAttribute="bottom" secondItem="BYr-Cp-Ed6" secondAttribute="top" constant="80" id="kKg-Z4-ZSo"/>
                                             <constraint firstAttribute="trailing" secondItem="8Hs-PP-Jtq" secondAttribute="trailing" id="pqq-m8-VxZ"/>
                                             <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerX" secondItem="NSN-sC-OG1" secondAttribute="centerX" id="tVj-eK-K4Y"/>
-                                            <constraint firstItem="6aD-1A-Pvz" firstAttribute="leading" secondItem="cJo-hx-Lci" secondAttribute="leading" id="zyx-eO-8PA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="cJo-hx-Lci" firstAttribute="bottom" secondItem="jRm-QE-EZd" secondAttribute="bottom" id="Gxy-wP-tJI"/>
-                                    <constraint firstItem="cJo-hx-Lci" firstAttribute="height" secondItem="jRm-QE-EZd" secondAttribute="height" id="V2j-rG-esG"/>
                                     <constraint firstItem="cJo-hx-Lci" firstAttribute="leading" secondItem="jRm-QE-EZd" secondAttribute="leading" id="XcV-aC-pY8"/>
                                     <constraint firstItem="cJo-hx-Lci" firstAttribute="top" secondItem="jRm-QE-EZd" secondAttribute="top" id="eLz-0h-ndx"/>
                                     <constraint firstItem="cJo-hx-Lci" firstAttribute="trailing" secondItem="jRm-QE-EZd" secondAttribute="trailing" id="uy4-Ri-Hcf"/>
@@ -319,7 +311,6 @@ terms &amp; conditions</string>
                         <outlet property="signupText" destination="ft4-sC-wqn" id="f5Z-pC-gR5"/>
                         <outlet property="submitView" destination="NSN-sC-OG1" id="JMN-Ke-Zwu"/>
                         <outlet property="userNameTextField" destination="xVT-dq-Exh" id="Fzu-G0-uG3"/>
-                        <outlet property="viewBottom" destination="6aD-1A-Pvz" id="YsX-CK-cOw"/>
                         <outlet property="viewInput" destination="BYr-Cp-Ed6" id="uZv-qp-Tx4"/>
                     </connections>
                 </viewController>

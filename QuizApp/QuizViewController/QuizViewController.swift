@@ -33,7 +33,8 @@ class QuizViewController: UIViewController {
             indexQuizLabel.text = "\(currentPage+1)/\(quizCount)"
         }
     }
-    
+    private var startTime: String = ""
+    private let dateFormatter = DateFormatter()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var time: String = "00:00"
     private var minutes: Float = 0.0 {
@@ -52,6 +53,7 @@ class QuizViewController: UIViewController {
     }
     
     func setupView() {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         collectionView.register(QuizCollectionViewCell.nib(), forCellWithReuseIdentifier: QuizCollectionViewCell.indentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -147,16 +149,34 @@ class QuizViewController: UIViewController {
     }
     
     func submitExam(isConfirm: Bool) {
+        var listAnswer: [QuizRequest.Answer] = []
+        for i in listQuizs {
+            var answerSelect = -1
+            if let answers = i.answers, answers.count > 0 {
+                for (index, element) in answers.enumerated() {
+                    if element.is_select == true {
+                        answerSelect = index
+                        break
+                    }
+                }
+                if let id = i.id {
+                    let answer = QuizRequest.Answer(quiz_id: id, answer: answerSelect)
+                    listAnswer.append(answer)
+                }
+            }
+        }
+        
         if isConfirm {
-            self.confirmView(title: "Bạn có chắc chắn muốn nộp bài?", message: "Dĩ nhiên rồi :)))") {
-                //dimissRootVC()
-                self.timer.upstream.connect().cancel()
-                self.presentScoreQuiz()
+            self.confirmView(title: "Bạn có chắc chắn muốn nộp bài?", message: "Dĩ nhiên rồi :)))") { [weak self] in
+                
+                let quizRequest = QuizRequest.init(exam_id: self?.listQuizs[0].exams_id ?? -1, start_time: self?.startTime ?? "", completion_time: self?.dateFormatter.string(from: Date()) ?? "", answer: listAnswer)
+                self?.timer.upstream.connect().cancel()
+                self?.presentScoreQuiz(quizRequest: quizRequest)
             }
         } else {
+            let quizRequest = QuizRequest.init(exam_id: self.listQuizs[0].exams_id ?? -1, start_time: startTime, completion_time: self.dateFormatter.string(from: Date()), answer: listAnswer)
             timer.upstream.connect().cancel()
-            //dimissRootVC()
-            presentScoreQuiz()
+            presentScoreQuiz(quizRequest: quizRequest)
         }
     }
 }
@@ -175,7 +195,6 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         cell.selectAnswer = { [weak self] quizNumber in
-            self?.listQuizs[index].isAnswer = "\(quizNumber)"
             if let answers = self?.listQuizs[index].answers {
                 for i in 0..<answers.count {
                     self?.listQuizs[index].answers?[i].is_select = false
@@ -201,6 +220,7 @@ extension QuizViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension QuizViewController {
     
     func start(minutes: Float) {
+        self.startTime = self.dateFormatter.string(from: Date())
         let initialTime = Int(minutes)
         self.endDate = Date()
         self.endDate = Calendar.current.date(byAdding: .second, value: initialTime * 60 + 1, to: endDate)!

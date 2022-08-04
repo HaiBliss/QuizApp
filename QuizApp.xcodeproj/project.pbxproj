@@ -217,6 +217,12 @@
 		1EAA9728288A5B2500401E88 /* ListExamsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA9727288A5B2500401E88 /* ListExamsAPI.swift */; };
 		1EAA9729288A5B2500401E88 /* ListExamsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA9727288A5B2500401E88 /* ListExamsAPI.swift */; };
 		1EAA972A288A5B2500401E88 /* ListExamsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA9727288A5B2500401E88 /* ListExamsAPI.swift */; };
+		1EAB2FD5289A48B200EF9EB6 /* QuizRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB2FD4289A48B200EF9EB6 /* QuizRequest.swift */; };
+		1EAB2FD6289A48B200EF9EB6 /* QuizRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB2FD4289A48B200EF9EB6 /* QuizRequest.swift */; };
+		1EAB2FD7289A48B200EF9EB6 /* QuizRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB2FD4289A48B200EF9EB6 /* QuizRequest.swift */; };
+		1EAB2FD9289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB2FD8289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift */; };
+		1EAB2FDA289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB2FD8289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift */; };
+		1EAB2FDB289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAB2FD8289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift */; };
 		8FA04623E04179B6855E4CE4 /* Pods_QuizApp_QuizAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7019B0658F9B608B131B4F /* Pods_QuizApp_QuizAppUITests.framework */; };
 		B4A8CF4DD0CE6D4DF93C1D36 /* Pods_QuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F3ECE62F6F18BDE046D6FB /* Pods_QuizApp.framework */; };
 		D06443D6F0C3B82FC0F2C45B /* Pods_QuizAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1532F080411E084A30FA7302 /* Pods_QuizAppTests.framework */; };
@@ -330,6 +336,8 @@
 		1EAA9721288A56A600401E88 /* Exams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exams.swift; sourceTree = "<group>"; };
 		1EAA9723288A578500401E88 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		1EAA9727288A5B2500401E88 /* ListExamsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExamsAPI.swift; sourceTree = "<group>"; };
+		1EAB2FD4289A48B200EF9EB6 /* QuizRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRequest.swift; sourceTree = "<group>"; };
+		1EAB2FD8289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreQuizExamViewModel.swift; sourceTree = "<group>"; };
 		2F7019B0658F9B608B131B4F /* Pods_QuizApp_QuizAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizApp_QuizAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692643C59BADFB0486A131B8 /* Pods-QuizApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp.debug.xcconfig"; path = "Target Support Files/Pods-QuizApp/Pods-QuizApp.debug.xcconfig"; sourceTree = "<group>"; };
 		97F3ECE62F6F18BDE046D6FB /* Pods_QuizApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,6 +388,7 @@
 			children = (
 				1E26A975289679A700DE211F /* ScoreQuizExamViewController.swift */,
 				1E26A979289679B300DE211F /* ScoreQuizExamViewController.storyboard */,
+				1EAB2FD8289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift */,
 			);
 			path = ScoreQuizExamViewController;
 			sourceTree = "<group>";
@@ -504,6 +513,7 @@
 				1EAA9721288A56A600401E88 /* Exams.swift */,
 				1EAA9723288A578500401E88 /* Page.swift */,
 				1E892C182892A511005A61FA /* Quizs.swift */,
+				1EAB2FD4289A48B200EF9EB6 /* QuizRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1122,6 +1132,7 @@
 				1E8D494C287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
 				1EAA9722288A56A600401E88 /* Exams.swift in Sources */,
 				1E8D498728853F2400396DF6 /* ExamTableViewCell.swift in Sources */,
+				1EAB2FD5289A48B200EF9EB6 /* QuizRequest.swift in Sources */,
 				1E3D31B128870FC40054F6F1 /* UIViewControllerExtension.swift in Sources */,
 				1E8D4978288171D000396DF6 /* DepartmentAPI.swift in Sources */,
 				1E892C0B28928B65005A61FA /* ApiError.swift in Sources */,
@@ -1142,6 +1153,7 @@
 				1EA71A352854FD7F004422A9 /* AppDelegate.swift in Sources */,
 				1E3D31BC2888093C0054F6F1 /* FilterViewController.swift in Sources */,
 				1E8D497D288537D600396DF6 /* ListExamsViewController.swift in Sources */,
+				1EAB2FD9289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift in Sources */,
 				1E58E562286E98CF006ECBFF /* SideMenuViewController.swift in Sources */,
 				1EA71A372854FD7F004422A9 /* SceneDelegate.swift in Sources */,
 				1E892C1D2892E1C1005A61FA /* QuizViewModel.swift in Sources */,
@@ -1155,6 +1167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAB2FD6289A48B200EF9EB6 /* QuizRequest.swift in Sources */,
 				1E8D49712881679500396DF6 /* HomeViewModel.swift in Sources */,
 				1E892C0C28928B65005A61FA /* ApiError.swift in Sources */,
 				1E8D494D287FCD2100396DF6 /* SlidesCollectionViewCell.swift in Sources */,
@@ -1197,6 +1210,7 @@
 				1E980392286A9BB8000C032B /* ProjectManager.swift in Sources */,
 				1E85B64C286BF4AD00767686 /* HistoryViewController.swift in Sources */,
 				1E4F4F57288E439500A72642 /* QuizViewController.swift in Sources */,
+				1EAB2FDA289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,10 +1236,12 @@
 				1E9465D82893C2F3005D05A2 /* PopupImageViewController.swift in Sources */,
 				1E3D31B728872F030054F6F1 /* ShadowView.swift in Sources */,
 				1E85B63C286B5EB100767686 /* TabBarView.swift in Sources */,
+				1EAB2FDB289A5F0000EF9EB6 /* ScoreQuizExamViewModel.swift in Sources */,
 				1E980393286A9BB8000C032B /* ProjectManager.swift in Sources */,
 				1E85B634286B4EA600767686 /* UserInfoViewController.swift in Sources */,
 				1E26A98028967D8A00DE211F /* CircularProgressBar.swift in Sources */,
 				1E8D497F288537D600396DF6 /* ListExamsViewController.swift in Sources */,
+				1EAB2FD7289A48B200EF9EB6 /* QuizRequest.swift in Sources */,
 				1EAA972A288A5B2500401E88 /* ListExamsAPI.swift in Sources */,
 				1E3D31A72886A62E0054F6F1 /* ListSubjectsViewController.swift in Sources */,
 				1EA71A582854FD87004422A9 /* QuizAppUITestsLaunchTests.swift in Sources */,

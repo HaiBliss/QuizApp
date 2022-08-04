@@ -16,6 +16,7 @@ enum RepositoriesNetworking {
     case getSubjectsDepartment(page: Int, perPage: Int, departmentId: Int)
     case getExams(page: Int, perPage: Int, mId: Int, isSubjectId: Bool)
     case getQuizs(page: Int, perPage: Int, examId: Int)
+    case pushQuizAnswer(quizRequest: QuizRequest)
 }
 
 extension RepositoriesNetworking: TargetType {
@@ -42,6 +43,8 @@ extension RepositoriesNetworking: TargetType {
             return .get
         case .getQuizs(_, _, _):
             return .get
+        case .pushQuizAnswer(_):
+            return .post
         }
     }
     
@@ -86,6 +89,8 @@ extension RepositoriesNetworking: TargetType {
                                                    "per_page": perPage,
                                                    "exam_id": examId
                                                   ], encoding: URLEncoding.default)
+        case .pushQuizAnswer(quizRequest: let quizRequest):
+            return .requestParameters(parameters: quizRequest.dictionaryQuizRequest, encoding: URLEncoding.default)
         }
     }
     
@@ -119,6 +124,8 @@ extension RepositoriesNetworking: TargetType {
             return "/exams"
         case .getQuizs(_, _, _):
             return "/exams/detail"
+        case .pushQuizAnswer(_):
+            return "/exams/submit"
         }
     }
     

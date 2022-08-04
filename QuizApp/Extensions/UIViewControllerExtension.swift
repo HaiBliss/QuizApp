@@ -144,10 +144,11 @@ extension UIViewController {
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    func presentScoreQuiz() {
+    func presentScoreQuiz(quizRequest: QuizRequest) {
         guard let vc = R.storyboard.scoreQuizExamViewController.scoreQuizExamViewController() else {
             return
         }
+        vc.quizRequest = quizRequest
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
@@ -200,6 +201,15 @@ extension UIViewController {
     func alertView(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func errorView(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.pushBaseRoot()
+        }
+        alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
     

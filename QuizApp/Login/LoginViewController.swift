@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var submitView: UIView!
     @IBOutlet weak var viewInput: UIView!
+    @IBOutlet weak var viewBottom: UIView!
     
     @IBOutlet weak var fullNameTextField: DesignableUITextField!
     @IBOutlet weak var userNameTextField: DesignableUITextField!

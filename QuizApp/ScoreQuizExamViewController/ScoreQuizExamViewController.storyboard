@@ -42,15 +42,15 @@
                                 <rect key="frame" x="0.0" y="340.5" width="414" height="521.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i9S-Nr-eP3">
-                                        <rect key="frame" x="36" y="96" width="342" height="212"/>
+                                        <rect key="frame" x="36" y="96" width="342" height="182"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-3o-uOJ" customClass="ShadowButton" customModule="QuizApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="342" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                                 <color key="backgroundColor" red="0.56082576510000004" green="0.57888770099999998" blue="0.98390752079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="6Ua-zS-3Ce"/>
+                                                    <constraint firstAttribute="height" constant="50" id="6Ua-zS-3Ce"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Xem Đáp Án">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,11 +64,11 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krp-lW-qUM" customClass="ShadowButton" customModule="QuizApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="76" width="342" height="60"/>
+                                                <rect key="frame" x="0.0" y="66" width="342" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="QFS-Qe-JXx"/>
+                                                    <constraint firstAttribute="height" constant="50" id="QFS-Qe-JXx"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Làm Lại">
                                                     <color key="titleColor" red="0.56078431370000004" green="0.58039215690000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,7 +80,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="3"/>
+                                                        <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.56078431370000004" green="0.58039215690000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,11 +88,11 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-Qj-w0b" customClass="ShadowButton" customModule="QuizApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="152" width="342" height="60"/>
+                                                <rect key="frame" x="0.0" y="132" width="342" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="tEP-46-apW"/>
+                                                    <constraint firstAttribute="height" constant="50" id="tEP-46-apW"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Trở Về">
                                                     <color key="titleColor" red="0.56078431370000004" green="0.58039215690000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,7 +104,7 @@
                                                         <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="3"/>
+                                                        <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.56078431370000004" green="0.58039215690000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

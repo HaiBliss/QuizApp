@@ -24,8 +24,6 @@ struct Quizs: Codable {
         let updated_date: String?
         let del_flg: Int?
         var answers: [Answer]?
-        let correct_answer: String?
-        var isAnswer: String?
         
         struct Answer: Codable {
             let id: Int?

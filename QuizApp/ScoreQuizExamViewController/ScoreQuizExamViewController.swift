@@ -7,15 +7,8 @@
 
 import UIKit
 import SwiftUI
-
-extension UIColor {
-    static func rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) -> UIColor {
-        return UIColor.init(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1)
-    }
-    static let defaultOuterColor = UIColor.rgb(56, 25, 49)
-    static let defaultInnerColor: UIColor = .rgb(234, 46, 111)
-    static let defaultPulseFillColor = UIColor.rgb(86, 30, 63)
-}
+import RxSwift
+import RxCocoa
 
 class ScoreQuizExamViewController: UIViewController {
 
@@ -31,25 +24,29 @@ class ScoreQuizExamViewController: UIViewController {
     var timer: Timer!
     var sum: Int = 0
     var correct: Int = 0
+    private var viewModel = ScoreQuizExamViewModel()
+    private let bag = DisposeBag()
+    var quizRequest: QuizRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sum = 150
-        correct = 100
-        chartProgressView.setCorner(.allCorners)
-        backgroundTopView.setCorner([.bottomLeft, .bottomRight])
-        setupView(sum: sum, correct: correct)
-        
+        setupView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-         timer = Timer.scheduledTimer(timeInterval: 0.015, target: self, selector: #selector(incrementCount), userInfo: nil, repeats: true)
-         timer.fire()
-
-        chartProgressView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(resetProgressCount)))
+        super.viewDidAppear(true)
+        bindData()
     }
     
-    func setupView(sum: Int, correct: Int) {
+    func setupView() {
+        backCorrectButton.isEnabled = false
+        restartButton.isEnabled = false
+//        backButton.isEnabled = false
+        chartProgressView.setCorner(.allCorners)
+        backgroundTopView.setCorner([.bottomLeft, .bottomRight])
+    }
+    
+    func setupChartProgress(sum: Int, correct: Int) {
         let xPosition = chartProgressView.frame.width / 2
         let yPosition = chartProgressView.frame.height / 2
         let lineWidth = chartProgressView.frame.height / 15
@@ -59,6 +56,56 @@ class ScoreQuizExamViewController: UIViewController {
         progressRing.countQuiz = CGFloat(sum)
         progressRing.correctQuiz = CGFloat(correct)
         chartProgressView.layer.addSublayer(progressRing)
+    }
+    
+    func startCicle() {
+         timer = Timer.scheduledTimer(timeInterval: 0.015, target: self, selector: #selector(incrementCount), userInfo: nil, repeats: true)
+         timer.fire()
+
+//        chartProgressView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(resetProgressCount)))
+    }
+    
+    func bindData() {
+        guard let quizRequest = quizRequest else {
+            self.errorView(title: "Lỗi", message: "Không có Data!")
+            return
+        }
+        self.loadingView(isRuning: true)
+        viewModel.postQuizAnswer(quizRequest: quizRequest)
+        viewModel.quizs.subscribe { [weak self] data in
+            self?.loadingView(isRuning: false)
+            if let quizs = data.element {
+                if let errorCode = quizs.code {
+                    switch errorCode {
+                    case 200:
+                        self?.sum = quizs.data?.count ?? 0
+                        self?.correct = 100
+                        self?.setupChartProgress(sum: self?.sum ?? 0, correct: self?.correct ?? 0)
+                        self?.startCicle()
+                        break
+                    default:
+                        self?.errorView(title: "Lỗi", message: quizs.message ?? "")
+                        break
+                    }
+                }
+            }
+        }.disposed(by: bag)
+        
+        viewModel.errorAPI.subscribe{ [weak self] data in
+            self?.loadingView(isRuning: false)
+            switch data.element {
+            case .networkError:
+                self?.alertView(title: "Lỗi", message: "Không có Internet" )
+            case .commonError(code: _, messages: let messages):
+                self?.alertView(title: "Lỗi", message: messages )
+            case .invalidJson:
+                break
+            case .unknow(code: _):
+               break
+            case .none:
+                break
+            }
+        }.disposed(by: bag)
     }
     
     @IBAction func backActionButton(_ sender: Any) {
@@ -82,6 +129,9 @@ class ScoreQuizExamViewController: UIViewController {
         if count >= CGFloat(correct) {
             progressRing.score = (10.0 / Double(sum)) * Double(correct)
             timer.invalidate()
+            backCorrectButton.isEnabled = true
+            restartButton.isEnabled = true
+            backButton.isEnabled = true
         }
     }
 

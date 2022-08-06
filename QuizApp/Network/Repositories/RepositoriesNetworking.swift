@@ -23,7 +23,7 @@ extension RepositoriesNetworking: TargetType {
     var baseURL: String {
         switch self {
         default:
-            return "https://quanghuy.me/api"
+            return "https://quanghuy.site/api"
         }
     }
     

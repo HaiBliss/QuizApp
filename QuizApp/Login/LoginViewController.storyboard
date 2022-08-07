@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJo-hx-Lci">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="771.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="831.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-PP-Jtq" customClass="GradientView" customModule="QuizApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="325.66666666666669"/>
@@ -236,43 +236,43 @@
                                                             <constraint firstAttribute="height" constant="80" id="XUI-2Z-IP3"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-Yt-sho">
-                                                        <rect key="frame" x="144" y="416" width="54" height="54"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="54" id="awu-uG-IFi"/>
-                                                            <constraint firstAttribute="width" constant="54" id="qkM-kr-38i"/>
-                                                        </constraints>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="sumbit"/>
-                                                        <connections>
-                                                            <action selector="submitAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cs4-rt-X93"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerX" secondItem="NSN-sC-OG1" secondAttribute="centerX" id="25U-Sr-lTs"/>
                                                     <constraint firstAttribute="bottom" secondItem="NSN-sC-OG1" secondAttribute="bottom" constant="-45" id="4sc-Go-xUc"/>
                                                     <constraint firstItem="AT0-M9-SWH" firstAttribute="centerX" secondItem="BYr-Cp-Ed6" secondAttribute="centerX" id="8gT-yy-klo"/>
                                                     <constraint firstItem="AT0-M9-SWH" firstAttribute="top" secondItem="BYr-Cp-Ed6" secondAttribute="top" constant="20" id="CQa-nY-zbp"/>
                                                     <constraint firstItem="NSN-sC-OG1" firstAttribute="centerX" secondItem="BYr-Cp-Ed6" secondAttribute="centerX" id="ERL-b4-pPj"/>
-                                                    <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerY" secondItem="NSN-sC-OG1" secondAttribute="centerY" id="TzD-E6-o42"/>
                                                     <constraint firstAttribute="trailing" secondItem="oTp-Mp-69c" secondAttribute="trailing" constant="27" id="di6-yj-HMK"/>
                                                     <constraint firstAttribute="bottom" secondItem="oTp-Mp-69c" secondAttribute="bottom" constant="60" id="foO-E6-766"/>
                                                     <constraint firstItem="oTp-Mp-69c" firstAttribute="top" secondItem="AT0-M9-SWH" secondAttribute="bottom" constant="30" id="ta6-7h-rHv"/>
                                                     <constraint firstItem="oTp-Mp-69c" firstAttribute="leading" secondItem="BYr-Cp-Ed6" secondAttribute="leading" constant="27" id="zpe-lK-Iu8"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-Yt-sho">
+                                                <rect key="frame" x="180" y="649.66666666666663" width="54" height="54"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="54" id="awu-uG-IFi"/>
+                                                    <constraint firstAttribute="width" constant="54" id="qkM-kr-38i"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="sumbit"/>
+                                                <connections>
+                                                    <action selector="submitAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cs4-rt-X93"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="BYr-Cp-Ed6" firstAttribute="top" secondItem="hVN-ab-jrx" secondAttribute="bottom" constant="40" id="9bt-Pc-duN"/>
                                             <constraint firstItem="BYr-Cp-Ed6" firstAttribute="leading" secondItem="cJo-hx-Lci" secondAttribute="leading" constant="36" id="ALH-dC-6bj"/>
+                                            <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerX" secondItem="NSN-sC-OG1" secondAttribute="centerX" id="GHm-89-R8t"/>
                                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="top" secondItem="cJo-hx-Lci" secondAttribute="top" id="Hka-Us-54a"/>
                                             <constraint firstItem="8Hs-PP-Jtq" firstAttribute="leading" secondItem="cJo-hx-Lci" secondAttribute="leading" id="Zoq-5n-7zW"/>
                                             <constraint firstAttribute="trailing" secondItem="BYr-Cp-Ed6" secondAttribute="trailing" constant="36" id="dTg-mX-jt0"/>
+                                            <constraint firstItem="0Sf-Yt-sho" firstAttribute="centerY" secondItem="NSN-sC-OG1" secondAttribute="centerY" id="kFS-6Z-FYT"/>
                                             <constraint firstAttribute="trailing" secondItem="8Hs-PP-Jtq" secondAttribute="trailing" id="pqq-m8-VxZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="BYr-Cp-Ed6" secondAttribute="bottom" constant="100" id="thh-kM-CAT"/>
+                                            <constraint firstAttribute="bottom" secondItem="BYr-Cp-Ed6" secondAttribute="bottom" constant="160" id="thh-kM-CAT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -320,19 +320,19 @@
     </scenes>
     <designables>
         <designable name="O8P-1I-kCD">
-            <size key="intrinsicContentSize" width="157" height="34"/>
+            <size key="intrinsicContentSize" width="131" height="34"/>
         </designable>
         <designable name="TGO-hm-esV">
-            <size key="intrinsicContentSize" width="169" height="34"/>
+            <size key="intrinsicContentSize" width="145" height="34"/>
         </designable>
         <designable name="Uui-Qd-Cke">
-            <size key="intrinsicContentSize" width="115.33333333333333" height="34"/>
+            <size key="intrinsicContentSize" width="89.333333333333329" height="34"/>
         </designable>
         <designable name="YbT-DA-tcL">
-            <size key="intrinsicContentSize" width="111.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="87.666666666666671" height="34"/>
         </designable>
         <designable name="xVT-dq-Exh">
-            <size key="intrinsicContentSize" width="119.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="93.666666666666671" height="34"/>
         </designable>
     </designables>
     <resources>
